@@ -73,25 +73,19 @@
                 </h1>
                 <form class="contact-form" id="contactForm" action="https://formsubmit.co/80e55ae3c77f53b900759eddc6dbf412" method="POST">
                     <div class="form-group">
-                        <label for="user-name" class="contact-label"><i class="bi bi-person-fill"></i></label>
+                        <label for="user-name" class="contact-label"><i class="bi bi-person-fill">&nbsp;&nbsp;</i></label>
                         <input type="text" id="user-name" class="contact-input" name="name" placeholder="Enter Your Name" title="Enter your name" required>
                     </div>
                     <div class="form-group">
-                        <label for="user-email" class="contact-label"><i class="bi bi-envelope-fill"></i></label>
+                        <label for="user-email" class="contact-label"><i class="bi bi-envelope-fill">&nbsp;&nbsp;</i></label>
                         <input type="text" id="user-email" class="contact-input" name="email" placeholder="Enter Your Email" title="Enter a valid email in format: my@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="contact-reason" class="contact-label">Subject:</label> 
-                        <select class="select" id="contact-reason" class="contact-input" title="Choose a reason for your message" required>
-                            <option hidden disabled selected value> -- select an option -- </option>
-                            <option value="Need for a Project" >Need for a Project</option>
-                            <option value="Employment Opportunity">Employment Opportunity</option>
-                            <option value="Programming Advice">Programming Advice</option>
-                            <option value="Just saying hi">Wanted to Say You're Awesome!</option>
-                        </select>
+                        <label for="contact-reason" class="contact-label"><i class="bi bi-chat-right-quote-fill">&nbsp;&nbsp;</i></label>
+                        <input type="text" id="contact-reason" class="contact-input" name="reason" placeholder="Enter Message Subject" title="Enter your reason to contact" required> 
                     </div>
                     <div class="form-group">
-                        <label for="contact-message" class="contact-label"><i class="bi bi-chat-dots-fill"></i></label>
+                        <label for="contact-message" class="contact-label"><i class="bi bi-chat-dots-fill">&nbsp;&nbsp;</i></label>
                         <textarea id="contact-message" class="contact-input" name="message" placeholder="Write your message here..." title="Write a detailed message" required></textarea>
                     </div>
                         <button type="submit" form="contactForm" class="form-button" value="submit">
