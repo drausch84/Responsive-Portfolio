@@ -541,75 +541,103 @@ path.two {
 }
 
 /* Thank You Page CSS */
-.body-thankyou{
-  background-image:url("../images/comp-background.jpeg");
-  background-size: cover;
-}
-.thankyou-h{
-  color:white;
-  transform: rotate(-12deg);
-  margin-right:550px;
-  font-size:50px;
+.success-h{
   font-family:'Raleway', sans-serif;
+  text-align:center;
+  font-size: 54px;
+  background: -webkit-linear-gradient(#a71d31, #3f0d12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
-.envelope-img{
-  transform: rotate(-15deg);
-  margin-top: 10px;
-  margin-left: 300px;
+.success-hr{
+  background:#3f0d12;
 }
-.thankyou-p{
-  color:#fff;
+.email-env{
+  margin-left:165px;
+}
+.success-p{
+  text-align:center;
+  margin-top:15px;
   font-family:'Mukta', sans-serif;
-  transform:rotate(-12deg);
-  margin-left:200px;
+  font-size: 18px;
+  color:#3f0d12;
+}
+.return-home-btn{
   position:absolute;
+  margin-left:220px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	/* line-height: 2; */
+	color: #3f0d12;
+	font-size: 20px;
+	font-family: 'Mukta', sans-serif;
+	letter-spacing: 4px;
+
+	/* use combination of any two */
+	/* 1. */
+	/* padding: 5px; */
+
+	/* 2. */
+	padding-left: 5px;
+	/* padding-right: 5px; */
 }
-.redirect-btn{
-  color: #34495e;
-  overflow: hidden;
+.return-home-btn:hover{
   text-decoration: none;
+  color:#a71d31;
+}
+.return-home-btn::before,
+.return-home-btn::after,
+.btn-span::before,
+.btn-span::after {
+	content: '';
+	position: absolute;
+  text-decoration: none;
+	width: 8px;
+	height: 8px;
+	background: transparent;
+	transition: 1s;
+	/* -webkit-mix-blend-mode: hue; */
 }
 
-.redirect-btn:before, .redirect-btn:after{
-  content: "";
-  text-decoration: none;
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: coral;
-  top: 0;
-  left: -100%;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+.return-home-btn::before {
+	top: -2px;
+	left: -2px;
+	border-top: 2px solid #3f0d12;
+	border-left: 2px solid #3f0d12;
+}
+.return-home-btn::after {
+	top: -2px;
+	right: -2px;
+	border-top: 2px solid #3f0d12;
+	border-right: 2px solid #3f0d12;
 }
 
-.redirect-btn:after{
-  bottom: 0 !important;
-  top: auto !important;
-  text-decoration: none;
-  right: -100%;
-  left: auto;
+.btn-span::before {
+	bottom: -2px;
+	left: -2px;
+	border-bottom: 2px solid #3f0d12;
+	border-left: 2px solid #3f0d12;
+}
+.btn-span::after {
+	bottom: -2px;
+	right: -2px;
+	border-bottom: 2px solid #3f0d12;
+	border-right: 2px solid #3f0d12;
 }
 
-.redirect-btn:hover:before{
-  left: 0;
-  text-decoration: none;
-}
 
-.redirect-btn:hover:after{
-  right: 0;
+.return-home-btn:hover::before,
+.return-home-btn:hover::after,
+.return-home-btn:hover .btn-span::before,
+.return-home-btn:hover .btn-span::after  {
+	width: calc( 180px / 2);
+	height: calc( 50px / 2);
   text-decoration: none;
-}
-#thankyou-btn{
-    display: inline-block;
-    padding: 10px 18px;
-    margin: 20px 0 0 135px;
-    position: relative;
-    background:white;
-    color:coral;
-    font-family:'Mukta',sans-serif;
-    text-decoration:none;
 }
 /* Responsive CSS Media Queries*/
 @media screen and (max-width: 1024px){

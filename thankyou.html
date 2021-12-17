@@ -26,17 +26,40 @@
 
     <title>Thank You Page</title>
 </head>
-<body class="body-thankyou">
+<body>
     <div class="content-ctnr">
-        <div class="personal-image-div">
-            <h1 class="thankyou-h">Thank You For Reaching Out!</h1>
-            <img src="static/images/email-thank-you.png" height="110" width="110" class="envelope-img" alt="email-envelope">
-            <p class="thankyou-p">
-                I will respond to you ASAP!&nbsp;&nbsp;&nbsp;To return to the homepage:<br>
-                <a href="index.html" class="redirect-btn" id="thankyou-btn">Click Here</a>
-            </p>
-            
-        </div>
+        <div class="form-container">
+            <div class="contact-div" id="left-side-form">
+                <h1 class="left-side-h">
+                    Contact Me Today
+                </h1>
+                <hr class="left-side-hr">
+                <p class="left-side-p">
+                    Reasons to Contact Me:
+                </p>
+                <ul class="contact-menu">
+                    <li class="contact-reason">
+                        <i class="bi bi-check-circle-fill">&nbsp;&nbsp;&nbsp;</i>Talk About a Project
+                    </li>
+                    <li class="contact-reason">
+                        <i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;Discuss an Employment Opportunity
+                    </li>
+                    <li class="contact-reason">
+                        <i class="bi bi-check-circle-fill"></i>&nbsp;&nbsp;&nbsp;Ask for Programming Advice
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-div" id="right-side-form">
+                <h1 class="success-h">Success!</h1>
+                <hr class="success-hr">
+                <img src="static/images/email-thank-you.png" height="130" width="130" alt="envelope" class="email-env">
+                <p class="success-p">
+                    Thank you for reaching out to me!<br>
+                    Your email was successfully sent, and I will respond ASAP.<br>
+                    To return to the home page:<br>
+                    <a href="index.html" class="return-home-btn"><span class="btn-span"></span>Click Here</a>
+                </p>
+            </div>
     </div>
     
 </body>
