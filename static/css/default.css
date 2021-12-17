@@ -539,6 +539,29 @@ path.two {
   color:#3f0d12;
   font-size:22px;
 }
+.btn-ctnr{
+  margin-top:35px;
+  margin-left:10px;
+}
+.form-btn{
+  text-align: center;
+  cursor: pointer;
+  font-family:'Raleway',sans-serif;
+  text-transform: uppercase;
+  font-weight:bolder;
+  font-size:24px;
+  margin: 0 0 0 100px;
+  color:#3f0d12;
+  background:#fff;
+  border:#3f0d12 solid;
+  transition: all 0.8s;
+  padding:5px 10px;
+}
+.form-btn:hover{
+  color:#fff;
+  background:#3f0d12;
+}
+
 
 /* Thank You Page CSS */
 .success-h{
