@@ -662,6 +662,12 @@ path.two {
 	height: calc( 50px / 2);
   text-decoration: none;
 }
+/* 404 Page CSS */
+.body-404{
+  background: -webkit-linear-gradient(#ffd89b , #19547b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* Responsive CSS Media Queries*/
 @media screen and (max-width: 1024px){
   body{
