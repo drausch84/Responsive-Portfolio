@@ -462,6 +462,43 @@ path.two {
   color:#333333;
   font-weight:bold;
 }
+.content-ctnr-offset{
+  display:flex;
+  margin:auto;
+  background:#FAFAFA;
+  flex-direction: row;
+}
+.about-h{
+  font-size:80px;
+  font-family:'Tinos', serif;
+}
+.about-h2{
+  font-size:40px;
+  font-weight:lighter;
+}
+.about-p{
+  font-family:'Raleway', sans-serif;
+}
+.about-me-img{
+  margin-top:40px;
+  margin-left:12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 10%;
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  transition-duration: 0.05s;
+}
+.personal-pic{
+  padding-left:10px;
+  border: 1px solid lightgray; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+}
+.personal-pic:hover{
+  box-shadow: 0 0 2px 2.5px #ddd;
+}
 /* Portfolio Page CSS */
 .body-portfolio .portfolio-link-portfolio{
   color:#333333;
