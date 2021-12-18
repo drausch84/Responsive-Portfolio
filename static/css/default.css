@@ -665,9 +665,70 @@ path.two {
 /* 404 Page CSS */
 .body-404{
   background: -webkit-linear-gradient(#ffd89b , #19547b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
+.lost-page-message{
+  margin-top:90px;
+}
+.oops-h{
+  font-size:100px;
+  font-family:'Tinos', serif;
+  text-align:center;
+}
+.oops-h-2{
+  font-size:40px;
+  font-family:'Tinos', serif;
+  text-align:center;
+}
+.lost-page-h{
+  font-size:400px;
+  text-align:center;
+  font-weight:900;
+  letter-spacing: 22px;
+  background:url("../images/denver-skyline.jpeg") center no-repeat;
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip:text;
+}
+.lost-page-p{
+  text-align:center;
+  font-size:50px;
+}
+.home-btn{
+  font-size:1.5rem;
+  border:2px solid white;
+  background:white;
+  border-radius:100px;
+  width:40px;
+  height:40px;
+  padding:5px;
+  margin: 10% auto;
+  transition: .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.home-icon{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align:center;
+}
+.home-btn:hover{
+  width:125px;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+  transition:.3s;
+}
+
+.home-btn:active{
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  transition: .05s
+}
+.home-btn-a{
+  text-decoration:none;
+  color:#3f0d12;
+}
+.home-btn-a:hover{
+  text-decoration:none;
+  color:#3f0d12;
+}
+
 /* Responsive CSS Media Queries*/
 @media screen and (max-width: 1024px){
   body{
