@@ -339,7 +339,8 @@ footer .social-icons{
   flex-direction: row;
 }
 .home-div{
-  margin:100px;
+  display: flex;
+  flex-direction: column;
 }
 #intro{
   margin-left:100px;
