@@ -317,6 +317,9 @@ footer .social-icons{
 .social-icons .facebook-link:hover{
   background-color:#3b5998;
 }
+.footer-p{
+  text-justify:start;
+}
 
 /*Home Page CSS*/
 .body-home .portfolio-link-home{
@@ -341,7 +344,7 @@ footer .social-icons{
 }
 #intro{
   margin-left:100px;
-  float:right;
+  width:50%;
 }
 .avatar-pic{
   -webkit-border-radius: 50%;
