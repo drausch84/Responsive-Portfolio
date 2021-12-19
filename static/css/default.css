@@ -339,8 +339,7 @@ footer .social-icons{
   flex-direction: row;
 }
 .home-div{
-  margin:10px;
-
+  margin:100px;
 }
 #intro{
   margin-left:100px;
@@ -539,6 +538,10 @@ path.two {
   text-align:center;
   padding-bottom:2px;
 }
+.hobbies-div{
+  display:flex;
+  flex-direction: column;
+}
 .hobbies-div-h{
   font-size:30px;
   font-weight:bolder;
@@ -566,6 +569,9 @@ path.two {
 .li-link:hover{
   text-decoration:none;
   color:#a71d31
+}
+#li-icon{
+  color:#a71d31;
 }
 /* Portfolio Page CSS */
 .body-portfolio .portfolio-link-portfolio{
