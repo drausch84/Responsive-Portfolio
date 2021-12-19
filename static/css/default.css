@@ -462,12 +462,6 @@ path.two {
   color:#333333;
   font-weight:bold;
 }
-.content-ctnr-offset{
-  display:flex;
-  margin:auto;
-  background:#FAFAFA;
-  flex-direction: row;
-}
 .about-h{
   font-size:80px;
   font-family:'Tinos', serif;
@@ -499,6 +493,44 @@ path.two {
 .personal-pic:hover{
   box-shadow: 0 0 2px 2.5px #ddd;
 }
+.content-ctnr-offset{
+  display:flex;
+  justify-content: space-between;
+  box-shadow: inset 0px 1px 4px 0px rgb(0 0 0 / 10%);
+  background: #fafafa;
+  border-bottom: #dddddd solid 1px;
+  margin-top:100px;
+}
+.section-divider{
+  border:none;
+  height: 20px;
+ 	width: 90%;
+	height: 50px;
+	margin-top: 0;
+	border-bottom: 1px solid #1f1209;
+	box-shadow: 0 20px 20px -20px #333;
+  margin: -50px auto 10px; 
+}
+.left-side-div{
+  display:flex;
+  flex-direction: column;
+}
+.right-side-div{
+  display:flex;
+  flex-direction: column;
+}
+.minded-h{
+  font-family:'Tinos', serif;
+  font-size:40px;
+}
+.minded-list{
+  list-style: none;
+  display:inline;
+}
+.minded-li{
+  font-family:'Raleway', sans-serif;
+}
+
 /* Portfolio Page CSS */
 .body-portfolio .portfolio-link-portfolio{
   color:#333333;
@@ -765,7 +797,6 @@ path.two {
   text-decoration:none;
   color:#3f0d12;
 }
-
 /* Responsive CSS Media Queries*/
 @media screen and (max-width: 1024px){
   body{
@@ -780,6 +811,12 @@ path.two {
   footer [class^=col-]
   {
     margin-bottom:30px;
+  }
+
+}
+@media only screen and (min-width: 830px){
+  .content-ctnr-offset {
+    padding: 9.6rem 4.3rem;
   }
 }
 @media (max-width:767px)
@@ -798,30 +835,9 @@ path.two {
     font-weight:600
   }
 }
-/* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
+@media only screen and (min-width: 428px){
 
 }
-/* Custom, iPhone X */
-@media only screen and (min-width : 375px){
-
-}
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-  
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
+@media only screen and (min-width:374px){
 
 }
