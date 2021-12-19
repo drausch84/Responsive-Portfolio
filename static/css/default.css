@@ -533,7 +533,40 @@ path.two {
 .minded-li{
   font-family:'Raleway', sans-serif;
 }
-
+.hobbies-h{
+  font-family:'Tinos', serif;
+  font-size:56px;
+  text-align:center;
+  padding-bottom:2px;
+}
+.hobbies-div-h{
+  font-size:30px;
+  font-weight:bolder;
+  font-family:'Raleway', sans-serif;
+}
+.underline{
+  background-size:  100% 15%;
+  background-repeat: repeat-x;
+  background-position: left 0% bottom 10%;
+  background-image: linear-gradient(181deg, #a71d31 0%, #a71d31 50%, transparent 54%, transparent 100%);
+}
+.hobbies-list{
+  list-style: none;
+  display:inline;
+}
+.hobbies-li{
+  font-family:'Raleway', sans-serif;
+  font-size:1.1em;
+}
+.li-link{
+  text-decoration: underline;
+  text-decoration-color: #a71d31;
+  color:black;
+}
+.li-link:hover{
+  text-decoration:none;
+  color:#a71d31
+}
 /* Portfolio Page CSS */
 .body-portfolio .portfolio-link-portfolio{
   color:#333333;
