@@ -172,7 +172,7 @@
     </div>
     <div class="content-ctnr-offset">
         <div class="chart-div">
-            <canvas id="skillsChart" height="500" width="1000"></canvas>
+            <canvas id="skillsChart" height="500" width="800"></canvas>
         </div>
     </div>
     <footer>
@@ -246,9 +246,7 @@
     <script>
         // setup 
         const data = {
-            //labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
             datasets: [{
-                //data: [18, 12, 6, 9, 12, 3, 9],
                 data: [
                     { language: 'HTML', expertise: {value: 90 } },
                     { language: 'CSS', expertise: {value: 85} },
@@ -260,21 +258,21 @@
                 ],
                 backgroundColor: [
                     '#880808',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(0, 0, 0, 0.2)'
+                    '#097969',
+                    '#702963',
+                    '#87CEEB',
+                    '#808000',
+                    '#C3B1E1',
+                    '#F28C28'
                 ],
                 borderColor: [
-                    'rgba(255, 26, 104, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(0, 0, 0, 1)'
+                    'black',
+                    'black',
+                    'black',
+                    'black',
+                    'black',
+                    'black',
+                    'black'
                 ],
                 borderWidth: 1
             }]
@@ -297,10 +295,19 @@
                             }
                         },
                         beginAtZero: true
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                size: 16
+                            }
+                        },
+                        beginAtZero: true
                     }
                 },
                 plugins: {
                     datalabels: {
+                        color: '#fff',
                         formatter: function(value, context){
                             return context.dataset.data[context.dataIndex].expertise.value + '%'
                         },
@@ -322,37 +329,6 @@
             },
             plugins: [ChartDataLabels]
         };
-        /* var xValues = ["HTML", "CSS", "Javascript", "Java", "Python", "Kotlin", "MySQL", "Firebase", "MongoDB"];
-       var yValues = [90, 85, 70, 65, 75, 65, 95, 80, 75];
-       var barColors = ["#880808", "#097969", "#702963", "#7DF9FF", "#FA8072", "#808000", "#C3B1E1", "#87CEEB", "#F28C28"];
-
-       new Chart("skillsChart", {
-           type: "bar",
-           data: {
-               labels: xValues,
-               datasets: [{
-                   backgroundColor: barColors,
-                   borderColor:barColors,
-                   barPercentage: 1,
-                   data: yValues
-               }]
-           },
-           options: {
-               plugins: {
-                   legend: {
-                       display: false
-                   },
-                   title: {
-                       display: true,
-                       text: "My Programming Skills (% based)",
-                       font: {
-                           size: 40
-                       }
-                   },
-                plugins: [yValues]
-               }
-            }
-        }); */
         // render init block
         const myChart = new Chart(
             document.getElementById('skillsChart'),
