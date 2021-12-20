@@ -504,6 +504,15 @@ path.two {
   border-bottom: #dddddd solid 1px;
   margin-top:40px;
 }
+.content-ctnr-offset-2{
+  display:flex;
+  justify-content: space-between;
+  box-shadow: inset 0px 1px 4px 0px rgb(0 0 0 / 10%);
+  background: #fafafa;
+  border-bottom: #dddddd solid 1px;
+  margin-top:40px;
+  padding: 85px 74px;
+}
 .section-divider{
   border:none;
   height: 20px;
@@ -514,11 +523,7 @@ path.two {
 	box-shadow: 0 20px 20px -20px #333;
   margin: -50px auto 10px; 
 }
-.left-side-div{
-  display:flex;
-  flex-direction: column;
-}
-.right-side-div{
+.minded-div{
   display:flex;
   flex-direction: column;
 }
@@ -542,6 +547,7 @@ path.two {
 .hobbies-div{
   display:flex;
   flex-direction: column;
+  height:320px;
 }
 .hobbies-div-h{
   font-size:30px;
@@ -576,6 +582,7 @@ path.two {
 }
 .chart-div{
   margin:auto;
+  height:400px;
 }
 /* Portfolio Page CSS */
 .body-portfolio .portfolio-link-portfolio{
