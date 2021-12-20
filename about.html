@@ -105,7 +105,70 @@
             <canvas id="skillsChart" height="500" width="800"></canvas>
         </div>
     </div>
-    <h1 class="hobbies-h">
+    <h1 class="about-sec-h">
+        education.
+    </h1>
+    <div class="content-ctnr-col">
+        <div class="edu-div">
+            <h2 class="degree-cert-h">
+                Bachelor's Degree
+            </h2>
+            <h4 class="edu-org-h">
+                <i>Bachelor of Science in Computer Science</i>&nbsp;|&nbsp; Regis University
+            </h4>
+            <p class="comp-year">2022</p>
+            <ul class="edu-list">
+                <li class="edu-li"><i class="bi bi-file-check-fill"></i>&nbsp;&nbsp;<b class="li-b">Honors:</b>&nbsp;Dean's List for Summer 2020, Fall 2020, and Summer 2021 academic sessions</li>
+                <li class="edu-li"><i class="bi bi-file-check-fill"></i>&nbsp;&nbsp;<b class="li-b">Relevant Coursework:</b>&nbsp;Data Structures, Software Engineering, Web and Database Applications, 
+                Computation Theory, Algorithms and Analysis, Database Management, Mobile Computing</li>
+            </ul>
+            <br>
+        </div>
+        <hr class="edu-hr">
+        <div class="edu-div-2">
+            <h2 class="degree-cert-h">
+                Certificate of Completion 
+            </h2>
+            <h4 class="edu-org-h">
+                <i>Web Developer Boot Camp</i>&nbsp;|&nbsp; University of Denver
+            </h4>
+            <p class="comp-year">2018</p>
+            <ul class="edu-list">
+                <li class="edu-li"><i class="bi bi-file-check-fill"></i>&nbsp;&nbsp;<b class="li-b">Relevant Coursework:</b>&nbsp;HTML, CSS, Javascript, Reactjs, Handlebarsjs,
+                Expressjs, Git, MySQL, MongoDB, Firebase, Nodejs, Redux, jQuery, Materialize, Bootstrap</li>
+            </ul>    
+        </div>
+    </div>
+    <div class="content-ctnr-offset-2">
+        <div class="minded-div">
+            <h2 class="minded-h">
+                Left-Minded
+            </h2>
+            <ul class="minded-list">
+                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Understanding of Computational Models</li>
+                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Understanding of Different Algorithms and Complexities</li>
+                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Proficiency in Upper Division Mathematics</li>
+                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Understanding of Different ISAs</li>
+                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Fake Expert in Quantum Physics</li>
+            </ul>
+        </div>
+        <div class="minded-div">
+            <img src="static/images/brain-image.png" class="brain-img" alt="brain" height="300" width="300">
+        </div>
+        <div class="minded-div">
+            <h2 class="minded-h">
+                Right-Minded
+            </h2>
+            <ul class="minded-list">
+                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Keen Eye For Clean UI</li>
+                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Love of Art and Design</li>
+                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Avid Writer and Novelist</li>
+                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Former Musical Producer</li>
+                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Ability to Quote numerous Simpsons episodes</li>
+            </ul>
+        </div>
+    </div>
+    <h1 class="about-sec-h">
         hobbies and interests.
     </h1>
     <div class="content-ctnr">
@@ -146,35 +209,7 @@
             </ul>
         </div>
     </div>
-    <div class="content-ctnr-offset-2">
-        <div class="minded-div">
-            <h2 class="minded-h">
-                Left-Minded
-            </h2>
-            <ul class="minded-list">
-                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Understanding of Computational Models</li>
-                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Understanding of Different Algorithms and Complexities</li>
-                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Proficiency in Upper Division Mathematics</li>
-                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Understanding of Different ISAs</li>
-                <li class="minded-li"><i class="bi bi-file-code-fill"></i>&nbsp;&nbsp;&nbsp;Fake Expert in Quantum Physics</li>
-            </ul>
-        </div>
-        <div class="minded-div">
-            <img src="static/images/brain-image.png" class="brain-img" alt="brain" height="300" width="300">
-        </div>
-        <div class="minded-div">
-            <h2 class="minded-h">
-                Right-Minded
-            </h2>
-            <ul class="minded-list">
-                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Keen Eye For Clean UI</li>
-                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Love of Art and Design</li>
-                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Avid Writer and Novelist</li>
-                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Former Musical Producer</li>
-                <li class="minded-li"><i class="bi bi-brush-fill"></i>&nbsp;&nbsp;&nbsp;Ability to Quote numerous Simpsons episodes</li>
-            </ul>
-        </div>
-    </div>
+    
     <footer>
         <div class="container">
             <div class="row">
@@ -297,6 +332,13 @@
                         beginAtZero: true
                     },
                     y: {
+                        title: {
+                            display: true,
+                            text: 'Expertise Level  (0-100%)',
+                            font: {
+                                size: 20
+                            }
+                        },
                         ticks: {
                             font: {
                                 size: 16
