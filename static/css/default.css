@@ -620,6 +620,64 @@ path.two {
   color:#333333;
   font-weight:bold;
 }
+.content-ctnr-portfolio{
+  display:flex;
+  margin:auto;
+  margin-top:75px;
+  flex-direction: row;
+  gap:128px;
+}
+.portfolio-intro-div{
+  display:flex;
+  flex-direction: column;
+  width:400px;
+}
+.portfolio-h{
+  font-family:'Tinos', serif;
+  font-size: 80px;
+}
+.portfolio-h3{
+  font-family:'Raleway', sans-serif;
+  font-size:24px;
+  font-weight:bolder;
+}
+.portfolio-p{
+  font-family:'Raleway', sans-serif;
+}
+.portfolio-mockups-div{
+  display:flex;
+}
+.portfolio-mockups-div img {
+  background: #ffffff;
+  display: inline-block;
+  padding: 15px 15px 30px;
+  text-align: center;
+  margin-top:20px;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -webkit-transition: all .20s linear;
+  -moz-transition: all .20s linear;
+  transition: all .20s linear;
+  z-index: 0;
+  position: relative;
+}
+.portfolio-mockups-div img:after {
+  color: #333;
+  font-size: 25px;
+  content: attr(title);
+  position: relative;
+  top: 15px;
+}
+.portfolio-mockups-div img:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+}
+.tc-mockup-img{
+  display:block;
+}
+
 /* Contact Page CSS */
 .body-contact .portfolio-link-contact{
   color:#333333;
