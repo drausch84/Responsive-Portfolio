@@ -868,6 +868,7 @@ path.two {
   text-decoration:none;
   color:#3f0d12;
 }
+
 /* Responsive CSS Media Queries*/
 @media screen and (max-width: 1024px){
   body{
