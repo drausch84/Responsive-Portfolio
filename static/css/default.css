@@ -189,6 +189,12 @@ footer{
     margin-top:145px;
     flex-shrink:0;
 }
+.index-footer{
+  margin-top:400px;
+}
+.contact-footer{
+  margin-top:380px;
+}
 footer hr{
     border-top-color:#bbb;
     opacity:0.5;
