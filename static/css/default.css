@@ -710,6 +710,9 @@ path.two {
   color: #1f1209;
   line-height:22px;
 }
+.card {
+  background-color: unset !important;
+}
 .tech-list, .tech-li{
   text-decoration:none;
   list-style: disc outside;
