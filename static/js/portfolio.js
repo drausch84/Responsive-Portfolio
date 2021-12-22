@@ -21,15 +21,16 @@ for (let item of items) {
   item.addEventListener("keypress", toggleItem, false);
 }
 
-/* Card Flip Animation */
-function flip(event){
-	var element = event.currentTarget;
-	if (element.className === "card") {
-    if(element.style.transform == "rotateY(180deg)") {
-      element.style.transform = "rotateY(0deg)";
-    }
-    else {
-      element.style.transform = "rotateY(180deg)";
-    }
+/* Card Flip Animation Portfolio Page */
+const cards = document.querySelectorAll(".card");
+
+function transition() {
+  if (this.classList.contains("active")) {
+    this.classList.remove("active");
+  } else {
+    this.classList.add("active");
   }
-};
+}
+
+cards.forEach((card) => card.addEventListener("click", transition));
+ 

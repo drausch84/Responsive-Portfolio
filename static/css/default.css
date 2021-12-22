@@ -625,7 +625,17 @@ path.two {
   margin:auto;
   margin-top:75px;
   flex-direction: row;
-  gap:128px;
+  gap:145px;
+}
+.content-ctnr-offset-portfolio{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: inset 0px 1px 4px 0px rgb(0 0 0 / 10%);
+  background: #fafafa;
+  border-bottom: #dddddd solid 1px;
+  margin-top:40px;
+  padding: 85px 74px;
 }
 .portfolio-intro-div{
   display:flex;
@@ -677,7 +687,194 @@ path.two {
 .tc-mockup-img{
   display:block;
 }
-
+  /* Card CSS Portfolio Page*/
+.card-h, .btn-text, .project-overview, .tech-list, .tech-li{
+  margin:0;
+  padding:0;
+}
+.card-h, .btn-text{
+  font-family: "Mukata", sans-serif;
+  text-transform: uppercase;
+  color: #3f0d12;
+}
+.card-h{
+  font-size:24px;
+  font-weight:500;
+  letter-spacing:-0.2px;
+  text-align:center;
+  margin-bottom:20px;
+}
+.project-overview, .tech-li{
+  font-family: 'Raleway', sans-serif;
+  font-weight:400;
+  color: #1f1209;
+  line-height:22px;
+}
+.tech-list, .tech-li{
+  text-decoration:none;
+  list-style: disc outside;
+}
+.tech-list{
+  padding-left:20px;
+}
+.tech-li{
+  font-size:20px;
+}
+.flip-p{
+  text-align:center;
+  font-size:18px;
+  font-family:'Tinos', serif;
+  margin-top:12px;
+}
+#flip-icon{
+  color:#a71d31;
+}
+.btn-svg{
+  margin: 0px;
+  min-width: 24px;
+  min-height: 24px;
+}
+.card-container{
+  position:relative;
+  width: 400px;
+  height: 500px;
+  min-width: 400px;
+  min-height: 500px;
+  margin: 4px;
+  perspective: 1000px;
+}
+.active {
+  transform: translateZ(0px) rotateY(180deg) !important;
+}
+.active:after {
+  display: none;
+}
+.card {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -moz-backface-visibility: hidden;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.card:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 14px 50px -4px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1.4);
+}
+.card:hover {
+  transform: translateZ(0px);
+}
+.card:hover:after {
+  opacity: 1;
+}
+.card .side {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
+}
+.card .front {
+  z-index: 2;
+}
+.card .back {
+  transform: rotateY(180deg);
+}
+.card .project-info{
+  padding: 16px;
+}
+.front .img {
+  background-color: #dadce2;
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 200px;
+}
+.front .img1{
+  background-image: url("../images/writers-img.jpeg");
+}
+.front .img2{
+  background-image: url("../images/horror-img.jpeg");
+}
+.front .img3{
+  background-image: url("../images/image-manipulation-img.jpeg");
+}
+.front .img4{
+  background-image: url("../images/turing-machine-img.jpeg");
+}
+.front .img5{
+  background-image: url("../images/automata-img.jpeg");
+}
+.front .img6{
+  background-image: url("../images/friends-img.jpg");
+}
+.front .img7{
+  background-image: url("../images/laughing-img.jpeg");
+}
+.front .img8{
+  background-image: url("../images/leo-laughing-img.jpeg");
+}
+.back {
+  position: relative;
+}
+.back .card-h {
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+.back .tech-li {
+  line-height: 22px;
+  margin: 2px 0 6px 0;
+  
+}
+.back .btn {
+  position: absolute;
+  bottom: 16px;
+  width: calc(100% - 32px);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a71d31;
+  background-image: linear-gradient(-90deg, #3f0d12, #a71d31);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-text, .btn-text:hover{
+  text-decoration:none;
+  color:#fff;
+}
+.back .btn:hover .btn-text {
+  transform: translateX(0px);
+}
+.back .btn:hover .btn-svg {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.back .btn .btn-text {
+  transform: translateX(12px);
+  transition: transform 0.3s ease-out;
+}
+.back .btn .btn-svg {
+  margin: 1px 0 0 4px;
+  transform: translateX(-8px);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
 /* Contact Page CSS */
 .body-contact .portfolio-link-contact{
   color:#333333;
