@@ -902,6 +902,18 @@ path.two {
   color:#333333;
   font-weight:bold;
 }
+.contact-info-div{
+  display:flex;
+  flex-direction: column;
+}
+.contact-h{
+  font-family:'Tinos', serif;
+  font-size: 80px;
+}
+.contact-h4{
+  font-family:'Raleway', sans-serif;
+  font-size:22px;
+}
 .form-container{
   display:flex;
   background:#fff;
@@ -1145,13 +1157,47 @@ path.two {
   text-decoration:none;
   color:#3f0d12;
 }
-/* Swup Page Transition Animations */
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
+
+/* Page Scrolling CSS Animation */
+.toShow{
+  opacity:0;
 }
-html.is-animating .transition-fade {
-  opacity: 0;
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceInUp {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 200px, 0);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
 }
 
 /* Responsive CSS Media Queries*/
