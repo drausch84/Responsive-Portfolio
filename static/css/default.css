@@ -186,7 +186,6 @@ footer{
     font-size:15px;
     line-height:24px;
     color:#737373;
-    margin-top:145px;
     flex-shrink:0;
 }
 .index-footer{
@@ -902,18 +901,113 @@ path.two {
   color:#333333;
   font-weight:bold;
 }
+.content-ctnr-contact{
+  display:flex;
+  margin:auto;
+  margin-top:75px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:100px;
+}
 .contact-info-div{
   display:flex;
   flex-direction: column;
 }
 .contact-h{
   font-family:'Tinos', serif;
-  font-size: 80px;
+  font-size: 100px;
 }
 .contact-h4{
   font-family:'Raleway', sans-serif;
   font-size:22px;
 }
+.contact-icon-list{
+  list-style: none;
+}
+#contact-link, #contact-link:hover{
+  text-decoration:none;
+  font-family:'Mukta', sans-serif;
+  font-size:26px;
+}
+#contact-linkedin-icon{
+  color:#0e76a8;
+  font-size:40px;
+}
+.linkedin-li, .linkedin-li:hover{
+  color:#0e76a8;
+}
+.linkedin-li:hover{
+  -moz-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  opacity: 0.5;
+}
+#contact-facebook-icon{
+  color:#3b5998;
+  font-size:40px;
+}
+.facebook-li, .facebook-li:hover{
+  color:#3b5998;
+}
+.facebook-li:hover{
+  -moz-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  opacity: 0.5;
+}
+#contact-github-icon{
+  color:#6e5494;
+  font-size:40px;
+}
+.github-li, .github-li:hover{
+  color:#6e5494;
+}
+.github-li:hover{
+  -moz-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  opacity: 0.5;
+}
+#contact-twitter-icon{
+  color:#00acee;
+  font-size:40px;
+}
+.twitter-li, .twitter-li:hover{
+  color:#00acee;
+}
+.twitter-li:hover{
+  -moz-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  opacity: 0.5;
+}
+.contact-img{
+  -webkit-box-shadow: 0 4px 6px rgba(12, 12, 12, 0.3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  border-radius:2%;
+  margin-top:45px;
+}
+.content-ctnr-offset-contact{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: inset 0px 1px 4px 0px rgb(0 0 0 / 10%);
+  background: #fafafa;
+  border-bottom: #dddddd solid 1px;
+  margin-top:40px;
+  padding: 85px 74px;
+  justify-content: center;
+}
+
 .form-container{
   display:flex;
   background:#fff;
