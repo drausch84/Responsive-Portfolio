@@ -31,5 +31,4 @@ function transition() {
     this.classList.add("active");
   }
 }
-
 cards.forEach((card) => card.addEventListener("click", transition));
