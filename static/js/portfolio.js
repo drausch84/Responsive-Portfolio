@@ -47,3 +47,8 @@ $(document).ready(function() {
     }, 500);
   }); 
 });
+
+/* Scroll To Top Button Behavior */
+let scroll = document.querySelector('.topScroll');
+let options = {top: 0, left: 0, behavior: 'smooth'};
+scroll.addEventListener('click', () => {window.scroll(options) });

@@ -1359,6 +1359,36 @@ path.two {
 
 }
 
+/* Page Transition and Scroll Button CSS */
 .center {
   opacity: 0;
+}
+.scroll-btn-div{
+  display:flex;
+  justify-content: center;
+  margin:0;
+  padding:0;
+}
+.topScroll{
+  background:transparent;
+  color:#fff;
+  font-size:60px;
+  position:relative;
+  width:50px;
+  top:-40px;
+  cursor:pointer;
+  transition: 0.5s;
+	-moz-transition: 0.5s;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s; 
+}
+.topScroll:hover{
+  -moz-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  opacity: 0.6;
 }
