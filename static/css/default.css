@@ -5,6 +5,9 @@ body{
   display:flex;
   flex-direction: column;
 }
+html{
+  scroll-behavior: smooth;
+}
 .middle-nav{
     position: relative;
     z-index: 9;
@@ -190,7 +193,7 @@ footer{
     margin-top:85px;
 }
 .index-footer{
-  margin-top:400px;
+  margin-top:300px;
 }
 .contact-footer{
   margin-top:380px;
@@ -312,6 +315,7 @@ footer .social-icons{
   display:flex;
   margin:auto;
   margin-top:75px;
+  justify-content: center;
   flex-direction: row;
 }
 .content-ctnr-col{
@@ -321,13 +325,14 @@ footer .social-icons{
   flex-direction: column;
 }
 .home-div{
-  display: flex;
-  flex-direction: column;
+
+}
+#avatar{
+
 }
 #intro{
   margin-left:100px;
   width:50%;
-  margin:auto;
 }
 .avatar-pic{
   -webkit-border-radius: 50%;
@@ -632,6 +637,7 @@ path.two {
   margin:auto;
   margin-top:75px;
   flex-direction: row;
+  justify-content:center;
   gap:145px;
 }
 .content-ctnr-offset-portfolio{
@@ -914,7 +920,7 @@ path.two {
   margin:auto;
   margin-top:75px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   gap:100px;
 }
 .contact-info-div{
@@ -1071,7 +1077,6 @@ path.two {
   background: -webkit-linear-gradient(#a71d31, #3f0d12);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 .contact-form{
   margin-top:50px;
@@ -1275,7 +1280,6 @@ path.two {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @keyframes bounceInUp {
   0%,
   60%,
@@ -1306,6 +1310,8 @@ path.two {
   -webkit-animation-name: bounceInUp;
   animation-name: bounceInUp;
 }
+
+/* Page Transitions CSS */
 
 /* Responsive CSS Media Queries*/
 @media screen and (max-width: 1024px){
@@ -1351,4 +1357,8 @@ path.two {
 }
 @media only screen and (min-width:374px){
 
+}
+
+.center {
+  opacity: 0;
 }

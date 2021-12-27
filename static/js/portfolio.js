@@ -32,3 +32,18 @@ function transition() {
   }
 }
 cards.forEach((card) => card.addEventListener("click", transition));
+
+/* Page Transitions */
+$(document).ready(function() {
+  $(".center").animate({opacity: 1}, 500);
+  $('a.portfolio-link').click(function(event) {
+    event.preventDefault();
+    var url = $(this).attr("href");
+    console.log(url);
+    $(".center").animate({opacity: 0}, 500);
+    
+    setTimeout(function() {
+      window.location.href = url;
+    }, 500);
+  }); 
+});

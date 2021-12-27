@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Optional Bootstrap JS-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Javascript -->
@@ -53,330 +53,332 @@
             </ul>
           </nav>
     </div>
-    <div class="content-ctnr-portfolio">
-        <div class="portfolio-intro-div">
-            <h1 class="portfolio-h">
-                portfolio.
-            </h1>
-            <h3 class="portfolio-h3">
-                Take a look at some of the projects that I've worked on over the years.
-            </h3>
-            <br>
-            <p class="portfolio-p">
-                Most of my project experience involves the projects that I was required to complete during my time at the <i>Denver University</i> coding boot camp as well as my time 
-                earning my Bachelor of Science in Computer Science at <i>Regis University</i>.  I feel that each project showcases a different language, data structure, or framework in
-                order to showcase my range of programming education.
-            </p>
+    <main class="center">
+        <div class="content-ctnr-portfolio">
+            <div class="portfolio-intro-div">
+                <h1 class="portfolio-h">
+                    portfolio.
+                </h1>
+                <h3 class="portfolio-h3">
+                    Take a look at some of the projects that I've worked on over the years.
+                </h3>
+                <br>
+                <p class="portfolio-p">
+                    Most of my project experience involves the projects that I was required to complete during my time at the <i>Denver University</i> coding boot camp as well as my time 
+                    earning my Bachelor of Science in Computer Science at <i>Regis University</i>.  I feel that each project showcases a different language, data structure, or framework in
+                    order to showcase my range of programming education.
+                </p>
+            </div>
+            <div class="portfolio-mockups-div">
+                <img src="static/images/terror-cellar-mockup.png" class="tc-mockup-img" alt="Terror Cellar Mockup" height="420" width="400">
+            </div>
         </div>
-        <div class="portfolio-mockups-div">
-            <img src="static/images/terror-cellar-mockup.png" class="tc-mockup-img" alt="Terror Cellar Mockup" height="420" width="400">
+        <div class="content-ctnr-offset-portfolio">
+            <!-- Card #1 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img1"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Writer's Conference Website
+                            </h2>
+                            <p class="project-overview">
+                                This was a project in a Web and Database 
+                                Applications course where we were tasked with
+                                creating a conference website with a theme
+                                of our choosing. There were two versions of this project,
+                                one using Python (which I linked), but feel free to check out the other
+                                hosted version.
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">HTML</li>
+                                <li class="tech-li">CSS</li>
+                                <li class="tech-li">Javascript</li>
+                                <li class="tech-li">Jinja2</li>
+                                <li class="tech-li">Python</li>
+                                <li class="tech-li">Flask</li>
+                                <li class="tech-li">SQLite</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/PythonConferenceWebsite" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Card #1 -->
+            <!-- Card #2 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img2"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Terror Cellar
+                            </h2>
+                            <p class="project-overview">
+                                This was a project in a Mobile Computing course.  This was my first experience using Kotlin, and I had a blast.
+                                The Android application is a horror movie review app where users can add, delete, or modify any movie reviews
+                                added to a list on a landing page.  Utilizes standard login as well as Google login.
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">Kotlin</li>
+                                <li class="tech-li">SQLite</li>
+                                <li class="tech-li">Firebase</li>
+                                <li class="tech-li">Room ORM</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/Terror_Cellar" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Card #2 -->
+            <!-- Card #3 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img3"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Java Image Manipulation
+                            </h2>
+                            <p class="project-overview">
+                                This was a project from my Data Structures course.  Using a stack data structure, the user can input any image file and apply different filters
+                                to manipulate the image.  There are many different filters including color filters, image position filters, as well as a combination of color and 
+                                position.
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">Java</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/JavaImageManipulation" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Card #3 -->
+            <!-- Card #4 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img4"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Turing Machine Simulator
+                            </h2>
+                            <p class="project-overview">
+                                This was a project from my Computation Theory course.  We had to use Java in order to create a program that would simulate a turing machine.  The user enters
+                                text files and the program will request that the user type in a string to determine whether or not the string input will be accepted by the turing machine.
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">Java</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/TuringMachineSim" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Card #4 -->
+            <!-- Card #5 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img5"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                DFA Prolog Program
+                            </h2>
+                            <p class="project-overview">
+                                This was a project from my Principles of Programming Languages course.  This program was written in Prolog and it will execute an arbitrary DFA.  In order to run the code 
+                                listed in the link, I highly recommend using SWI-Prolog.  An output example is provided in order to show how the program is supposed to execute.
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">Prolog</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/PrologDFA" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Card #5 -->
+            <!-- Card #6 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img6"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Friend Finder Application
+                            </h2>
+                            <p class="project-overview">
+                                This was a project I created during my time in the Denver University coding boot camp.  How far I've come from this point!  Still, I feel this project 
+                                shows my early grasp of Javascript as well as my introduction to Node.js and Express.js.  This was also the first time I worked with modals!  Apologies for the broken 
+                                picture links!
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">HTML</li>
+                                <li class="tech-li">Materialize CSS</li>
+                                <li class="tech-li">Javascript</li>
+                                <li class="tech-li">jQuery</li>
+                                <li class="tech-li">Express.js</li>
+                                <li class="tech-li">Node.js</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/FriendFinder" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Card #6 -->
+            <!-- Card #7 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img7"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Lib Jab: A Mad Libs&#8482; Clone
+                            </h2>
+                            <p class="project-overview">
+                                This was a project I worked on when I was shaking off the rust of not having programmed in jQuery or Javascript for a while.  This is a basic ad lib clone that I tried 
+                                to make as entertaining as I possibly could and designed it to match the goofiness of the original Mad Libs&#8482; books.  Hopefully you can get some laughs from this!
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">HTML</li>
+                                <li class="tech-li">CSS</li>
+                                <li class="tech-li">jQuery</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/LibJab" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Card #7 -->
+            <!-- Card #8 -->
+            <div class="card-container inactive">
+                <div class="card">
+                    <div class="side front">
+                        <div class="img img8"></div>
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Giphy&#8482; Generator
+                            </h2>
+                            <p class="project-overview">
+                                This was a project I created during my time at Denver University's coding boot camp.  The program uses Ajax programming to utilize the Giphy&#8482; API
+                                to allow the user to search for any animated gifs related to his or her search. A filter was coded in to keep the images no worse than PG-13!!!  
+                                Gifs can also be paused by clicking on them.
+                            </p>
+                            <p class="flip-p">
+                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
+                            </p>
+                        </div>
+                    </div>
+                    <div class="side back">
+                        <div class="project-info">
+                            <h2 class="card-h">
+                                Technologies Used
+                            </h2>
+                            <ul class="tech-list">
+                                <li class="tech-li">HTML</li>
+                                <li class="tech-li">CSS</li>
+                                <li class="tech-li">jQuery</li>
+                                <li class="tech-li">Ajax</li>
+                                <li class="tech-li">API Consumption</li>
+                            </ul>
+                            <div class="btn">
+                                <a class="btn-text" href="https://github.com/drausch84/Giphy-Project" target="_blank">See Project</a>
+                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of Card #8 -->
         </div>
-    </div>
-    <div class="content-ctnr-offset-portfolio">
-        <!-- Card #1 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img1"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Writer's Conference Website
-                        </h2>
-                        <p class="project-overview">
-                            This was a project in a Web and Database 
-                            Applications course where we were tasked with
-                            creating a conference website with a theme
-                            of our choosing. There were two versions of this project,
-                            one using Python (which I linked), but feel free to check out the other
-                            hosted version.
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">HTML</li>
-                            <li class="tech-li">CSS</li>
-                            <li class="tech-li">Javascript</li>
-                            <li class="tech-li">Jinja2</li>
-                            <li class="tech-li">Python</li>
-                            <li class="tech-li">Flask</li>
-                            <li class="tech-li">SQLite</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/PythonConferenceWebsite" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End of Card #1 -->
-        <!-- Card #2 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img2"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Terror Cellar
-                        </h2>
-                        <p class="project-overview">
-                            This was a project in a Mobile Computing course.  This was my first experience using Kotlin, and I had a blast.
-                            The Android application is a horror movie review app where users can add, delete, or modify any movie reviews
-                            added to a list on a landing page.  Utilizes standard login as well as Google login.
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">Kotlin</li>
-                            <li class="tech-li">SQLite</li>
-                            <li class="tech-li">Firebase</li>
-                            <li class="tech-li">Room ORM</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/Terror_Cellar" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End of Card #2 -->
-        <!-- Card #3 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img3"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Java Image Manipulation
-                        </h2>
-                        <p class="project-overview">
-                            This was a project from my Data Structures course.  Using a stack data structure, the user can input any image file and apply different filters
-                            to manipulate the image.  There are many different filters including color filters, image position filters, as well as a combination of color and 
-                            position.
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">Java</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/JavaImageManipulation" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End of Card #3 -->
-        <!-- Card #4 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img4"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Turing Machine Simulator
-                        </h2>
-                        <p class="project-overview">
-                            This was a project from my Computation Theory course.  We had to use Java in order to create a program that would simulate a turing machine.  The user enters
-                            text files and the program will request that the user type in a string to determine whether or not the string input will be accepted by the turing machine.
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">Java</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/TuringMachineSim" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End of Card #4 -->
-        <!-- Card #5 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img5"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            DFA Prolog Program
-                        </h2>
-                        <p class="project-overview">
-                            This was a project from my Principles of Programming Languages course.  This program was written in Prolog and it will execute an arbitrary DFA.  In order to run the code 
-                            listed in the link, I highly recommend using SWI-Prolog.  An output example is provided in order to show how the program is supposed to execute.
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">Prolog</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/PrologDFA" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End of Card #5 -->
-        <!-- Card #6 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img6"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Friend Finder Application
-                        </h2>
-                        <p class="project-overview">
-                            This was a project I created during my time in the Denver University coding boot camp.  How far I've come from this point!  Still, I feel this project 
-                            shows my early grasp of Javascript as well as my introduction to Node.js and Express.js.  This was also the first time I worked with modals!  Apologies for the broken 
-                            picture links!
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">HTML</li>
-                            <li class="tech-li">Materialize CSS</li>
-                            <li class="tech-li">Javascript</li>
-                            <li class="tech-li">jQuery</li>
-                            <li class="tech-li">Express.js</li>
-                            <li class="tech-li">Node.js</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/FriendFinder" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End of Card #6 -->
-        <!-- Card #7 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img7"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Lib Jab: A Mad Libs&#8482; Clone
-                        </h2>
-                        <p class="project-overview">
-                            This was a project I worked on when I was shaking off the rust of not having programmed in jQuery or Javascript for a while.  This is a basic ad lib clone that I tried 
-                            to make as entertaining as I possibly could and designed it to match the goofiness of the original Mad Libs&#8482; books.  Hopefully you can get some laughs from this!
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">HTML</li>
-                            <li class="tech-li">CSS</li>
-                            <li class="tech-li">jQuery</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/LibJab" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End of Card #7 -->
-        <!-- Card #8 -->
-        <div class="card-container inactive">
-            <div class="card">
-                <div class="side front">
-                    <div class="img img8"></div>
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Giphy&#8482; Generator
-                        </h2>
-                        <p class="project-overview">
-                            This was a project I created during my time at Denver University's coding boot camp.  The program uses Ajax programming to utilize the Giphy&#8482; API
-                            to allow the user to search for any animated gifs related to his or her search. A filter was coded in to keep the images no worse than PG-13!!!  
-                            Gifs can also be paused by clicking on them.
-                        </p>
-                        <p class="flip-p">
-                            <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                        </p>
-                    </div>
-                </div>
-                <div class="side back">
-                    <div class="project-info">
-                        <h2 class="card-h">
-                            Technologies Used
-                        </h2>
-                        <ul class="tech-list">
-                            <li class="tech-li">HTML</li>
-                            <li class="tech-li">CSS</li>
-                            <li class="tech-li">jQuery</li>
-                            <li class="tech-li">Ajax</li>
-                            <li class="tech-li">API Consumption</li>
-                        </ul>
-                        <div class="btn">
-                            <a class="btn-text" href="https://github.com/drausch84/Giphy-Project" target="_blank">See Project</a>
-                            <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End of Card #8 -->
-    </div>
-    <div class="content-ctnr">
+        <div class="content-ctnr">
 
-    </div>
+        </div>
+    </main>
     <footer>
         <div class="container">
             <div class="row">
