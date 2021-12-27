@@ -462,7 +462,7 @@ path.two {
   justify-content: center;
 }
 .about-h{
-  font-size:80px;
+  font-size:100px;
   font-family:'Tinos', serif;
 }
 .about-h2{
@@ -473,7 +473,7 @@ path.two {
   font-family:'Raleway', sans-serif;
 }
 .about-me-img{
-  margin-top:40px;
+  margin-top:64px;
   margin-left:12px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -657,7 +657,7 @@ path.two {
 }
 .portfolio-h{
   font-family:'Tinos', serif;
-  font-size: 80px;
+  font-size: 100px;
 }
 .portfolio-h3{
   font-family:'Raleway', sans-serif;
