@@ -938,6 +938,7 @@ path.two {
 }
 .contact-icon-list{
   list-style: none;
+  margin-top:30px;
 }
 #contact-link, #contact-link:hover{
   text-decoration:none;
