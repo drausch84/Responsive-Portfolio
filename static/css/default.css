@@ -503,6 +503,13 @@ path.two {
   margin-top:40px;
   padding: 85px 74px;
 }
+.content-ctnr-hobbies{
+  display:flex;
+  margin:auto;
+  margin-top:75px;
+  justify-content: space-between;
+  flex-direction: row;
+}
 .section-divider{
   border:none;
   height: 20px;
@@ -524,6 +531,7 @@ path.two {
 .minded-list{
   list-style: none;
   display:inline;
+  padding:0;
 }
 .minded-li{
   font-family:'Raleway', sans-serif;
@@ -539,6 +547,7 @@ path.two {
   display:flex;
   flex-direction: column;
   height:320px;
+  padding:10px;
 }
 .hobbies-div-h{
   font-size:30px;
@@ -554,6 +563,7 @@ path.two {
 .hobbies-list{
   list-style: none;
   display:inline;
+  padding:0;
 }
 .hobbies-li{
   font-family:'Raleway', sans-serif;
@@ -1309,6 +1319,15 @@ path.two {
 /* Page Transitions CSS */
 
 /* Responsive CSS Media Queries*/
+
+@media screen and (max-width:1694px){
+  body{
+    width:100%;
+  }
+  .content-ctnr-offset-portfolio{
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 1024px){
   body{
    margin-bottom: 0;
@@ -1347,11 +1366,15 @@ path.two {
     font-weight:600
   }
 }
+
 @media only screen and (min-width: 428px){
-
-}
-@media only screen and (min-width:374px){
-
+  .picture-row{
+    margin-left:90px;
+  }
+  .content-ctnr-hobbies{
+    margin-left:24px;
+    margin-right:24px;
+  }
 }
 
 /* Page Transition and Scroll Button CSS */
