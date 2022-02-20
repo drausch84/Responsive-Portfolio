@@ -1,3 +1,3 @@
 # Responsive-Portfolio
 ## Link
-Check out here: [Portfolio](https://drausch84.github.io/Responsive-Portfolio/).
+Check out here: [Portfolio](http://rauschdevelopment.com/).
