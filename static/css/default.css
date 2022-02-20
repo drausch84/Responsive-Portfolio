@@ -1366,8 +1366,9 @@ path.two {
     font-weight:600
   }
 }
-
-@media only screen and (min-width: 428px){
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
   .picture-row{
     margin-left:90px;
   }
