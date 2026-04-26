@@ -1,54 +1,69 @@
-//JS for toggling the nav menu between desktop, tablet, and mobil
+document.addEventListener('DOMContentLoaded', initializePortfolioPage);
 
-const toggle = document.querySelector(".toggle");
-const menu = document.querySelector(".menu");
-const items = document.querySelectorAll(".item");
-
-/* Toggle mobile menu */
-function toggleMenu() {
-  if (menu.classList.contains("active")) {
-    menu.classList.remove("active");
-    toggle.querySelector("a").innerHTML = "<i class='bi bi-list'></i>";
-  } else {
-    menu.classList.add("active");
-    toggle.querySelector("a").innerHTML = "<i class='bi bi-x'></i>";
-  }
+function initializePortfolioPage() {
+    initializeMobileNavigation();
+    initializeTopScrollButton();
 }
 
-/* Event Listeners */
-toggle.addEventListener("click", toggleMenu, false);
-for (let item of items) {
-  item.addEventListener("keypress", toggleItem, false);
+function initializeMobileNavigation() {
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const siteNav = document.getElementById('siteNav');
+
+    if (!mobileNavToggle || !siteNav) {
+        return;
+    }
+
+    mobileNavToggle.addEventListener('click', function handleMobileNavToggleClick() {
+        const isOpening = !siteNav.classList.contains('navOpen');
+
+        siteNav.classList.toggle('navOpen', isOpening);
+        mobileNavToggle.classList.toggle('navToggleOpen', isOpening);
+        mobileNavToggle.setAttribute('aria-expanded', String(isOpening));
+        mobileNavToggle.setAttribute('aria-label', isOpening ? 'Close navigation' : 'Open navigation');
+    });
+
+    siteNav.querySelectorAll('.siteNavLink').forEach(function bindMobileNavLinkClick(siteNavLink) {
+        siteNavLink.addEventListener('click', function handleMobileNavLinkClick() {
+            siteNav.classList.remove('navOpen');
+            mobileNavToggle.classList.remove('navToggleOpen');
+            mobileNavToggle.setAttribute('aria-expanded', 'false');
+            mobileNavToggle.setAttribute('aria-label', 'Open navigation');
+        });
+    });
+
+    document.addEventListener('click', function handleOutsideNavClick(event) {
+        const clickedInsideHeader = event.target.closest('.siteHeader');
+
+        if (clickedInsideHeader) {
+            return;
+        }
+
+        siteNav.classList.remove('navOpen');
+        mobileNavToggle.classList.remove('navToggleOpen');
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+        mobileNavToggle.setAttribute('aria-label', 'Open navigation');
+    });
 }
 
-/* Card Flip Animation Portfolio Page */
-const cards = document.querySelectorAll(".card");
+function initializeTopScrollButton() {
+    const topScrollButton = document.querySelector('.topScrollButton');
 
-function transition() {
-  if (this.classList.contains("active")) {
-    this.classList.remove("active");
-  } else {
-    this.classList.add("active");
-  }
+    if (!topScrollButton) {
+        return;
+    }
+
+    function updateTopScrollButtonVisibility() {
+        const shouldShowButton = window.scrollY > 500;
+        topScrollButton.classList.toggle('isVisible', shouldShowButton);
+    }
+
+    topScrollButton.addEventListener('click', function handleTopScrollButtonClick() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    window.addEventListener('scroll', updateTopScrollButtonVisibility);
+    updateTopScrollButtonVisibility();
 }
-cards.forEach((card) => card.addEventListener("click", transition));
-
-/* Page Transitions */
-$(document).ready(function() {
-  $(".center").animate({opacity: 1}, 500);
-  $('a.portfolio-link').click(function(event) {
-    event.preventDefault();
-    var url = $(this).attr("href");
-    console.log(url);
-    $(".center").animate({opacity: 0}, 500);
-    
-    setTimeout(function() {
-      window.location.href = url;
-    }, 500);
-  }); 
-});
-
-/* Scroll To Top Button Behavior */
-let scroll = document.querySelector('.topScroll');
-let options = {top: 0, left: 0, behavior: 'smooth'};
-scroll.addEventListener('click', () => {window.scroll(options) });

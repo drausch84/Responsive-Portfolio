@@ -1,169 +1,255 @@
 <!DOCTYPE html>
-<!--  Home Page -->
 <html lang="en">
 <head>
-    <meta name = "keywords" content = "main, portfolio, about, contact, Rausch, development, rauschdevelopment">
-    <meta name = "description" content = "Personal Portfolio Website">
-    <meta name = "author" content = "David Rausch">
-    <meta name="description" content="David Rausch Portfolio Site" />
-    <meta name="title" property="og:title" content="Rausch Development" />
-    <meta property="og:type" content="Portfolio Website" />
-    <meta name="image" property="og:image" content="https://live.staticflickr.com/65535/51897382380_1febc280b8_z.jpg" />
-    <meta name="description" property="og:description" content="Rausch Development Portfolio" /><meta name="author" content="David Rausch" />
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Custom CSS-->
-    <link href="static/css/default.css" rel="stylesheet" type="text/css" media="all">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Optional Bootstrap JS and jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Oswald:wght@300&family=Raleway:wght@300&family=Tinos&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="16x16">
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="32x32">
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="72x72" href="static/images/rausch-favicon.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="static/images/rausch-favicon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="static/images/rausch-favicon.png">
+    <meta name="keywords" content="David Rausch, Rausch Development, full-stack developer, senior software engineer, portfolio, Node.js, Express, MongoDB">
+    <meta name="description" content="Portfolio of David Rausch, a senior full-stack software engineer specializing in secure, scalable internal platforms and business workflow automation.">
+    <meta name="author" content="David Rausch">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="David Rausch | Senior Full-Stack Software Engineer">
+    <meta property="og:description" content="Secure, scalable full-stack platforms, workflow automation, and business-critical software systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://live.staticflickr.com/65535/51897382380_1febc280b8_z.jpg">
+    <link rel="icon" type="image/svg+xml" href="static/images/rausch-development-favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="static/css/default.css" rel="stylesheet" type="text/css">
 
-    <title>Home Page</title>
+    <title>David Rausch | Senior Full-Stack Software Engineer</title>
 </head>
-<body class="body-home">
-    <div class="middle-nav" id="portfolio-top">
-        <div class="container">
-            <div class="rd-logo">
-                <span class="portfolio-logo">
-                    <a href="/"><img src="static/images/Rausch_Development_logo.png" class="portfolio-logo" height="450" width="550"></a>
-                </span>
-            </div>
-        </div>
-        <nav id="portfolio-nav">
-            <ul class="menu" id="nav-menu">
-                <li id="item"><a href="/" class="portfolio-link-home portfolio-link">Home</a></li>
-                <li id="item"><a href="about" class="portfolio-link">About</a></li>
-                <li id="item"><a href="portfolio" class="portfolio-link">Portfolio</a></li>
-                <li id="item"><a href="contact" class="portfolio-link">Contact</a></li>
-                <li class="toggle"><a href="#" class="toggle-link"><i class="bi bi-list"></i></a></li>
-            </ul>
+<body class="homePageBody">
+    <header class="siteHeader" id="portfolioTop">
+        <a href="/" class="siteLogo" aria-label="Rausch Development Home">
+            <span class="siteLogoMark">RD</span>
+            <span class="siteLogoText">Rausch Development</span>
+        </a>
+        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+            <span class="mobileNavLine"></span>
+            <span class="mobileNavLine"></span>
+            <span class="mobileNavLine"></span>
+        </button>
+        <nav class="siteNav" id="siteNav">
+            <a href="/" class="siteNavLink activeNavLink">Home</a>
+            <a href="about" class="siteNavLink">About</a>
+            <a href="portfolio" class="siteNavLink">Portfolio</a>
+            <a href="contact" class="siteNavLink">Contact</a>
         </nav>
-    </div>
-    <main class="center">
-        <div class="content-ctnr">
-            <div class="home-div" id="avatar">
-                <img src="static/images/me avatar.png" class="avatar-pic" height="400" width="260">
-            </div>
-            <div class="home-div" id="intro">
-                <h3 class="home-h3">
-                    <b>Full-Stack Web Developer Located in Denver, CO</b>
-                </h3>
-                <h1 class="home-h1">
-                    <b>My Name is David Rausch</b>
+    </header>
+    <main>
+        <section class="heroSection">
+            <div class="heroBackgroundGlow heroGlowOne"></div>
+            <div class="heroBackgroundGlow heroGlowTwo"></div>
+            <div class="heroContent">
+                <p class="eyebrowText">Senior Full-Stack Software Engineer • Denver, CO</p>
+                <h1 class="heroTitle">
+                    I build full-stack systems that turn complex workflows into clean, scalable software.
                 </h1>
-                <p class="intro-p">       
-                    I'm a full stack developer with an enthusiasm for coding and creating engaging and exciting projects!
-                    Ever since I learned to write my first, "Hello World", program in Java 5 years ago, I became passionate
-                    about learning more about programming!  This passion guided me as I completed a coding boot camp
-                    at <i>University of Denver</i> and earned a Bachelor of Science in Computer Science at <i>Regis University</i>. As I
-                    find programming to be the perfect marriage of science and art, I ensure optimal functionality as well
-                    as engaging UI/UX in all of my projects.
+                <p class="heroIntro">
+                    I’m David Rausch, a senior full-stack engineer focused on architecture, secure application design, automation, and production-ready platforms that help teams work smarter.
                 </p>
-                <div class="wrapper">
-                    <a class="cta" href="portfolio">
-                        <span>See My Work</span>
-                        <span>
-                            <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
-                                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
-                                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
-                                </g>
-                            </svg>
-                        </span> 
-                    </a>
+                <div class="heroActionRow">
+                    <a href="portfolio" class="primaryButton">View My Work<i class="bi bi-arrow-right"></i></a>
+                    <a href="contact" class="secondaryButton">Contact Me</a>
                 </div>
-            </div>
-        </div>
-    </main>
-    <footer class="index-footer">
-        <div class="scroll-btn-div">
-            <div class="topScroll"><i class="bi bi-arrow-up-square" id="scoll-icon"></i></div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h5>
-                        Mission Statement
-                    </h5>
-                    <p class="footer-p">
-                        I've always believed that there is an art to every science.  And so it is with <i>Computer Science</i>.  With every website, application,
-                        or software that I've developed, I find myself amazed at both the science/logic and the art that goes into every line of code I write.  What I hope to provide
-                        to every project for any client is a sense of enthusiasm and proficiency to lead to creative and innovative solutions.
-                    </p>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="about" class="footer-link">About Rausch Development</a>
-                        </li>
-                        <li>
-                            <a href="portfolio" class="footer-link">View Projects</a>
-                        </li>
-                        <li>
-                            <a href="https://www.freeprivacypolicy.com/live/4793c892-91cc-4d61-9f83-a4d137ea213d" class="footer-link" target="_blank">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://www.termsfeed.com/live/d38ea692-26e1-4ca7-bc60-aa2204681f52" class="footer-link" target="_blank">Terms and Conditions</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <h5>Code of Ethics</h5>
-                    <p class="footer-p">
-                        As a computing professional, I abide by the ACM Code of Ethics for any project that I work on.  This includes
-                        any project I would work on for an employeer or as a freelancer.
-                        <br>
-                        <a href="https://www.acm.org/code-of-ethics" class="footer-link" target="_blank">Learn More</a>
-                    </p>
+                <div class="heroStatsGrid">
+                    <div class="heroStatCard">
+                        <span class="heroStatValue">7+</span>
+                        <span class="heroStatLabel">Years Building Production Software</span>
                     </div>
+                    <div class="heroStatCard">
+                        <span class="heroStatValue">End-to-End</span>
+                        <span class="heroStatLabel">Architecture, Development, Deployment</span>
+                    </div>
+                    <div class="heroStatCard">
+                        <span class="heroStatValue">Full-Stack</span>
+                        <span class="heroStatLabel">Backend, Frontend, Data, DevOps</span>
+                    </div>
+                </div>
             </div>
-            <hr>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-                        <a href="/" class="footer-link">Rausch Development</a>.
+            <aside class="heroFeatureCard heroCommandCard">
+                <div class="commandCardHeader">
+                    <span class="commandStatusDot"></span>
+                    <span class="commandStatusText">Available for senior full-stack roles</span>
+                </div>
+                <div class="commandCardBody">
+                    <p class="commandCardEyebrow">How I Work</p>
+                    <h2 class="commandCardTitle">I connect business problems to production software.</h2>
+                    <div class="commandFlowList">
+                        <div class="commandFlowItem">
+                            <span class="commandFlowNumber">01</span>
+                            <div>
+                                <h3>Diagnose the workflow</h3>
+                                <p>Map the real process, pain points, users, data, and constraints.</p>
+                            </div>
+                        </div>
+                        <div class="commandFlowItem">
+                            <span class="commandFlowNumber">02</span>
+                            <div>
+                                <h3>Design the system</h3>
+                                <p>Define architecture, data models, permissions, interfaces, and automation paths.</p>
+                            </div>
+                        </div>
+                        <div class="commandFlowItem">
+                            <span class="commandFlowNumber">03</span>
+                            <div>
+                                <h3>Build and ship</h3>
+                                <p>Develop, secure, deploy, document, support, and iterate with users.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="commandCardFooter">
+                    <span>Architecture</span>
+                    <span>Execution</span>
+                    <span>Ownership</span>
+                </div>
+            </aside>
+        </section>
+        <section class="capabilitiesSection">
+            <div class="sectionHeader">
+                <p class="eyebrowText">What I Bring</p>
+                <h2 class="sectionTitle">More than feature work. Full-system ownership.</h2>
+            </div>
+            <div class="capabilityGrid">
+                <article class="capabilityCard">
+                    <i class="bi bi-diagram-3 capabilityIcon"></i>
+                    <h3>System Architecture</h3>
+                    <p>Designing applications from the ground up with scalable data models, clear boundaries, reliable workflows, and maintainable structure.</p>
+                </article>
+                <article class="capabilityCard">
+                    <i class="bi bi-code-slash capabilityIcon"></i>
+                    <h3>Full-Stack Development</h3>
+                    <p>Building polished interfaces, practical APIs, server-side logic, database integrations, and production-ready features across the stack.</p>
+                </article>
+                <article class="capabilityCard">
+                    <i class="bi bi-shield-check capabilityIcon"></i>
+                    <h3>Secure Application Design</h3>
+                    <p>Implementing authentication, authorization, validation, access control, data protection, and defensive patterns that reduce real-world risk.</p>
+                </article>
+                <article class="capabilityCard">
+                    <i class="bi bi-lightning-charge capabilityIcon"></i>
+                    <h3>Business Process Automation</h3>
+                    <p>Turning manual work, disconnected tools, and operational bottlenecks into streamlined software that helps teams move faster.</p>
+                </article>
+            </div>
+        </section>
+        <section class="featuredWorkSection">
+            <div class="featuredWorkContent">
+                <p class="eyebrowText">Featured Work</p>
+                <h2 class="sectionTitle">Systems engineered for scale, reliability, and impact.</h2>
+                <p class="sectionText">
+                    My work spans private enterprise platforms and public-facing products. 
+                    Some systems are proprietary and cannot be publicly demoed, but they reflect the same standards I bring to every build: thoughtful architecture, clean execution, strong security, and long-term maintainability.
+                </p>
+            </div>
+            <div class="projectPreviewGrid">
+                <article class="projectPreviewCard">
+                    <span class="projectTag">Private Enterprise Platform</span>
+                    <h3>Campos Deliverable Suite (CDS)</h3>
+                    <p>
+                        Designed and built a private internal software platform for Campos EPC that replaces fragmented engineering workflows with a centralized operational system.
                     </p>
+                    <p>
+                        Responsibilities included architecture, full-stack development, security, DevOps, reporting systems, workflow automation, data management, technical documentation, and long-term platform ownership.
+                    </p>
+                    <p class="projectPrivacyNote">
+                        Proprietary internal platform for Campos EPC. Public demo unavailable.
+                    </p>
+                </article>
+                <article class="projectPreviewCard">
+                    <span class="projectTag">Public Media Platform</span>
+                    <h3>Rotted Cellar</h3>
+                    <p>
+                        A horror-focused media platform built for reviews, editorials, news, contests, creator submissions, e-commerce, user profiles, threaded discussions, reactions, and community-driven interaction.
+                    </p>
+                    <a href="portfolio" class="textLink">Explore project <i class="bi bi-arrow-right"></i></a>
+                </article>
+            </div>
+        </section>
+        <section class="techStackSection">
+            <p class="eyebrowText">Core Stack</p>
+            <div class="techCategoryGrid">
+                <div class="techCategoryCard">
+                    <h3>Languages</h3>
+                    <div class="techPillGrid">
+                        <span>JavaScript</span>
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>C#</span>
+                        <span>C++</span>
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <ul class="social-icons">
-                        <li>
-                            <a href="mailto:rauschdevelopment.io@gmail.com" class ="email"><i class="bi bi-envelope"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/david-rausch-52444878/" class="linkedin-link" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/drausch84" class="github-link" target="_blank"><i class="bi bi-github"></i></a>
-                        </li>
-                        <li>
-                            <a href=" https://www.facebook.com/david.rausch.71/" class="facebook-link" target="_blank"><i class="bi bi-facebook"></i></a>
-                        </li>
-                    </ul>
+                <div class="techCategoryCard">
+                    <h3>Backend & APIs</h3>
+                    <div class="techPillGrid">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>REST APIs</span>
+                        <span>System Design</span>
+                        <span>Secure Session Architecture</span>
+                        <span>Role-Based Access Control</span>
+                    </div>
+                </div>
+                <div class="techCategoryCard">
+                    <h3>Data & Cloud</h3>
+                    <div class="techPillGrid">
+                        <span>MongoDB</span>
+                        <span>SQL</span>
+                        <span>SQLite</span>
+                        <span>AWS</span>
+                        <span>Google Cloud Storage</span>
+                        <span>DBMS Management/Modeling</span>
+                    </div>
+                </div>
+                <div class="techCategoryCard">
+                    <h3>Tools & Delivery</h3>
+                    <div class="techPillGrid">
+                        <span>Git</span>
+                        <span>Agile Delivery</span>
+                        <span>CI/CD Pipelines</span>
+                        <span>DevOps</span>
+                        <span>Technical Documentation</span>
+                    </div>
                 </div>
             </div>
+        </section>
+        <section class="homeCtaSection">
+            <h2>Need senior engineering ownership without the hand-holding?</h2>
+            <p>
+                I operate across architecture, full-stack development, security, DevOps, documentation, and stakeholder communication to move software from idea to production.
+            </p>
+            <a href="contact" class="primaryButton">
+                Start a Conversation
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </section>
+    </main>
+    <footer class="siteFooter">
+        <div class="footerGrid">
+            <div class="footerBrandBlock">
+                <h2>Rausch Development</h2>
+                <p>
+                    Secure, scalable, business-focused software built with clean architecture, practical design, and long-term ownership in mind.
+                </p>
+            </div>
+            <div class="footerLinkBlock">
+                <h3>Quick Links</h3>
+                <a href="about">About</a>
+                <a href="portfolio">Portfolio</a>
+                <a href="contact">Contact</a>
+            </div>
+            <div class="footerLinkBlock">
+                <h3>Connect</h3>
+                <a href="mailto:rauschdevelopment.io@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/drausch84" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>&copy; 2026 Rausch Development. All rights reserved.</p>
         </div>
     </footer>
-   <!-- Custom JS -->
-   <script src="static/js/portfolio.js"></script>
+    <button class="topScrollButton" type="button" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+    <script src="static/js/portfolio.js"></script>
 </body>
 </html>

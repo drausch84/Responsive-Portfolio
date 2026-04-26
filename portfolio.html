@@ -1,452 +1,239 @@
 <!DOCTYPE html>
-<!--   Portfolio Page -->
 <html lang="en">
 <head>
-    <meta name = "keywords" content = "main, portfolio, about, contact, Rausch, development, rauschdevelopment">
-    <meta name = "description" content = "Personal Portfolio Website">
-    <meta name = "author" content = "David Rausch">
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Custom CSS-->
-    <link href="static/css/default.css" rel="stylesheet" type="text/css" media="all">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Optional Bootstrap JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Javascript -->
-    <script defer src="static/js/pageAnimation.js"></script>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Oswald:wght@300&family=Raleway:wght@300&family=Tinos&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="16x16">
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="32x32">
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="72x72" href="static/images/rausch-favicon.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="static/images/rausch-favicon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="static/images/rausch-favicon.png">
+    <meta name="keywords" content="David Rausch, Rausch Development, portfolio, full-stack developer, senior software engineer, Node.js, Express, MongoDB">
+    <meta name="description" content="Portfolio of David Rausch, featuring enterprise platform work, full-stack applications, and selected software engineering projects.">
+    <meta name="author" content="David Rausch">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Portfolio | David Rausch">
+    <meta property="og:description" content="Selected software engineering projects and professional platform work by David Rausch.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="static/images/rausch-development-favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="static/css/default.css" rel="stylesheet" type="text/css">
 
-    <title>Portfolio Page</title>
+    <title>Portfolio | David Rausch</title>
 </head>
-<body class="body-portfolio">
-    <div class="middle-nav">
-        <div class="container">
-            <div class="rd-logo">
-                <span class="portfolio-logo">
-                    <a href="/"><img src="static/images/Rausch_Development_logo.png" class="portfolio-logo" height="450" width="550"></a>
-                </span>
-            </div>
-        </div>
-        <nav id="portfolio-nav">
-            <ul class="menu" id="nav-menu">
-              <li id="item"><a href="/" class="portfolio-link">Home</a></li>
-              <li id="item"><a href="about" class="portfolio-link">About</a></li>
-              <li id="item"><a href="portfolio" class="portfolio-link-portfolio">Portfolio</a></li>
-              <li id="item"><a href="contact" class="portfolio-link">Contact</a></li>
-              <li class="toggle"><a href="#" class="toggle-link"><i class="bi bi-list"></i></a></li>
-            </ul>
-          </nav>
-    </div>
-    <main class="center">
-        <div class="content-ctnr-portfolio">
-            <div class="portfolio-intro-div">
-                <h1 class="portfolio-h">
-                    portfolio.
-                </h1>
-                <h3 class="portfolio-h3">
-                    Take a look at some of the projects that I've worked on over the years.
-                </h3>
-                <br>
-                <p class="portfolio-p">
-                    Most of my project experience involves the projects that I was required to complete during my time at the <i>University of Denver</i> coding boot camp as well as my time 
-                    earning my Bachelor of Science in Computer Science at <i>Regis University</i>.  I feel that each project showcases a different language, data structure, or framework in
-                    order to showcase my range of programming education.
+<body class="portfolioPageBody">
+    <header class="siteHeader" id="portfolioTop">
+        <a href="/" class="siteLogo" aria-label="Rausch Development Home">
+            <span class="siteLogoMark">RD</span>
+            <span class="siteLogoText">Rausch Development</span>
+        </a>
+        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+            <span class="mobileNavLine"></span>
+            <span class="mobileNavLine"></span>
+            <span class="mobileNavLine"></span>
+        </button>
+        <nav class="siteNav" id="siteNav">
+            <a href="/" class="siteNavLink">Home</a>
+            <a href="about" class="siteNavLink">About</a>
+            <a href="portfolio" class="siteNavLink activeNavLink">Portfolio</a>
+            <a href="contact" class="siteNavLink">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="portfolioHeroSection">
+            <div class="portfolioHeroContent">
+                <p class="eyebrowText">Portfolio</p>
+                <h1 class="portfolioHeroTitle">Selected systems, products, and engineering work.</h1>
+                <p class="portfolioHeroText">
+                    My strongest work includes private enterprise platforms, public-facing products, and production systems where architecture, security, data, usability, and long-term ownership all matter.
                 </p>
             </div>
-            <div class="portfolio-mockups-div">
-                <img src="static/images/terror-cellar-mockup.png" class="tc-mockup-img" alt="Terror Cellar Mockup" height="420" width="400">
+            <aside class="portfolioHeroPanel">
+                <p class="portfolioPanelEyebrow">Primary Focus</p>
+                <div class="portfolioPanelList">
+                    <div class="portfolioPanelItem">
+                        <i class="bi bi-building-gear"></i>
+                        <span>Enterprise platforms</span>
+                    </div>
+                    <div class="portfolioPanelItem">
+                        <i class="bi bi-kanban"></i>
+                        <span>Workflow automation</span>
+                    </div>
+                    <div class="portfolioPanelItem">
+                        <i class="bi bi-shield-lock"></i>
+                        <span>Secure full-stack systems</span>
+                    </div>
+                    <div class="portfolioPanelItem">
+                        <i class="bi bi-database-check"></i>
+                        <span>Data-driven applications</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+        <section class="featuredCaseStudySection">
+            <div class="sectionHeader">
+                <p class="eyebrowText">Featured Work</p>
+                <h2 class="sectionTitle">Professional systems and product-scale builds.</h2>
             </div>
-        </div>
-        <div class="content-ctnr-offset-portfolio">
-            <!-- Card #1 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img1"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Writer's Conference Website
-                            </h2>
-                            <p class="project-overview">
-                                This was a project in a Web and Database 
-                                Applications course where we were tasked with
-                                creating a conference website with a theme
-                                of our choosing. There were two versions of this project,
-                                one using Python (which I linked), but feel free to check out the other
-                                hosted version.
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
+            <div class="caseStudyGrid">
+                <article class="caseStudyCard caseStudyCardLarge">
+                    <div class="caseStudyHeader">
+                        <span class="projectTag">Private Enterprise Platform</span>
+                        <span class="projectStatusBadge">Proprietary</span>
                     </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">HTML</li>
-                                <li class="tech-li">CSS</li>
-                                <li class="tech-li">Javascript</li>
-                                <li class="tech-li">Jinja2</li>
-                                <li class="tech-li">Python</li>
-                                <li class="tech-li">Flask</li>
-                                <li class="tech-li">SQLite</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/PythonConferenceWebsite" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
+                    <div class="caseStudyTitle">
+                        <h3>Campos Deliverable Suite (CDS)</h3>
+                    </div>
+                    <p class="caseStudyLead">
+                        A private internal software platform for Campos EPC that centralizes engineering workflows, project data, assignment/deliverable tracking, reporting, EIC calculations, audit history, and operational visibility.
+                    </p>
+                    <div class="caseStudyFeatureArea">
+                        <div class="caseStudyContentGrid">
+                            <div>
+                                <h4>My Role</h4>
+                                <p>
+                                    Sole architect and developer responsible for system design, full-stack development, security, DevOps, technical documentation, stakeholder support, and long-term platform ownership.
+                                </p>
+                            </div>
+                            <div>
+                                <h4>Engineering Scope</h4>
+                                <p>
+                                    Authentication, authorization, role-based access, data modeling, workflow automation, report generation, import/export pipelines, dashboards, revision systems, and production deployment.
+                                </p>
                             </div>
                         </div>
                     </div>
+                    <div class="caseStudyPillGrid">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MongoDB</span>
+                        <span>EJS</span>
+                        <span>JavaScript</span>
+                        <span>DevOps</span>
+                        <span>CSS</span>
+                        <span>Google Cloud Storage</span>
+                    </div>
+                    <p class="projectPrivacyNote">
+                        Private repository and proprietary internal platform for Campos EPC. Public demo and screenshots unavailable.
+                    </p>
+                </article>
+                <article class="caseStudyCard caseStudyCardLarge">
+                    <div class="caseStudyHeader">
+                        <span class="projectTag">Public Media Platform</span>
+                        <span class="projectStatusBadge">In Development</span>
+                    </div>
+                    <div class="caseStudyTitle">
+                        <h3>Rotted Cellar</h3>
+                    </div>
+                    <p class="caseStudyLead">
+                        A full-stack horror media platform built for original content, community discussion, secure user accounts, creator submissions, contests, and e-commerce.
+                    </p>
+                    <div class="caseStudyFeatureArea">
+                        <div class="projectMockupFrame">
+                            <img src="static/images/Rotted Cellar Preview.png" alt="Rotted Cellar platform preview">
+                        </div>
+                    </div>
+                    <div class="caseStudyPillGrid">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MongoDB</span>
+                        <span>EJS</span>
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                        <span>Custom Middleware</span>
+                        <span>REST APIs</span>
+                        <span>Google Cloud Storage</span>
+                    </div>
+                    <p class="projectPrivacyNote">
+                        Private repository while in development. Screenshots or previews can be added as the platform moves closer to launch.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <section class="professionalSystemsSection">
+            <div class="sectionHeader">
+                <p class="eyebrowText">Professional Experience</p>
+                <h2 class="sectionTitle">Additional production systems experience.</h2>
+            </div>
+            <article class="professionalSystemCard">
+                <div>
+                    <span class="projectTag">Enterprise Government Software</span>
+                    <h3>GenTax Platform Support — FAST Enterprises</h3>
+                    <p>
+                        Supported production software for a large-scale government tax platform used by the Georgia Department of Revenue. Work included production support, SQL-driven reporting, fraud detection workflows, and technical communication in a regulated environment.
+                    </p>
                 </div>
-            </div> <!-- End of Card #1 -->
-            <!-- Card #2 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img2"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Terror Cellar
-                            </h2>
-                            <p class="project-overview">
-                                This was a project in a Mobile Computing course.  This was my first experience using Kotlin, and I had a blast.
-                                The Android application is a horror movie review app where users can add, delete, or modify any movie reviews
-                                added to a list on a landing page.  Utilizes standard login as well as Google login.
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
-                    </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">Kotlin</li>
-                                <li class="tech-li">SQLite</li>
-                                <li class="tech-li">Firebase</li>
-                                <li class="tech-li">Room ORM</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/Terror_Cellar" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
-                    </div>
+                <div class="professionalSystemMeta">
+                    <span>SQL</span>
+                    <span>C#</span>
+                    <span>Ad Hoc Reporting</span>
+                    <span>Fraud Detection</span>
+                    <span>Production Support</span>
                 </div>
-            </div> <!-- End of Card #2 -->
-            <!-- Card #3 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img3"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Java Image Manipulation
-                            </h2>
-                            <p class="project-overview">
-                                This was a project from my Data Structures course.  Using a stack data structure, the user can input any image file and apply different filters
-                                to manipulate the image.  There are many different filters including color filters, image position filters, as well as a combination of color and 
-                                position.
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
+            </article>
+        </section>
+        <section class="earlierWorkSection">
+            <div class="sectionHeader">
+                <p class="eyebrowText">Earlier Work</p>
+                <h2 class="sectionTitle">Selected academic and side projects.</h2>
+                <p class="sectionText">
+                    These projects are older, but they show earlier exposure to different languages, frameworks, data structures, and programming concepts.
+                </p>
+            </div>
+            <div class="earlierWorkGrid">
+                <article class="earlierWorkCard">
+                    <h3>Writer’s Conference Website</h3>
+                    <p>Conference website built with Python, Flask, Jinja2, and SQLite for a web/database applications course.</p>
+                    <div class="caseStudyPillGrid">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQLite</span>
+                        <span>Jinja2</span>
                     </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">Java</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/JavaImageManipulation" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
+                    <a href="https://github.com/drausch84/PythonConferenceWebsite" target="_blank" rel="noopener" class="textLink">View code <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="earlierWorkCard">
+                    <h3>Java Image Manipulation</h3>
+                    <p>Data structures project using Java and stack-based logic to apply image transformation filters.</p>
+                    <div class="caseStudyPillGrid">
+                        <span>Java</span>
+                        <span>Data Structures</span>
                     </div>
-                </div>
-            </div> <!-- End of Card #3 -->
-            <!-- Card #4 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img4"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Turing Machine Simulator
-                            </h2>
-                            <p class="project-overview">
-                                This was a project from my Computation Theory course.  We had to use Java in order to create a program that would simulate a turing machine.  The user enters
-                                text files and the program will request that the user type in a string to determine whether or not the string input will be accepted by the turing machine.
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
+                    <a href="https://github.com/drausch84/JavaImageManipulation" target="_blank" rel="noopener" class="textLink">View code <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="earlierWorkCard">
+                    <h3>Turing Machine Simulator</h3>
+                    <p>Java-based computation theory project that simulates a Turing machine using text-based input.</p>
+                    <div class="caseStudyPillGrid">
+                        <span>Java</span>
+                        <span>Computation Theory</span>
                     </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">Java</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/TuringMachineSim" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- End of Card #4 -->
-            <!-- Card #5 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img5"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                DFA Prolog Program
-                            </h2>
-                            <p class="project-overview">
-                                This was a project from my Principles of Programming Languages course.  This program was written in Prolog and it will execute an arbitrary DFA.  In order to run the code 
-                                listed in the link, I highly recommend using SWI-Prolog.  An output example is provided in order to show how the program is supposed to execute.
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
-                    </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">Prolog</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/PrologDFA" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- End of Card #5 -->
-            <!-- Card #6 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img6"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Friend Finder Application
-                            </h2>
-                            <p class="project-overview">
-                                This was a project I created during my time in the University of Denver coding boot camp.  How far I've come from this point!  Still, I feel this project 
-                                shows my early grasp of Javascript as well as my introduction to Node.js and Express.js.  This was also the first time I worked with modals!  Apologies for the broken 
-                                picture links!
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
-                    </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">HTML</li>
-                                <li class="tech-li">Materialize CSS</li>
-                                <li class="tech-li">Javascript</li>
-                                <li class="tech-li">jQuery</li>
-                                <li class="tech-li">Express.js</li>
-                                <li class="tech-li">Node.js</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/FriendFinder" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End of Card #6 -->
-            <!-- Card #7 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img7"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Lib Jab: A Mad Libs&#8482; Clone
-                            </h2>
-                            <p class="project-overview">
-                                This was a project I worked on when I was shaking off the rust of not having programmed in jQuery or Javascript for a while.  This is a basic ad lib clone that I tried 
-                                to make as entertaining as I possibly could and designed it to match the goofiness of the original Mad Libs&#8482; books.  Hopefully you can get some laughs from this!
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
-                    </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">HTML</li>
-                                <li class="tech-li">CSS</li>
-                                <li class="tech-li">jQuery</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/LibJab" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End of Card #7 -->
-            <!-- Card #8 -->
-            <div class="card-container inactive">
-                <div class="card">
-                    <div class="side front">
-                        <div class="img img8"></div>
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Horror Wordle - A Wordle&#8482; Clone
-                            </h2>
-                            <p class="project-overview">
-                                I think I speak for many people when I say that Wordle&#8482; has become quite the addiction!  As much as I love the game,
-                                I found myself wishing that I could play it more than once a day.  So, I decided to make my own clone of it with a horror twist!
-                            </p>
-                            <p class="flip-p">
-                                <i class="bi bi-arrow-down-circle-fill" id="flip-icon"></i>&nbsp;&nbsp;Click Card to Flip
-                            </p>
-                        </div>
-                    </div>
-                    <div class="side back">
-                        <div class="project-info">
-                            <h2 class="card-h">
-                                Technologies Used
-                            </h2>
-                            <ul class="tech-list">
-                                <li class="tech-li">HTML</li>
-                                <li class="tech-li">CSS</li>
-                                <li class="tech-li">jQuery</li>
-                                <li class="tech-li">Javascript</li>
-                            </ul>
-                            <div class="btn">
-                                <a class="btn-text" href="https://github.com/drausch84/Horror_Wordle" target="_blank">Browse Project Code</a>
-                                <svg class="btn-svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"/><path d="M0-.25h24v24H0z" fill="none"/></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- End of Card #8 -->
-        </div>
-        <div class="content-ctnr">
-
-        </div>
+                    <a href="https://github.com/drausch84/TuringMachineSim" target="_blank" rel="noopener" class="textLink">View code <i class="bi bi-arrow-right"></i></a>
+                </article>
+            </div>
+        </section>
     </main>
-    <footer>
-        <div class="scroll-btn-div">
-            <div class="topScroll"><i class="bi bi-arrow-up-square" id="scoll-icon"></i></div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h5>
-                        Mission Statement
-                    </h5>
-                    <p class="footer-p">
-                        I've always believed that there is an art to every science.  And so it is with <i>Computer Science</i>.  With every website, application,
-                        or software that I've developed, I find myself amazed at both the science/logic and the art that goes into every line of code I write.  What I hope to provide
-                        to every project for any client is a sense of enthusiasm and proficiency to lead to creative and innovative solutions.
-                    </p>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="about" class="footer-link">About Rausch Development</a>
-                        </li>
-                        <li>
-                            <a href="portfolio" class="footer-link">View Projects</a>
-                        </li>
-                        <li>
-                            <a href="https://www.freeprivacypolicy.com/live/4793c892-91cc-4d61-9f83-a4d137ea213d" class="footer-link" target="_blank">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://www.termsfeed.com/live/d38ea692-26e1-4ca7-bc60-aa2204681f52" class="footer-link" target="_blank">Terms and Conditions</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <h5>Code of Ethics</h5>
-                    <p class="footer-p">
-                        As a computing professional, I abide by the ACM Code of Ethics for any project that I work on.  This includes
-                        any project I would work on for an employeer or as a freelancer.
-                        <br>
-                        <a href="https://www.acm.org/code-of-ethics" class="footer-link" target="_blank">Learn More</a>
-                    </p>
-                 </div>
+    <footer class="siteFooter">
+        <div class="footerGrid">
+            <div class="footerBrandBlock">
+                <h2>Rausch Development</h2>
+                <p>
+                    Secure, scalable, business-focused software built with clean architecture, practical design, and long-term ownership in mind.
+                </p>
             </div>
-            <hr>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-                        <a href="/" class="footer-link">Rausch Development</a>.
-                    </p>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <ul class="social-icons">
-                        <li>
-                            <a href="mailto:rauschdevelopment.io@gmail.com" class ="email"><i class="bi bi-envelope"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/david-rausch-52444878/" class="linkedin-link" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/drausch84" class="github-link" target="_blank"><i class="bi bi-github"></i></a>
-                        </li>
-                        <li>
-                            <a href=" https://www.facebook.com/david.rausch.71/" class="facebook-link" target="_blank"><i class="bi bi-facebook"></i></a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="footerLinkBlock">
+                <h3>Quick Links</h3>
+                <a href="about">About</a>
+                <a href="portfolio">Portfolio</a>
+                <a href="contact">Contact</a>
             </div>
+            <div class="footerLinkBlock">
+                <h3>Connect</h3>
+                <a href="mailto:rauschdevelopment.io@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/drausch84" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>&copy; 2026 Rausch Development. All rights reserved.</p>
         </div>
     </footer>
+    <button class="topScrollButton" type="button" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
     <script src="static/js/portfolio.js"></script>
 </body>
 </html>

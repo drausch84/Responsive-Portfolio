@@ -1,392 +1,206 @@
 <!DOCTYPE html>
-<!-- About Page -->
 <html lang="en">
 <head>
-    <meta name = "keywords" content = "main, portfolio, about, contact, Rausch, development, rauschdevelopment">
-    <meta name = "description" content = "Personal Portfolio Website">
-    <meta name = "author" content = "David Rausch">
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Custom CSS-->
-    <link href="static/css/default.css" rel="stylesheet" type="text/css" media="all">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Optional Bootstrap JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Javascript -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    
-    <script defer src="static/js/pageAnimation.js"></script>
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <!-- Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Oswald:wght@300&family=Raleway:wght@300&family=Tinos&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="16x16">
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="32x32">
-    <link rel="icon" type="image/x-icon" href="static/images/rausch-favicon.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="72x72" href="static/images/rausch-favicon.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="static/images/rausch-favicon.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="static/images/rausch-favicon.png">
-
-    <title>About Page</title>
+    <meta name="keywords" content="David Rausch, Rausch Development, senior full-stack software engineer, software architect, Node.js, Express, MongoDB, portfolio">
+    <meta name="description" content="About David Rausch, a senior full-stack software engineer focused on secure, scalable systems, platform ownership, and business workflow automation.">
+    <meta name="author" content="David Rausch">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="About David Rausch | Senior Full-Stack Software Engineer">
+    <meta property="og:description" content="Senior full-stack engineer building secure, scalable software systems from architecture to production.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="static/images/rausch-development-favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="static/css/default.css" rel="stylesheet" type="text/css">
+    <title>About David Rausch | Senior Full-Stack Software Engineer</title>
 </head>
-<body class="body-about">
-    <div class="middle-nav">
-        <div class="container">
-            <div class="rd-logo">
-                <span class="portfolio-logo">
-                    <a href="/"><img src="static/images/Rausch_Development_logo.png" class="portfolio-logo" height="450" width="550"></a>
-                </span>
-            </div>
-        </div>
-        <nav id="portfolio-nav">
-            <ul class="menu" id="nav-menu">
-              <li id="item"><a href="/" class="portfolio-link">Home</a></li>
-              <li id="item"><a href="about" class="portfolio-link-about">About</a></li>
-              <li id="item"><a href="portfolio" class="portfolio-link">Portfolio</a></li>
-              <li id="item"><a href="contact" class="portfolio-link">Contact</a></li>
-              <li class="toggle"><a href="#" class="toggle-link"><i class="bi bi-list"></i></a></li>
-            </ul>
-          </nav>
-    </div>
-    <main class="center">
-        <div class="content-ctnr-about">
-            <div class="about-intro-div">
-                <h1 class="about-h">
-                    about.
+<body class="aboutPageBody">
+    <header class="siteHeader" id="portfolioTop">
+        <a href="/" class="siteLogo" aria-label="Rausch Development Home">
+            <span class="siteLogoMark">RD</span>
+            <span class="siteLogoText">Rausch Development</span>
+        </a>
+        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+            <span class="mobileNavLine"></span>
+            <span class="mobileNavLine"></span>
+            <span class="mobileNavLine"></span>
+        </button>
+        <nav class="siteNav" id="siteNav">
+            <a href="/" class="siteNavLink">Home</a>
+            <a href="about" class="siteNavLink activeNavLink">About</a>
+            <a href="portfolio" class="siteNavLink">Portfolio</a>
+            <a href="contact" class="siteNavLink">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="aboutHeroSection">
+            <div class="aboutHeroContent">
+                <p class="eyebrowText">About David Rausch</p>
+                <h1 class="aboutHeroTitle">
+                    A senior full-stack engineer who builds systems people rely on.
                 </h1>
-                <h2 class="about-h2">
-                    I'm a full stack software engineer<br> located in Denver, CO. 
-                </h2>
-                <p class="about-p">
-                    I have been learning about programming for the better part of 4 years.  In 2018, I attended<br> 
-                    and graduated from a coding boot camp at the University of Denver where I learned about<br>
-                    HTML, CSS, Javascript, Node.js, MySQL, MongoDB, React, and much more.  I came to a<br> 
-                    realization that while the boot camp laid a sturdy foundation for my programming knowledge,<br> 
-                    I needed to further my education. I chose to enroll at Regis University where I earned my<br> 
-                    Bachelor of Science in Computer Science in 2022.  Through my education, I've learned the<br> 
-                    importance of fully functional programs that also maintain a high standard of design to<br> 
-                    ensure optimal UI/UX.
+                <p class="aboutHeroText">
+                    I specialize in designing and building secure, scalable systems that replace fragmented processes, reduce manual work, and give teams better tools to operate.
                 </p>
-                <hr>
+                <p class="aboutHeroText">
+                    My experience spans architecture, backend development, UI/UX, security, DevOps, reporting, documentation, stakeholder communication, and long-term platform ownership.
+                </p>
+                <div class="aboutHeroActionRow">
+                    <a href="portfolio" class="primaryButton">
+                        View My Work
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="contact" class="secondaryButton">
+                        Contact Me
+                    </a>
+                </div>
             </div>
-            <div class="about-img-div">
-                <img src="static/images/me-in-the-woods.png" class="about-me-img" height="360" width="210">
-                <hr>
-            </div>
-        </div>
-        <div class="content-ctnr-about toShow">
-            <div class="picture-row">
-                <a target="_blank" href="static/images/me-and-adiley.jpeg">
-                    <img src="static/images/me-and-adiley.jpeg" class="personal-pic" alt="me-and-my-baby" height="240" width="200">
-                </a>
-                <a target="_blank" href="static/images/me-hiking.jpeg">
-                    <img src="static/images/me-hiking.jpeg" class="personal-pic" alt="me-on-14er" height="240" width="200">
-                </a>
-                <a target="_blank" href="static/images/me-devils-causeway.jpg">
-                    <img src="static/images/me-devils-causeway.jpg" class="personal-pic" alt="me-devils-causeway" height="240" width="200">
-                </a>
-                <a target="_blank" href="static/images/me-hiking in snow.jpg">
-                    <img src="static/images/me-hiking in snow.jpg" class="personal-pic" alt="me-in-snow" height="240" width="210">
-                </a>
-                <a target="_blank" href="static/images/me-kristine-halloween.jpeg">
-                    <img src="static/images/me-kristine-halloween.jpeg" class="personal-pic" alt="me-kristine-halloween" height="240" width="200">
-                </a>
-                <a target="_blank" href="static/images/me-kayaking.jpg">
-                    <img src="static/images/me-kayaking.jpg" class="personal-pic" alt="me-kayaking" height="240" width="200">
-                </a>
-                <a target="_blank" href="static/images/me-kristine-sharkcage.jpeg">
-                    <img src="static/images/me-kristine-sharkcage.jpeg" class="personal-pic" alt="me-kristine-sharkcage-diving" height="240" width="200">
-                </a>
-            </div>
-        </div>
-        <div class="content-ctnr-offset toShow">
-            <div class="chart-div">
-                <canvas id="skillsChart" height="500" width="800"></canvas>
-            </div>
-        </div>
-        <h1 class="about-sec-h">
-            education.
-        </h1>
-        <div class="content-ctnr-col toShow">
-            <div class="edu-div">
-                <h2 class="degree-cert-h">
-                    Bachelor's Degree
-                </h2>
-                <h4 class="edu-org-h">
-                    <i>Bachelor of Science in Computer Science</i>&nbsp;|&nbsp; Regis University
-                </h4>
-                <p class="comp-year">2022</p>
-                <ul class="edu-list">
-                    <li class="edu-li"><i class="bi bi-file-check-fill" id="li-icon"></i>&nbsp;&nbsp;<b class="li-b">Honors:</b>&nbsp;Dean's List for Summer 2020, Fall 2020, and Summer 2021 academic sessions</li>
-                    <li class="edu-li"><i class="bi bi-file-check-fill" id="li-icon"></i>&nbsp;&nbsp;<b class="li-b">Relevant Coursework:</b>&nbsp;Data Structures, Software Engineering, Web and Database Applications, 
-                    Computation Theory, Algorithms and Analysis, Database Management, Mobile Computing</li>
-                </ul>
-                <br>
-            </div>
-            <hr class="edu-hr">
-            <div class="edu-div-2">
-                <h2 class="degree-cert-h">
-                    Certificate of Completion 
-                </h2>
-                <h4 class="edu-org-h">
-                    <i>Web Developer Boot Camp</i>&nbsp;|&nbsp; University of Denver
-                </h4>
-                <p class="comp-year">2018</p>
-                <ul class="edu-list">
-                    <li class="edu-li"><i class="bi bi-file-check-fill" id="li-icon"></i>&nbsp;&nbsp;<b class="li-b">Relevant Coursework:</b>&nbsp;HTML, CSS, Javascript, React.js, Handlebars.js,
-                    Express.js, Git, MySQL, MongoDB, Firebase, Node.js, Redux, jQuery, Materialize, Bootstrap</li>
-                </ul>    
-            </div>
-        </div>
-        <div class="content-ctnr-offset-2 toShow">
-            <div class="minded-div">
-                <h2 class="minded-h">
-                    Left-Minded
-                </h2>
-                <ul class="minded-list">
-                    <li class="minded-li"><i class="bi bi-file-code-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Understanding of Computational Models</li>
-                    <li class="minded-li"><i class="bi bi-file-code-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Understanding of Different Algorithms and Complexities</li>
-                    <li class="minded-li"><i class="bi bi-file-code-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Proficiency in Upper Division Mathematics</li>
-                    <li class="minded-li"><i class="bi bi-file-code-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Understanding of Different ISAs</li>
-                    <li class="minded-li"><i class="bi bi-file-code-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Fake Expert in Quantum Physics</li>
-                </ul>
-            </div>
-            <div class="minded-div">
-                <img src="static/images/brain-image.png" class="brain-img" alt="brain" height="300" width="300">
-            </div>
-            <div class="minded-div">
-                <h2 class="minded-h">
-                    Right-Minded
-                </h2>
-                <ul class="minded-list">
-                    <li class="minded-li"><i class="bi bi-brush-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Keen Eye For Clean UI</li>
-                    <li class="minded-li"><i class="bi bi-brush-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Love of Art and Design</li>
-                    <li class="minded-li"><i class="bi bi-brush-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Avid Writer and Novelist</li>
-                    <li class="minded-li"><i class="bi bi-brush-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Former Musical Producer</li>
-                    <li class="minded-li"><i class="bi bi-brush-fill" id="li-icon"></i>&nbsp;&nbsp;&nbsp;Ability to Quote numerous Simpsons episodes</li>
-                </ul>
-            </div>
-        </div>
-        <h1 class="about-sec-h">
-            hobbies and interests.
-        </h1>
-        <div class="content-ctnr-hobbies toShow">
-            <div class="hobbies-div">
-                <h3 class="hobbies-div-h"><span class="underline">
-                    Art and Writing
-                </span>
-                </h3>
-                <ul class="hobbies-list">
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love writing poetry and shared some poems&nbsp;<a href="https://drbuck10.tumblr.com/" class="li-link" target="_blank">here</a></li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;Currently completing two novels (1 horror, 1 comedy)</li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I enjoy painting and consider Bob Ross as my spirit animal!</li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I once fronted a punk-rock band for several years</li>
-                </ul>
-            </div>
-            <div class="hobbies-div">
-                <h3 class="hobbies-div-h"><span class="underline">
-                    General Interests
-                </span>
-                </h3>
-                <ul class="hobbies-list">
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;My favorite shows are <i>Breaking Bad</i> and <i>The Simpsons</i></li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love being outdoors: hiking, snowboarding, or kayaking</li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love to cook, especially Italian or Mediterranean cuisine</li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;When I need to decompress, I watch <i>Planet Earth</i></li>
-                </ul>
-            </div>
-            <div class="hobbies-div">
-                <h3 class="hobbies-div-h"><span class="underline">
-                    Coding Hobbies
-                </span>
-                </h3>
-                <ul class="hobbies-list">
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love website design, most of my projects are web-related</li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love learning about game engines; currently learning <i>Unreal</i></li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love building Android apps in Kotlin</li>
-                    <li class="hobbies-li"><i class="bi bi-patch-check-fill" id="li-icon"></i>&nbsp;&nbsp;I love writing custom shell scripts in Bash or Korn</li>
-                </ul>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="scroll-btn-div">
-            <div class="topScroll"><i class="bi bi-arrow-up-square" id="scoll-icon"></i></div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h5>
-                        Mission Statement
-                    </h5>
-                    <p class="footer-p">
-                        I've always believed that there is an art to every science.  And so it is with <i>Computer Science</i>.  With every website, application,
-                        or software that I've developed, I find myself amazed at both the science/logic and the art that goes into every line of code I write.  What I hope to provide
-                        to every project for any client is a sense of enthusiasm and proficiency to lead to creative and innovative solutions.
+            <aside class="aboutProfileCard">
+                <img src="static/images/Me At Devil's Causeway.jpeg" alt="David Rausch outdoors in Colorado" class="aboutProfileImage">
+                <div class="aboutProfileContent">
+                    <p class="aboutProfileLabel">Based in Denver, CO</p>
+                    <h2>Builder. Problem solver. Full-stack owner.</h2>
+                    <p>
+                        I bring a practical mix of engineering discipline, design taste, documentation habits, and “figure it out” energy.
                     </p>
                 </div>
-                <div class="col-xs-6 col-md-3">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="about" class="footer-link">About Rausch Development</a>
-                        </li>
-                        <li>
-                            <a href="portfolio" class="footer-link">View Projects</a>
-                        </li>
-                        <li>
-                            <a href="https://www.freeprivacypolicy.com/live/4793c892-91cc-4d61-9f83-a4d137ea213d" class="footer-link" target="_blank">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="https://www.termsfeed.com/live/d38ea692-26e1-4ca7-bc60-aa2204681f52" class="footer-link" target="_blank">Terms and Conditions</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-md-3">
-                    <h5>Code of Ethics</h5>
-                    <p class="footer-p">
-                        As a computing professional, I abide by the ACM Code of Ethics for any project that I work on.  This includes
-                        any project I would work on for an employeer or as a freelancer.
-                        <br>
-                        <a href="https://www.acm.org/code-of-ethics" class="footer-link" target="_blank">Learn More</a>
-                    </p>
+            </aside>
+        </section>
+        <section class="aboutPrinciplesSection">
+            <div class="sectionHeader">
+                <p class="eyebrowText">How I Work</p>
+                <h2 class="sectionTitle">Practical engineering from discovery through delivery.</h2>
+            </div>
+            <div class="aboutPrinciplesGrid">
+                <article class="aboutPrincipleCard">
+                    <i class="bi bi-diagram-3 aboutPrincipleIcon"></i>
+                    <h3>Start with the workflow</h3>
+                    <p>I look beyond the feature request and identify the process, users, constraints, data, and failure points the software needs to support.</p>
+                </article>
+                <article class="aboutPrincipleCard">
+                    <i class="bi bi-database-check aboutPrincipleIcon"></i>
+                    <h3>Design the data carefully</h3>
+                    <p>Strong software starts with clear data models, reliable relationships, validation, permissions, and reporting needs considered early.</p>
+                </article>
+                <article class="aboutPrincipleCard">
+                    <i class="bi bi-shield-lock aboutPrincipleIcon"></i>
+                    <h3>Build defensively</h3>
+                    <p>I care about secure sessions, role-based access, input validation, data isolation, audit trails, and reducing avoidable risk.</p>
+                </article>
+                <article class="aboutPrincipleCard">
+                    <i class="bi bi-people aboutPrincipleIcon"></i>
+                    <h3>Support real users</h3>
+                    <p>I write documentation, listen to feedback, improve workflows, and build interfaces for people who need software to make their work easier.</p>
+                </article>
+            </div>
+        </section>
+        <section class="aboutSnapshotSection">
+            <div class="aboutSnapshotCard">
+                <p class="eyebrowText">Professional Snapshot</p>
+                <h2>What I bring to a team</h2>
+                <div class="aboutSnapshotGrid">
+                    <div class="aboutSnapshotItem">
+                        <span class="aboutSnapshotValue">Full-Stack</span>
+                        <span class="aboutSnapshotLabel">Frontend, backend, data, APIs, deployment, and support.</span>
                     </div>
-            </div>
-            <hr>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-                        <a href="/" class="footer-link">Rausch Development</a>.
-                    </p>
+                    <div class="aboutSnapshotItem">
+                        <span class="aboutSnapshotValue">Platform Owner</span>
+                        <span class="aboutSnapshotLabel">Experience owning architecture, delivery, security, and documentation.</span>
+                    </div>
+                    <div class="aboutSnapshotItem">
+                        <span class="aboutSnapshotValue">Business-Focused</span>
+                        <span class="aboutSnapshotLabel">Strong at turning operational pain points into useful software.</span>
+                    </div>
+                    <div class="aboutSnapshotItem">
+                        <span class="aboutSnapshotValue">Production-Minded</span>
+                        <span class="aboutSnapshotLabel">I think about maintainability, reliability, users, and long-term scale.</span>
+                    </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <ul class="social-icons">
-                        <li>
-                            <a href="mailto:rauschdevelopment.io@gmail.com" class ="email"><i class="bi bi-envelope"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/david-rausch-52444878/" class="linkedin-link" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/drausch84" class="github-link" target="_blank"><i class="bi bi-github"></i></a>
-                        </li>
-                        <li>
-                            <a href=" https://www.facebook.com/david.rausch.71/" class="facebook-link" target="_blank"><i class="bi bi-facebook"></i></a>
-                        </li>
+            </div>
+        </section>
+        <section class="aboutEducationSection">
+            <div class="sectionHeader">
+                <p class="eyebrowText">Education</p>
+                <h2 class="sectionTitle">Formal training backed by production experience.</h2>
+            </div>
+            <div class="educationCardGrid">
+                <article class="educationCard">
+                    <span class="educationType">Bachelor’s Degree</span>
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p class="educationSchool">Regis University • 2022</p>
+                    <ul class="educationList">
+                        <li><i class="bi bi-check-circle-fill"></i> Dean’s List: Summer 2020, Fall 2020, Summer 2021</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Focused on software engineering, data structures, algorithms, databases, and computing theory</li>
                     </ul>
+                </article>
+                <article class="educationCard">
+                    <span class="educationType">Certificate</span>
+                    <h3>Web Developer Boot Camp</h3>
+                    <p class="educationSchool">University of Denver • 2018</p>
+                    <ul class="educationList">
+                        <li><i class="bi bi-check-circle-fill"></i> Built a foundation in full-stack web development</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Covered JavaScript, Node.js, Express, databases, Git, frontend frameworks, and web application fundamentals</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <section class="aboutPersonalSection">
+            <div class="aboutPersonalContent">
+                <p class="eyebrowText">Beyond the Keyboard</p>
+                <h2 class="sectionTitle">Creative, curious, and usually outside when I’m not building software.</h2>
+                <p class="sectionText">
+                    Outside of engineering, I’m usually hiking, writing, watching horror films, or working on creative projects. I like building things with both structure and personality, which carries into the way I approach software, design, and user experience.
+                </p>
+            </div>
+
+            <div class="aboutInterestGrid">
+                <div class="aboutInterestCard">
+                    <i class="bi bi-tree-fill"></i>
+                    <h3>Outdoors</h3>
+                    <p>Hiking, snowboarding, kayaking, and taking full advantage of living near the mountains.</p>
+                </div>
+
+                <div class="aboutInterestCard">
+                    <i class="bi bi-film"></i>
+                    <h3>Horror</h3>
+                    <p>A lifelong horror fan with a strong interest in genre storytelling, reviews, media platforms, and community-driven content.</p>
+                </div>
+
+                <div class="aboutInterestCard">
+                    <i class="bi bi-pencil-square"></i>
+                    <h3>Writing & Design</h3>
+                    <p>Creative writing, clean interfaces, content systems, and the balance between technical structure and visual polish.</p>
                 </div>
             </div>
+        </section>
+    </main>
+    <footer class="siteFooter">
+        <div class="footerGrid">
+            <div class="footerBrandBlock">
+                <h2>Rausch Development</h2>
+                <p>
+                    Secure, scalable, business-focused software built with clean architecture, practical design, and long-term ownership in mind.
+                </p>
+            </div>
+            <div class="footerLinkBlock">
+                <h3>Quick Links</h3>
+                <a href="about">About</a>
+                <a href="portfolio">Portfolio</a>
+                <a href="contact">Contact</a>
+            </div>
+            <div class="footerLinkBlock">
+                <h3>Connect</h3>
+                <a href="mailto:rauschdevelopment.io@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/drausch84" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>&copy; 2026 Rausch Development. All rights reserved.</p>
         </div>
     </footer>
+    <button class="topScrollButton" type="button" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
     <script src="static/js/portfolio.js"></script>
-    <script>
-        // chart setup 
-        const data = {
-            datasets: [{
-                data: [
-                    { language: 'HTML', expertise: {value: 90 } },
-                    { language: 'CSS', expertise: {value: 85} },
-                    { language: 'Javascript', expertise: {value: 70} },
-                    { language: 'Java', expertise: {value: 65} },
-                    { language: 'Python', expertise: {value: 70} },
-                    { language: 'MySQL', expertise: {value: 95} },
-                    { language: 'Firebase', expertise: {value: 80} },
-                ],
-                backgroundColor: [
-                    '#880808',
-                    '#097969',
-                    '#702963',
-                    '#87CEEB',
-                    '#808000',
-                    '#C3B1E1',
-                    '#F28C28'
-                ],
-                borderColor: [
-                    'black',
-                    'black',
-                    'black',
-                    'black',
-                    'black',
-                    'black',
-                    'black'
-                ],
-                borderWidth: 1
-            }]
-        };
-
-        // config 
-        const config = {
-            type: 'bar',
-            data,
-            options: {
-                parsing: {
-                    xAxisKey: 'language',
-                    yAxisKey: 'expertise.value'
-                },
-                scales: {
-                    x: {
-                        ticks: {
-                            font: {
-                                size: 20
-                            }
-                        },
-                        beginAtZero: true
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Expertise Level  (0-100%)',
-                            font: {
-                                size: 20
-                            }
-                        },
-                        ticks: {
-                            font: {
-                                size: 16
-                            }
-                        },
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    datalabels: {
-                        color: '#fff',
-                        formatter: function(value, context){
-                            return context.dataset.data[context.dataIndex].expertise.value + '%'
-                        },
-                        font: {
-                            size:30
-                        }
-                    },
-                    legend: {
-                        display: false
-                    },
-                    title: {
-                        display: true,
-                        text: "My Programming Skills",
-                        font: {
-                            size: 60
-                        }
-                    },
-                }
-            },
-            plugins: [ChartDataLabels]
-        };
-        // render init block
-        const myChart = new Chart(
-            document.getElementById('skillsChart'),
-        config
-        );
-    </script>
 </body>
 </html>
