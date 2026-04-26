@@ -13,6 +13,31 @@ body {
         radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 34rem),
         radial-gradient(circle at top right, rgba(23, 32, 51, 0.1), transparent 30rem),
         #ffffff;
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+        opacity 260ms ease,
+        transform 260ms ease;
+}
+body.pageLoaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+body.pageLeaving {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+@media (prefers-reduced-motion: reduce) {
+    body {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    body.pageLoaded,
+    body.pageLeaving {
+        opacity: 1;
+        transform: none;
+    }
 }
 a {
     color: inherit;
@@ -1822,138 +1847,3 @@ a {
     }
 }
 /*** END 404 PAGE CSS ***/
-
-/* Page Scrolling CSS Animation */
-.toShow{
-  opacity:0;
-}
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-@keyframes bounceInUp {
-  0%,
-  60%,
-  75%,
-  90%,
-  100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 200px, 0);
-    transform: translate3d(0, 200px, 0);
-  }
-
-  60% {
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.bounceInUp {
-  -webkit-animation-name: bounceInUp;
-  animation-name: bounceInUp;
-}
-/* Page Transitions CSS */
-
-/* Responsive CSS Media Queries*/
-@media screen and (max-width:1694px){
-  body{
-    width:100%;
-  }
-  .content-ctnr-offset-portfolio{
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 1024px){
-  body{
-   margin-bottom: 0;
-  }
-  .footer {
-    position: relative;
-  }
-}
-@media (max-width:991px)
-{
-  footer [class^=col-]
-  {
-    margin-bottom:30px;
-  }
-
-}
-
-@media only screen and (min-width: 830px){
-  .content-ctnr-offset {
-    padding: 9.6rem 4.3rem;
-  }
-}
-@media (max-width:767px)
-{
-  footer
-  {
-    padding-bottom:0;
-  }
-}
-@media (max-width:767px)
-{
-  .social-icons li.title
-  {
-    display:block;
-    margin-right:0;
-    font-weight:600
-  }
-}
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  .picture-row{
-    margin-left:90px;
-  }
-  .content-ctnr-hobbies{
-    margin-left:24px;
-    margin-right:24px;
-  }
-}
-
-/* Page Transition and Scroll Button CSS */
-.center {
-  opacity: 0;
-}
-.scroll-btn-div{
-  display:flex;
-  justify-content: center;
-  margin:0;
-  padding:0;
-}
-.topScroll{
-  background:transparent;
-  color:#fff;
-  font-size:60px;
-  position:relative;
-  width:50px;
-  top:-40px;
-  cursor:pointer;
-  transition: 0.5s;
-	-moz-transition: 0.5s;
-	-webkit-transition: 0.5s;
-	-o-transition: 0.5s; 
-}
-.topScroll:hover{
-  -moz-transition: opacity 0.4s;
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  opacity: 0.6;
-}
