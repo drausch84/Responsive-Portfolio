@@ -1499,11 +1499,12 @@ a {
 .contactFieldGroup textarea {
     resize: vertical;
     min-height: 170px;
+    max-height:300px;
 }
 .contactFieldGroup input:focus,
 .contactFieldGroup textarea:focus {
     border-color: #15803d;
-    background: #ffffff;
+    background: #0f0d0d;
     box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
 }
 .contactSubmitButton {
