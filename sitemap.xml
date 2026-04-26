@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://rauschdevelopment.com/</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://rauschdevelopment.com/about</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://rauschdevelopment.com/portfolio</loc>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://rauschdevelopment.com/contact</loc>
+        <priority>0.70</priority>
+    </url>
+</urlset>
