@@ -16,4 +16,8 @@
         <loc>https://rauschdevelopment.com/contact</loc>
         <priority>0.70</priority>
     </url>
+    <url>
+    <loc>https://rauschdevelopment.com/resume</loc>
+        <priority>0.80</priority>
+    </url>
 </urlset>
