@@ -1505,6 +1505,7 @@ a {
 .contactFieldGroup textarea:focus {
     border-color: #15803d;
     background: #0f0d0d;
+    color:#e2e8f0;
     box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
 }
 .contactSubmitButton {
