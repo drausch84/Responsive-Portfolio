@@ -596,7 +596,6 @@ a {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 .projectPrivacyNote {
-    margin-top: 16px;
     padding: 12px 14px;
     border-radius: 16px;
     background: #f8fafc;
@@ -1204,6 +1203,7 @@ a {
     font-size: 0.92rem;
     font-weight: 700;
     line-height: 1.55;
+    margin-top:10px !important;
 }
 .projectMockupFrame {
     height: 100%;
