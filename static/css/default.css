@@ -1341,7 +1341,36 @@ a {
 .earlierWorkCard .textLink {
     margin-top: 20px;
 }
+@media (max-width: 920px) {
+    .portfolioHeroSection {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: stretch;
+    }
+    .portfolioHeroContent,
+    .portfolioHeroPanel {
+        min-width: 0;
+    }
+    .portfolioHeroPanel {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .professionalSystemCard {
+        grid-template-columns: 1fr;
+    }
+    .professionalSystemMeta {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .professionalSystemMeta span {
+        width: auto;
+    }
+}
 @media (max-width: 720px) {
+    .portfolioPageBody {
+        overflow-x: hidden;
+    }
     .portfolioHeroSection,
     .featuredCaseStudySection,
     .professionalSystemsSection,
@@ -1351,6 +1380,24 @@ a {
     }
     .portfolioHeroTitle {
         font-size: clamp(2.55rem, 13vw, 4rem);
+        letter-spacing: -0.055em;
+    }
+    .portfolioHeroText {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    .portfolioHeroPanel {
+        padding: 20px;
+        border-radius: 26px;
+    }
+    .portfolioPanelItem {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+    }
+    .portfolioPanelItem span {
+        min-width: 0;
+        overflow-wrap: break-word;
     }
     .caseStudyGrid,
     .caseStudyContentGrid,
@@ -1386,6 +1433,17 @@ a {
     }
     .projectMockupTrack {
         min-height: 240px;
+    }
+    .professionalSystemMeta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 4px;
+    }
+    .professionalSystemMeta span {
+        display: inline-flex;
+        width: auto;
+        max-width: 100%;
+        white-space: normal;
     }
 }
 /*** END Portfolio Page CSS ***/
