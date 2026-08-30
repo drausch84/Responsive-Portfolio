@@ -2050,6 +2050,7 @@ a {
     overflow: hidden;
     border-radius: 34px;
     padding: 34px;
+    height:60%;
 }
 .resumeHeroPanel::before {
     content: "";
