@@ -212,6 +212,7 @@ a {
 .primaryButton {
     color: #ffffff;
     background: #121826;
+    width:25%;
     box-shadow: 0 14px 35px rgba(15, 23, 42, 0.18);
 }
 .primaryButton:hover {
