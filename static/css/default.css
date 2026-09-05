@@ -374,7 +374,9 @@ a {
         width: min(100% - 28px, 1180px);
         margin-top: 48px;
     }
-
+    .primaryButton {
+        width: 100%;
+    }
     .heroTitle {
         font-size: clamp(2.65rem, 13vw, 4rem);
     }
