@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="description" content="Public resume summary for David Rausch, senior full-stack software engineer specializing in platform architecture, workflow automation, secure systems, Node.js, Express, MongoDB, and production software ownership.">
     <meta name="author" content="David Rausch">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,25 +14,28 @@
     <meta name="robots" content="index,follow">
     <script type="application/ld+json">
         {
-            "@context":"https://schema.org",
-            "@type":"ProfilePage",
-            "name":"Resume | David Rausch",
-            "url":"https://rauschdevelopment.com/resume",
-            "mainEntity":{
-                "@type":"Person",
-                "name":"David Rausch",
-                "jobTitle":"Senior Full-Stack Software Engineer",
-                "url":"https://rauschdevelopment.com/",
-                "sameAs":[
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "name": "Resume | David Rausch",
+            "url": "https://rauschdevelopment.com/resume",
+            "mainEntity": {
+                "@type": "Person",
+                "name": "David Rausch",
+                "jobTitle": "Senior Full-Stack Software Engineer",
+                "url": "https://rauschdevelopment.com/",
+                "sameAs": [
                     "https://github.com/drausch84",
                     "https://www.linkedin.com/in/david-rausch-52444878/"
                 ]
             }
         }
     </script>
+    <script src="static/js/portfolio.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link href="static/css/default.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="static/css/default.css">
     <title>Resume | David Rausch | Senior Full-Stack Software Engineer</title>
 </head>
 <body class="resumePageBody">
@@ -41,40 +44,36 @@
             <span class="siteLogoMark">RD</span>
             <span class="siteLogoText">Rausch Development</span>
         </a>
-        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
             <span class="mobileNavLine"></span>
             <span class="mobileNavLine"></span>
             <span class="mobileNavLine"></span>
         </button>
-        <nav class="siteNav" id="siteNav">
+        <nav class="siteNav" id="siteNav" aria-label="Primary navigation">
             <a href="/" class="siteNavLink">Home</a>
             <a href="/about" class="siteNavLink">About</a>
             <a href="/portfolio" class="siteNavLink">Portfolio</a>
-            <a href="/resume" class="siteNavLink activeNavLink">Resume</a>
+            <a href="/resume" class="siteNavLink activeNavLink" aria-current="page">Résumé</a>
             <a href="/contact" class="siteNavLink">Contact</a>
         </nav>
     </header>
     <main>
+        <!-- Resume Hero -->
         <section class="resumeHeroSection">
             <div class="resumeHeroContent">
                 <p class="eyebrowText">Resume</p>
-                <h1 class="resumeHeroTitle">Senior full-stack engineer with end-to-end platform ownership.</h1>
+                <h1 class="resumeHeroTitle">Engineering ownership, from first sketch to production.</h1>
                 <p class="resumeHeroText">
-                    Public career summary for David Rausch, focused on secure full-stack systems, platform architecture, workflow automation, data modeling, production support, and long-term software ownership.
+                    Full-stack software engineer focused on business-critical applications, system architecture, secure workflows, and dependable delivery.
+                    My work spans proprietary enterprise platforms and hands-on production support.
                 </p>
                 <div class="resumeHeroActionRow">
-                    <a href="/contact" class="primaryButton">
-                        Request Formal Resume
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                    <a href="https://github.com/drausch84" target="_blank" rel="noopener" class="secondaryButton">
-                        View GitHub
-                        <i class="bi bi-github"></i>
-                    </a>
+                    <a class="primaryButton" href="/contact?topic=resume">Request my résumé <i aria-hidden="true" class="bi bi-arrow-up-right"></i></a>
+                    <a class="secondaryButton" href="/portfolio">Explore my work <i aria-hidden="true" class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <aside class="resumeHeroPanel">
-                <p class="resumePanelEyebrow">Core Profile</p>
+                <p class="resumePanelEyebrow">Core strengths</p>
                 <div class="resumePanelList">
                     <div class="resumePanelItem">
                         <i class="bi bi-code-slash"></i>
@@ -95,180 +94,311 @@
                 </div>
             </aside>
         </section>
-        <section class="resumeSummarySection">
+        <!-- Professional Summary -->
+        <section class="resumeSummarySection" aria-labelledby="resumeSummaryTitle">
             <div class="sectionHeader">
                 <p class="eyebrowText">Professional Summary</p>
-                <h2 class="sectionTitle">Architecture, execution, and ownership.</h2>
+                <h2 class="sectionTitle" id="resumeSummaryTitle">
+                    More than writing code. Building and owning complete systems.
+                </h2>
             </div>
-            <div class="resumeSummaryCard">
-                <p>
-                    Senior software engineer specializing in full-stack platform development and system architecture. Experienced in building secure, data-driven applications that streamline complex business workflows and replace legacy processes.
+            <div class="resumeSummaryEditorial">
+                <p class="resumeSummaryLead">
+                    I develop business-critical applications from initial requirements through production,
+                    taking responsibility for architecture, data modeling, user interfaces, security,
+                    deployment, and long-term maintenance. My experience combines independent platform
+                    development with enterprise client delivery and production support.
                 </p>
-                <p>
-                    Comfortable owning systems end-to-end, including design, development, security, deployment, documentation, stakeholder support, and long-term iteration.
-                </p>
+                <div class="resumeSummaryColumns">
+                    <div class="resumeSummaryColumn">
+                        <h3>Enterprise application development</h3>
+                        <p>
+                            At Campos EPC, I independently architected and developed the Campos Deliverable
+                            Suite (CDS), a full-stack application that brings engineering calculations,
+                            project records, interactive drawing tools, reporting, and coordination into
+                            a unified platform. I continue to develop and support the system as its
+                            functionality evolves.
+                        </p>
+                    </div>
+                    <div class="resumeSummaryColumn">
+                        <h3>Client delivery &amp; production experience</h3>
+                        <p>
+                            For San Diego Gas &amp; Electric (SDG&amp;E), I develop custom TypeScript and React
+                            applications using SharePoint Framework (SPFx), supported by Power Automate
+                            workflows. My earlier experience at FAST Enterprises includes production
+                            support, SQL reporting, defect resolution, and stakeholder collaboration
+                            on government tax software.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="resumeSkillsSection">
+        <!-- Technical Skills -->
+        <section class="resumeSkillsSection" aria-labelledby="resumeSkillsTitle">
             <div class="sectionHeader">
-                <p class="eyebrowText">Skills</p>
-                <h2 class="sectionTitle">Technical strengths and delivery areas.</h2>
+                <p class="eyebrowText">Technical Skills</p>
+                <h2 class="sectionTitle" id="resumeSkillsTitle">The tools and practices behind my work.</h2>
             </div>
             <div class="resumeSkillGrid">
                 <article class="resumeSkillCard">
-                    <i class="bi bi-braces"></i>
-                    <h3>Full-Stack Development</h3>
-                    <p>JavaScript, Node.js, Express.js, EJS, REST API development, frontend behavior, backend routing, and production application logic.</p>
+                    <i class="bi bi-code-slash" aria-hidden="true"></i>
+                    <h3>Languages &amp; front-end</h3>
+                    <p>Responsive interfaces, custom components, and application experiences built with modern web technologies.</p>
+                    <div class="resumeSkillTechnologies">
+                        <span>JavaScript</span>
+                        <span>TypeScript</span>
+                        <span>React.js</span>
+                        <span>EJS</span>
+                        <span>jQuery</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>SCSS</span>
+                    </div>
                 </article>
                 <article class="resumeSkillCard">
-                    <i class="bi bi-database-check"></i>
-                    <h3>Data & Architecture</h3>
-                    <p>MongoDB, SQL, data modeling, validation rules, relational thinking, access control boundaries, and scalable schema design.</p>
+                    <i class="bi bi-database" aria-hidden="true"></i>
+                    <h3>Back-end &amp; data</h3>
+                    <p>Server-side applications, API development, data models, and business logic that support complex workflows.</p>
+                    <div class="resumeSkillTechnologies">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>REST APIs</span>
+                        <span>MongoDB</span>
+                        <span>Mongoose</span>
+                        <span>SQL</span>
+                        <span>Data modeling</span>
+                    </div>
                 </article>
                 <article class="resumeSkillCard">
-                    <i class="bi bi-shield-lock"></i>
-                    <h3>Security & Reliability</h3>
-                    <p>Authentication, authorization, role-based access, data isolation, application-level threat mitigation, and production hardening.</p>
+                    <i class="bi bi-shield-lock" aria-hidden="true"></i>
+                    <h3>Architecture &amp; reliability</h3>
+                    <p>Secure system design and practical ownership of applications throughout their production lifecycle.</p>
+                    <div class="resumeSkillTechnologies">
+                        <span>System design</span>
+                        <span>Authentication</span>
+                        <span>Authorization</span>
+                        <span>Role-based access</span>
+                        <span>Validation</span>
+                        <span>Logging</span>
+                        <span>Deployment</span>
+                    </div>
                 </article>
                 <article class="resumeSkillCard">
-                    <i class="bi bi-kanban"></i>
-                    <h3>Workflow Automation</h3>
-                    <p>Task systems, notifications, dashboards, report generation, data imports, revision history, audit trails, and operational visibility.</p>
+                    <i class="bi bi-diagram-3" aria-hidden="true"></i>
+                    <h3>Platforms &amp; delivery</h3>
+                    <p>Enterprise applications, workflow automation, source control, technical documentation, and stakeholder delivery.</p>
+                    <div class="resumeSkillTechnologies">
+                        <span>SPFx</span>
+                        <span>SharePoint</span>
+                        <span>Microsoft 365</span>
+                        <span>Power Automate</span>
+                        <span>Google Cloud Storage</span>
+                        <span>Git</span>
+                        <span>CI/CD</span>
+                    </div>
                 </article>
             </div>
+            <div class="resumeAdditionalSkills">
+                <span class="resumeAdditionalSkillsLabel">Additional programming experience</span>
+                <div class="resumeAdditionalSkillsList">
+                    <span>C++</span>
+                    <span>C#</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                </div>
+            </div>
         </section>
+        <!-- Professional Experience -->
         <section class="resumeExperienceSection">
             <div class="sectionHeader">
                 <p class="eyebrowText">Experience</p>
                 <h2 class="sectionTitle">Professional timeline.</h2>
             </div>
             <div class="resumeTimeline">
+                <!-- Campos EPC -->
                 <article class="resumeTimelineItem">
-                    <div class="resumeTimelineMarker"></div>
+                    <div class="resumeTimelineMarker" aria-hidden="true"></div>
                     <div class="resumeTimelineCard">
                         <div class="resumeTimelineHeader">
                             <div>
-                                <span class="projectTag">Current Role</span>
-                                <h3>Engineer II / Senior Software Engineer — Platform Owner</h3>
-                                <p class="resumeCompanyLine">Campos EPC · Denver, CO</p>
+                                <span class="projectTag">Current role</span>
+                                <h3>Engineer II <span class="roleContext">/ Software Engineer &amp; Platform Architect</span></h3>
+                                <p class="resumeCompanyLine">Campos EPC · Denver, Colorado</p>
                             </div>
                             <span class="resumeDateBadge">Jul 2024 — Present</span>
                         </div>
                         <p>
-                            Sole architect and developer of a mission-critical internal enterprise platform consolidating fragmented engineering workflows into a centralized, secure, data-driven system.
+                            Hired into an engineering organization and became responsible for architecting, implementing, and supporting custom enterprise
+                            software, including two major platform initiatives.
                         </p>
-                        <div class="resumeHighlightGrid">
-                            <div class="resumeHighlightItem">
-                                <i class="bi bi-building-gear"></i>
-                                <span>Designed and built a proprietary internal platform used across teams and projects.</span>
+                        <div class="experienceProjectGrid">
+                            <div class="experienceProject">
+                                <span class="experienceProjectLabel">Internal engineering platform</span>
+                                <h4>Campos Deliverable Suite</h4>
+                                <p>
+                                    Designed and developed a full-stack platform centralizing engineering records, calculation utilities, reporting,
+                                    task coordination, revision history, and interactive drawing functionality.
+                                </p>
+                                <div class="caseStudyPillGrid">
+                                    <span>Node.js</span>
+                                    <span>Express.js</span>
+                                    <span>MongoDB</span>
+                                    <span>EJS</span>
+                                </div>
                             </div>
-                            <div class="resumeHighlightItem">
-                                <i class="bi bi-shield-check"></i>
-                                <span>Implemented authentication, authorization, data isolation, and application-level security controls.</span>
-                            </div>
-                            <div class="resumeHighlightItem">
-                                <i class="bi bi-file-earmark-text"></i>
-                                <span>Built reporting, import/export, revision, audit, and documentation systems.</span>
-                            </div>
-                            <div class="resumeHighlightItem">
-                                <i class="bi bi-graph-up-arrow"></i>
-                                <span>Improved operational visibility through workflow automation, task tracking, and dashboards.</span>
+                            <div class="experienceProject">
+                                <span class="experienceProjectLabel">Client application delivery</span>
+                                <h4>Distribution Contract Design</h4>
+                                <p>
+                                    Developed custom TypeScript/React SPFx applications within SharePoint, with permission-aware workflows and 25+ Power Automate flows
+                                    supporting a procurement and project management platform.
+                                </p>
+                                <div class="caseStudyPillGrid">
+                                    <span>TypeScript</span>
+                                    <span>React</span>
+                                    <span>SPFx</span>
+                                    <span>SCSS</span>
+                                    <span>Power Automate</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="caseStudyPillGrid">
-                            <span>Node.js</span>
-                            <span>Express.js</span>
-                            <span>MongoDB</span>
-                            <span>EJS</span>
-                            <span>JavaScript</span>
-                            <span>Security</span>
-                            <span>DevOps</span>
-                            <span>Documentation</span>
+                        <div class="experienceRecognition">
+                            <i aria-hidden="true" class="bi bi-award"></i>
+                            <p>
+                                <strong>Technical recognition:</strong> Received the highest-rated presentation at the inaugural Campos Catalyst event for
+                                presenting CDS to company leadership.
+                            </p>
                         </div>
                     </div>
                 </article>
+                <!-- FAST Enterprises -->
                 <article class="resumeTimelineItem">
-                    <div class="resumeTimelineMarker"></div>
+                    <div class="resumeTimelineMarker" aria-hidden="true"></div>
                     <div class="resumeTimelineCard">
                         <div class="resumeTimelineHeader">
                             <div>
-                                <span class="projectTag">Production Software</span>
+                                <span class="projectTag">Production software</span>
                                 <h3>Implementation Consultant / Software Engineer</h3>
-                                <p class="resumeCompanyLine">FAST Enterprises LLC · Atlanta, GA</p>
+                                <p class="resumeCompanyLine">FAST Enterprises · Atlanta, Georgia</p>
                             </div>
                             <span class="resumeDateBadge">Mar 2023 — Mar 2024</span>
                         </div>
                         <p>
-                            Supported production software for a large-scale government tax platform used by the Georgia Department of Revenue, working in a regulated environment with technical and business stakeholders.
+                            Supported a large-scale government tax platform used by the Georgia Department of Revenue, including troubleshooting,
+                            production deployments, defect resolution, SQL reporting, and stakeholder communication in a regulated environment.
                         </p>
                         <div class="caseStudyPillGrid">
-                            <span>SQL</span>
                             <span>C#</span>
-                            <span>Production Support</span>
+                            <span>SQL</span>
+                            <span>Production support</span>
                             <span>Reporting</span>
-                            <span>Defect Resolution</span>
-                            <span>Stakeholder Communication</span>
+                            <span>Defect resolution</span>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
-        <section class="resumeEducationSection">
+        <!-- Education -->
+        <section class="resumeEducationSection" aria-labelledby="resumeEducationTitle">
             <div class="sectionHeader">
                 <p class="eyebrowText">Education</p>
-                <h2 class="sectionTitle">Academic foundation.</h2>
+                <h2 class="sectionTitle" id="resumeEducationTitle">Education &amp; professional training.</h2>
             </div>
-            <article class="resumeEducationCard">
-                <div>
-                    <h3>Bachelor of Science — Computer Science</h3>
-                    <p>Regis University · Denver, CO</p>
-                </div>
-                <span class="resumeDateBadge">Dean’s List · 3x</span>
-            </article>
+            <div class="resumeEducationGrid">
+                <article class="resumeEducationCard">
+                    <div class="resumeEducationCardTop">
+                        <span class="resumeEducationIcon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
+                        <span class="resumeEducationType">Undergraduate degree</span>
+                    </div>
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p class="resumeEducationSchool">Regis University <span>· Denver, Colorado</span></p>
+                    <div class="resumeEducationRecognition">
+                        <i class="bi bi-award" aria-hidden="true"></i>
+                        <span>Dean's List · Three-time honoree</span>
+                    </div>
+                </article>
+                <article class="resumeEducationCard">
+                    <div class="resumeEducationCardTop">
+                        <span class="resumeEducationIcon"><i class="bi bi-code-square" aria-hidden="true"></i></span>
+                        <span class="resumeEducationType">Professional certification</span>
+                    </div>
+                    <h3>Web Developer Certification</h3>
+                    <p class="resumeEducationSchool">University of Denver <span>· Denver, Colorado</span></p>
+                    <p class="resumeEducationNote">Additional training in web application development.</p>
+                </article>
+            </div>
         </section>
-        <section class="resumeRequestSection">
-            <div class="resumeRequestCard">
-                <div>
-                    <p class="eyebrowText">Formal Resume</p>
-                    <h2 class="sectionTitle">Resume available upon request.</h2>
-                    <p class="sectionText">
-                        For privacy reasons, I do not publish a downloadable resume containing personal contact details. If you have a serious software engineering opportunity, reach out and I’ll be happy to provide a current resume directly.
-                    </p>
-                </div>
-                <a href="/contact" class="primaryButton">
-                    Request Resume
-                    <i class="bi bi-send"></i>
-                </a>
+        <!-- Résumé Request -->
+        <section class="resumeRequestSection" aria-labelledby="resumeRequestTitle">
+            <div class="resumeRequestHeading">
+                <p class="eyebrowText">Formal Résumé</p>
+                <h2 id="resumeRequestTitle">The full résumé, available on request.</h2>
+                <p>For software engineering opportunities, I'm happy to provide a current copy.</p>
             </div>
+            <a href="/contact?topic=resume" class="resumeRequestDocument" aria-label="Request David Rausch's formal résumé through the contact form">
+                <span class="resumeRequestDocumentIcon" aria-hidden="true">
+                    <i class="bi bi-file-earmark-text"></i>
+                </span>
+                <span class="resumeRequestDocumentInfo">
+                    <strong>David Rausch · Professional Résumé</strong>
+                    <small>Current version · Available on request</small>
+                </span>
+                <span class="resumeRequestDocumentAction">
+                    Request a copy
+                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </span>
+            </a>
         </section>
     </main>
     <footer class="siteFooter">
         <div class="footerGrid">
             <div class="footerBrandBlock">
-                <h2>Rausch Development</h2>
-                <p>
-                    Secure, scalable, business-focused software built with clean architecture, practical design, and long-term ownership in mind.
-                </p>
+                <a href="/" class="footerBrandLink" aria-label="Rausch Development home">
+                    <span class="footerBrandMark">RD</span>
+                    <span>Rausch Development</span>
+                </a>
+                <p>Full-stack software engineering, enterprise platforms, and independently developed applications.</p>
+                <a href="/contact" class="footerAvailability">
+                    <span class="availabilityDot" aria-hidden="true"></span>
+                    <span>Open to senior software engineering opportunities</span>
+                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
             </div>
-            <div class="footerLinkBlock">
-                <h3>Quick Links</h3>
-                <a href="/about">About</a>
-                <a href="/portfolio">Portfolio</a>
-                <a href="/resume">Resume</a>
-                <a href="/contact">Contact</a>
-            </div>
-            <div class="footerLinkBlock">
-                <h3>Connect</h3>
-                <a href="mailto:rauschdevelopment.io@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/drausch84" target="_blank" rel="noopener">GitHub</a>
+            <div class="footerLinkGroup">
+                <nav class="footerLinkBlock" aria-label="Footer navigation">
+                    <h3>Explore</h3>
+                    <div class="footerLinkList">
+                        <a href="/">Home</a>
+                        <a href="/about">About</a>
+                        <a href="/portfolio">Portfolio</a>
+                        <a href="/resume">Résumé</a>
+                        <a href="/contact">Contact</a>
+                    </div>
+                </nav>
+                <div class="footerLinkBlock">
+                    <h3>Connect</h3>
+                    <div class="footerLinkList">
+                        <a href="mailto:rauschdevelopment.io@gmail.com">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/drausch84" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footerBottom">
-            <p>&copy; 2026 Rausch Development. All rights reserved.</p>
+            <p>&copy; 2026 Rausch Development. Designed and developed by David Rausch.</p>
+            <a href="#portfolioTop">Back to top <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
         </div>
     </footer>
     <button class="topScrollButton" type="button" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
-    <script src="static/js/portfolio.js"></script>
 </body>
 </html>

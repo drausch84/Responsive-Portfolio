@@ -2,72 +2,76 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeProjectMockupCarousels();
 });
 
-/* Initialize Project Mockup Carousels */
+/* Helper: Update Project Mockup Indicators */
+function updateProjectMockupDots(dots, activeIndex) {
+    dots.forEach((dot, index) => {
+        const isActive = index === activeIndex;
+        dot.classList.toggle('active', isActive);
+        dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+}
+/* END Helper: Update Project Mockup Indicators */
+
+/* Helper: Initialize Project Mockup Carousels */
 function initializeProjectMockupCarousels() {
-    const carousels = document.querySelectorAll('.projectMockupCarousel');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    carousels.forEach((carousel) => {
+    document.querySelectorAll('.projectMockupCarousel').forEach((carousel) => {
         const track = carousel.querySelector('.projectMockupTrack');
-        const slides = carousel.querySelectorAll('.projectMockupSlide');
-        const dots = carousel.querySelectorAll('.projectMockupDot');
+        const slides = [...carousel.querySelectorAll('.projectMockupSlide')];
+        const dots = [...carousel.querySelectorAll('.projectMockupDot')];
 
-        if (!track || !slides.length || !dots.length) {
+        if (!track || !slides.length || slides.length !== dots.length) {
             return;
         }
 
-        updateProjectMockupDots(dots, 0);
+        let activeIndex = 0;
+        let scrollFrame = null;
 
-        dots.forEach((dot, dotIndex) => {
-            dot.addEventListener('click', () => {
-                track.scrollTo({
-                    left: dotIndex * track.clientWidth,
-                    behavior: 'smooth'
-                });
+        function showSlide(nextIndex, shouldFocus = false) {
+            activeIndex = Math.min(Math.max(nextIndex, 0), slides.length - 1);
+            updateProjectMockupDots(dots, activeIndex);
+            track.scrollTo({ left: activeIndex * track.clientWidth, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
 
-                updateProjectMockupDots(dots, dotIndex);
+            if (shouldFocus) {
+                dots[activeIndex].focus();
+            }
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+            dot.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    showSlide(activeIndex + (event.key === 'ArrowRight' ? 1 : -1), true);
+                }
             });
         });
 
-        let carouselAnimationFrame = null;
+        track.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                event.preventDefault();
+                showSlide(activeIndex + (event.key === 'ArrowRight' ? 1 : -1));
+            }
+        });
 
         track.addEventListener('scroll', () => {
-            if (carouselAnimationFrame) {
-                window.cancelAnimationFrame(carouselAnimationFrame);
+            if (scrollFrame !== null) {
+                cancelAnimationFrame(scrollFrame);
             }
 
-            carouselAnimationFrame = window.requestAnimationFrame(() => {
-                const activeIndex = getActiveProjectMockupSlideIndex(track, slides);
+            scrollFrame = requestAnimationFrame(() => {
+                activeIndex = Math.min(slides.length - 1, Math.max(0, Math.round(track.scrollLeft / Math.max(1, track.clientWidth))));
                 updateProjectMockupDots(dots, activeIndex);
+                scrollFrame = null;
             });
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+            track.scrollLeft = activeIndex * track.clientWidth;
         });
+
+        updateProjectMockupDots(dots, 0);
     });
 }
-/* END Initialize Project Mockup Carousels */
-
-
-/* Get Active Project Mockup Slide Index */
-function getActiveProjectMockupSlideIndex(track, slides) {
-    const slideWidth = track.clientWidth;
-
-    if (!slideWidth) {
-        return 0;
-    }
-
-    const activeIndex = Math.round(track.scrollLeft / slideWidth);
-    const maxIndex = slides.length - 1;
-
-    return Math.max(0, Math.min(activeIndex, maxIndex));
-}
-/* END Get Active Project Mockup Slide Index */
-
-
-/* Update Project Mockup Dots */
-function updateProjectMockupDots(dots, activeIndex) {
-    dots.forEach((dot, dotIndex) => {
-        const isActiveDot = dotIndex === activeIndex;
-
-        dot.classList.toggle('active', isActiveDot);
-        dot.setAttribute('aria-current', isActiveDot ? 'true' : 'false');
-    });
-}
-/* END Update Project Mockup Dots */
+/* END Helper: Initialize Project Mockup Carousels */

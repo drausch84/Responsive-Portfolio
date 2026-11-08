@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Portfolio of David Rausch, a senior full-stack software engineer specializing in secure, scalable internal platforms and business workflow automation.">
-    <meta name="author" content="David Rausch">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="David Rausch | Senior Full-Stack Software Engineer">
-    <meta property="og:description" content="Secure, scalable full-stack platforms, workflow automation, and business-critical software systems.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://live.staticflickr.com/65535/51897382380_1febc280b8_z.jpg">
-    <link rel="icon" type="image/svg+xml" href="static/images/rausch-development-favicon.svg">
-    <link rel="canonical" href="https://rauschdevelopment.com/">
-    <meta name="robots" content="index,follow">
+    <meta charset="utf-8"/>
+    <meta content="Portfolio of David Rausch, a senior full-stack software engineer specializing in secure, scalable internal platforms and business workflow automation." name="description"/>
+    <meta content="David Rausch" name="author"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="David Rausch | Senior Full-Stack Software Engineer" property="og:title"/>
+    <meta content="Secure, scalable full-stack platforms, workflow automation, and business-critical software systems." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <link href="static/images/rausch-development-favicon.svg" rel="icon" type="image/svg+xml"/>
+    <link href="https://rauschdevelopment.com/" rel="canonical"/>
+    <meta content="index,follow" name="robots"/>
+    <script defer="" src="static/js/portfolio.js"></script>
+    <script src="static/js/homePage.js" defer></script>
     <script type="application/ld+json">
         {
             "@context":"https://schema.org",
@@ -19,255 +21,545 @@
             "name":"David Rausch",
             "url":"https://rauschdevelopment.com/",
             "jobTitle":"Senior Full-Stack Software Engineer",
-            "worksFor":{
-                "@type":"Organization",
-                "name":"Rausch Development"
-            },
             "sameAs":[
                 "https://github.com/drausch84",
                 "https://www.linkedin.com/in/david-rausch-52444878/"
             ]
         }
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link href="static/css/default.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.17.0/devicon.min.css">
+    <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="static/css/default.css" rel="stylesheet" type="text/css"/>
     <title>Rausch Development | David Rausch | Senior Full-Stack Software Engineer</title>
 </head>
 <body class="homePageBody">
     <header class="siteHeader" id="portfolioTop">
-        <a href="/" class="siteLogo" aria-label="Rausch Development Home">
+        <a aria-label="Rausch Development Home" class="siteLogo" href="/">
             <span class="siteLogoMark">RD</span>
             <span class="siteLogoText">Rausch Development</span>
         </a>
-        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+        <button aria-controls="siteNav" aria-expanded="false" aria-label="Open menu" class="mobileNavToggle" id="mobileNavToggle" type="button">
             <span class="mobileNavLine"></span>
             <span class="mobileNavLine"></span>
             <span class="mobileNavLine"></span>
         </button>
-        <nav class="siteNav" id="siteNav">
-            <a href="/" class="siteNavLink activeNavLink">Home</a>
-            <a href="about" class="siteNavLink">About</a>
-            <a href="portfolio" class="siteNavLink">Portfolio</a>
-            <a href="/resume" class="siteNavLink">Resume</a>
-            <a href="contact" class="siteNavLink">Contact</a>
+        <nav aria-label="Primary navigation" class="siteNav" id="siteNav">
+            <a aria-current="page" class="siteNavLink activeNavLink" href="/">Home</a>
+            <a class="siteNavLink" href="/about">About</a>
+            <a class="siteNavLink" href="/portfolio">Portfolio</a>
+            <a class="siteNavLink" href="/resume">Résumé</a>
+            <a class="siteNavLink" href="/contact">Contact</a>
         </nav>
     </header>
     <main>
-        <section class="heroSection">
-            <div class="heroBackgroundGlow heroGlowOne"></div>
-            <div class="heroBackgroundGlow heroGlowTwo"></div>
-            <div class="heroContent">
-                <p class="eyebrowText">Senior Full-Stack Software Engineer • Denver, CO</p>
-                <h1 class="heroTitle">
-                    I build full-stack systems that turn complex workflows into clean, scalable software.
-                </h1>
-                <p class="heroIntro">
-                    I’m David Rausch, a senior full-stack engineer focused on architecture, secure application design, automation, and production-ready platforms that help teams work smarter.
+        <!-- Home Hero -->
+        <section class="homeHero" aria-labelledby="homeHeroTitle">
+            <div class="homeHeroContent">
+                <p class="eyebrowText">Senior Full-Stack Software Engineer · Denver, Colorado</p>
+                <h1 id="homeHeroTitle">Building software that makes complex work feel simple.</h1>
+                <p class="homeHeroDescription">
+                    From engineering calculations to automated procurement workflows, I architect
+                    and develop full-stack applications that solve operational problems and
+                    remain dependable in production.
                 </p>
-                <div class="heroActionRow">
-                    <a href="portfolio" class="primaryButton">View My Work<i class="bi bi-arrow-right"></i></a>
-                    <a href="contact" class="secondaryButton">Contact Me</a>
+                <div class="homeHeroActions">
+                    <a class="primaryButton" href="/portfolio">View My Work <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                    <a class="secondaryButton" href="/contact">Contact Me <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
                 </div>
-                <div class="heroStatsGrid">
-                    <div class="heroStatCard">
-                        <span class="heroStatValue">7+</span>
-                        <span class="heroStatLabel">Years Building Production Software</span>
+                <div class="homeHeroProof" aria-label="Professional experience highlights">
+                    <div class="homeHeroProofItem">
+                        <strong>2</strong>
+                        <span>Enterprise platforms</span>
+                        <small>Campos Deliverable Suite (CDS) and San Diego Gas & Electric (SDG&amp;E)'s Distribution Contract Design (DCD) system</small>
                     </div>
-                    <div class="heroStatCard">
-                        <span class="heroStatValue">End-to-End</span>
-                        <span class="heroStatLabel">Architecture, Development, Deployment</span>
+                    <div class="homeHeroProofItem">
+                        <strong>7+ years</strong>
+                        <span>Software development</span>
+                        <small>Applications, systems, and production support</small>
                     </div>
-                    <div class="heroStatCard">
-                        <span class="heroStatValue">Full-Stack</span>
-                        <span class="heroStatLabel">Backend, Frontend, Data, DevOps</span>
+                    <div class="homeHeroProofItem">
+                        <strong>End-to-end</strong>
+                        <span>Engineering ownership</span>
+                        <small>Architecture through support</small>
                     </div>
                 </div>
             </div>
-            <aside class="heroFeatureCard heroCommandCard">
-                <div class="commandCardHeader">
-                    <span class="commandStatusDot"></span>
-                    <span class="commandStatusText">Available for senior full-stack roles</span>
+            <aside class="homeProcessPanel" aria-label="My software engineering approach">
+                <div class="homeProcessHeader">
+                    <p class="homeProcessEyebrow">Engineering Approach</p>
+                    <div class="homeProcessStatus">
+                        <span class="homeProcessStatusDot" aria-hidden="true"></span>
+                        <span>Concept to production</span>
+                    </div>
                 </div>
-                <div class="commandCardBody">
-                    <p class="commandCardEyebrow">How I Work</p>
-                    <h2 class="commandCardTitle">I connect business problems to production software.</h2>
-                    <div class="commandFlowList">
-                        <div class="commandFlowItem">
-                            <span class="commandFlowNumber">01</span>
-                            <div>
-                                <h3>Diagnose the workflow</h3>
-                                <p>Map the business process, pain points, users, data, and constraints.</p>
-                            </div>
+                <h2 class="homeProcessTitle">From workflow to working system.</h2>
+                <div class="homeProcessFlow">
+                    <div class="homeProcessRail" aria-hidden="true">
+                        <span class="homeProcessProgress"></span>
+                    </div>
+                    <div class="homeProcessStep">
+                        <span class="homeProcessNode" aria-hidden="true"><i class="bi bi-search"></i></span>
+                        <div>
+                            <h3>Understand the problem</h3>
+                            <p>Identify users, constraints, data requirements, and operational pain points.</p>
                         </div>
-                        <div class="commandFlowItem">
-                            <span class="commandFlowNumber">02</span>
-                            <div>
-                                <h3>Design the system</h3>
-                                <p>Define architecture, data models, permissions, interfaces, and automation paths.</p>
-                            </div>
+                    </div>
+                    <div class="homeProcessStep">
+                        <span class="homeProcessNode" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+                        <div>
+                            <h3>Architect the solution</h3>
+                            <p>Design data models, access controls, interfaces, and integration paths.</p>
                         </div>
-                        <div class="commandFlowItem">
-                            <span class="commandFlowNumber">03</span>
-                            <div>
-                                <h3>Build and ship</h3>
-                                <p>Develop, secure, deploy, document, support, and iterate with users.</p>
-                            </div>
+                    </div>
+                    <div class="homeProcessStep">
+                        <span class="homeProcessNode" aria-hidden="true"><i class="bi bi-cloud-check"></i></span>
+                        <div>
+                            <h3>Deliver and maintain</h3>
+                            <p>Develop, test, deploy, document, and continuously improve the application.</p>
                         </div>
                     </div>
                 </div>
-                <div class="commandCardFooter">
-                    <span>Architecture</span>
-                    <span>Execution</span>
-                    <span>Ownership</span>
+                <div class="homeProcessFooter">
+                    <i class="bi bi-check2-circle" aria-hidden="true"></i>
+                    <span>Designed with production responsibility in mind.</span>
                 </div>
             </aside>
         </section>
-        <section class="capabilitiesSection">
-            <div class="sectionHeader">
-                <p class="eyebrowText">What I Bring</p>
-                <h2 class="sectionTitle">More than feature work. Full-system ownership.</h2>
-            </div>
-            <div class="capabilityGrid">
-                <article class="capabilityCard">
-                    <i class="bi bi-diagram-3 capabilityIcon"></i>
-                    <h3>System Architecture</h3>
-                    <p>Designing applications from the ground up with scalable data models, clear boundaries, reliable workflows, and maintainable structure.</p>
-                </article>
-                <article class="capabilityCard">
-                    <i class="bi bi-code-slash capabilityIcon"></i>
-                    <h3>Full-Stack Development</h3>
-                    <p>Building polished interfaces, practical APIs, server-side logic, database integrations, and production-ready features across the stack.</p>
-                </article>
-                <article class="capabilityCard">
-                    <i class="bi bi-shield-check capabilityIcon"></i>
-                    <h3>Secure Application Design</h3>
-                    <p>Implementing authentication, authorization, validation, access control, data protection, and defensive patterns that reduce real-world risk.</p>
-                </article>
-                <article class="capabilityCard">
-                    <i class="bi bi-lightning-charge capabilityIcon"></i>
-                    <h3>Business Process Automation</h3>
-                    <p>Turning manual work, disconnected tools, and operational bottlenecks into streamlined software that helps teams move faster.</p>
-                </article>
-            </div>
-        </section>
-        <section class="featuredWorkSection">
-            <div class="featuredWorkContent">
-                <p class="eyebrowText">Featured Work</p>
-                <h2 class="sectionTitle">Systems engineered for scale, reliability, and impact.</h2>
-                <p class="sectionText">
-                    My work spans private enterprise platforms and public-facing products. 
-                    Some systems are proprietary and cannot be publicly demoed, but they reflect the same standards I bring to every build: thoughtful architecture, clean execution, strong security, and long-term maintainability.
-                </p>
-            </div>
-            <div class="projectPreviewGrid">
-                <article class="projectPreviewCard">
-                    <span class="projectTag">Private Enterprise Platform</span>
-                    <h3>Campos Deliverable Suite (CDS)</h3>
+        <!-- Engineering Expertise -->
+        <section class="homeExpertiseSection" aria-labelledby="homeExpertiseTitle">
+            <div class="homeExpertiseInner">
+                <div class="homeExpertiseHeader">
+                    <h2 id="homeExpertiseTitle">I work across the entire application.</h2>
                     <p>
-                        Designed and built a private internal software platform for Campos EPC that replaces fragmented engineering workflows with a centralized operational system.
+                        My experience spans the full software development lifecycle, from planning and
+                        system architecture to implementation, testing, deployment, and ongoing support.
+                        I take a practical approach to engineering, focusing on software that is
+                        reliable, maintainable, and straightforward for people to use.
                     </p>
-                    <p>
-                        Responsibilities included architecture, full-stack development, security, DevOps, reporting systems, workflow automation, data management, technical documentation, and long-term platform ownership.
-                    </p>
-                    <p class="projectPrivacyNote">
-                        Proprietary internal platform for Campos EPC. Public demo unavailable.
-                    </p>
-                </article>
-                <article class="projectPreviewCard">
-                    <span class="projectTag">Public Media Platform</span>
-                    <h3>Rotted Cellar</h3>
-                    <p>
-                        A horror-focused media platform built for reviews, editorials, news, contests, creator submissions, e-commerce, user profiles, threaded discussions, reactions, and community-driven interaction.
-                    </p>
-                    <a href="portfolio" class="textLink">Explore project <i class="bi bi-arrow-right"></i></a>
-                </article>
-            </div>
-        </section>
-        <section class="techStackSection">
-            <p class="eyebrowText">Core Stack</p>
-            <div class="techCategoryGrid">
-                <div class="techCategoryCard">
-                    <h3>Languages</h3>
-                    <div class="techPillGrid">
-                        <span>JavaScript</span>
-                        <span>Java</span>
-                        <span>Python</span>
-                        <span>C#</span>
-                        <span>C++</span>
-                    </div>
                 </div>
-                <div class="techCategoryCard">
-                    <h3>Backend & APIs</h3>
-                    <div class="techPillGrid">
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>REST APIs</span>
-                        <span>System Design</span>
-                        <span>Secure Session Architecture</span>
-                        <span>Role-Based Access Control</span>
-                    </div>
-                </div>
-                <div class="techCategoryCard">
-                    <h3>Data & Cloud</h3>
-                    <div class="techPillGrid">
-                        <span>MongoDB</span>
-                        <span>SQL</span>
-                        <span>SQLite</span>
-                        <span>AWS</span>
-                        <span>Google Cloud Storage</span>
-                        <span>DBMS Management/Modeling</span>
-                    </div>
-                </div>
-                <div class="techCategoryCard">
-                    <h3>Tools & Delivery</h3>
-                    <div class="techPillGrid">
-                        <span>Git</span>
-                        <span>Agile Delivery</span>
-                        <span>CI/CD Pipelines</span>
-                        <span>DevOps</span>
-                        <span>Technical Documentation</span>
-                    </div>
+                <div class="homeExpertiseLayout">
+                    <article class="homeExpertiseGroup">
+                        <div class="homeExpertiseGroupHeader">
+                            <span class="homeExpertiseCategory">Architecture &amp; Development</span>
+                            <h3>Designing the system. Building the software.</h3>
+                        </div>
+                        <div class="homeExpertiseTopics">
+                            <div class="homeExpertiseTopic">
+                                <h4>System Architecture</h4>
+                                <p>
+                                    I design applications with careful attention to data structures,
+                                    system organization, and how individual components work together.
+                                    My goal is to establish a solid foundation that supports current
+                                    requirements while remaining adaptable as needs evolve.
+                                </p>
+                            </div>
+                            <div class="homeExpertiseTopic">
+                                <h4>Full-Stack Development</h4>
+                                <p>
+                                    I'm comfortable working throughout the stack, developing responsive
+                                    user interfaces, server-side functionality, APIs, and database
+                                    integrations. I pay close attention to how these pieces interact
+                                    to create a consistent, dependable application.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="homeExpertiseGroup">
+                        <div class="homeExpertiseGroupHeader">
+                            <span class="homeExpertiseCategory">Security &amp; Operations</span>
+                            <h3>Making sure it works beyond development.</h3>
+                        </div>
+                        <div class="homeExpertiseTopics">
+                            <div class="homeExpertiseTopic">
+                                <h4>Security &amp; Reliability</h4>
+                                <p>
+                                    I approach security as a fundamental part of application design,
+                                    incorporating authentication, authorization, data validation,
+                                    access controls, and appropriate error handling. I also prioritize
+                                    testing, troubleshooting, and maintaining software in production.
+                                </p>
+                            </div>
+                            <div class="homeExpertiseTopic">
+                                <h4>Workflow Automation</h4>
+                                <p>
+                                    I look for opportunities to simplify repetitive tasks and improve
+                                    how information moves through a system. Whether developing custom
+                                    application logic or integrating automation tools, I focus on
+                                    reducing unnecessary manual effort and making processes more efficient.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
-        <section class="homeCtaSection">
-            <h2>Need senior-level execution, architecture, and ownership?</h2>
-            <p>
-                I operate across architecture, full-stack development, security, DevOps, documentation, and stakeholder communication to move software from idea to production.
-            </p>
-            <a href="contact" class="primaryButton">
-                Start a Conversation
-                <i class="bi bi-arrow-right"></i>
-            </a>
+        <!-- Selected Engineering Work -->
+        <section class="homeWorkSection" id="featuredWork" aria-labelledby="homeWorkTitle">
+            <div class="homeWorkHeader">
+                <p class="eyebrowText">Selected Engineering Work</p>
+                <h2 id="homeWorkTitle">A closer look at what I've built.</h2>
+            </div>
+            <div class="homeWorkShowcase" id="homeWorkShowcase">
+                <div class="homeWorkNavigation" role="tablist" aria-label="Featured engineering projects">
+                    <button class="homeWorkTab" id="homeWorkTabCds" type="button" role="tab" aria-controls="homeWorkPanelCds" aria-selected="true">
+                        <span>Campos Deliverable Suite</span>
+                        <small>Enterprise engineering</small>
+                    </button>
+                    <button class="homeWorkTab" id="homeWorkTabDcd" type="button" role="tab" aria-controls="homeWorkPanelDcd" aria-selected="false">
+                        <span>Distribution Contract Design</span>
+                        <small>Client platform</small>
+                    </button>
+                    <button class="homeWorkTab" id="homeWorkTabRotted" type="button" role="tab" aria-controls="homeWorkPanelRotted" aria-selected="false">
+                        <span>Rotted Cellar</span>
+                        <small>Independent product</small>
+                    </button>
+                </div>
+                <div class="homeWorkPanels">
+                    <!-- Campos Deliverable Suite -->
+                    <article class="homeWorkPanel" id="homeWorkPanelCds" role="tabpanel" aria-labelledby="homeWorkTabCds" tabindex="0">
+                        <div class="homeWorkContent">
+                            <span class="homeWorkType">Enterprise Engineering Platform · Proprietary</span>
+                            <h3>Campos Deliverable Suite</h3>
+                            <p class="homeWorkDescription">
+                                A full-stack platform I independently architected and developed to bring engineering records,
+                                calculations, project coordination, reporting, and interactive drawing tools into one application.
+                            </p>
+                            <div class="homeWorkDetails">
+                                <div>
+                                    <span>My Role</span>
+                                    <strong>Sole Architect &amp; Full-Stack Developer</strong>
+                                </div>
+                                <div>
+                                    <span>Technologies</span>
+                                    <p>JavaScript · Node.js · Express.js · MongoDB · EJS</p>
+                                </div>
+                            </div>
+                            <a class="homeWorkLink" href="/portfolio#cds">
+                                Explore Campos Deliverable Suite <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="homeWorkVisual homeWorkVisual--cds">
+                            <div class="homeWorkVisualHeader">
+                                <span>Engineering operations</span>
+                                <i class="bi bi-diagram-3" aria-hidden="true"></i>
+                            </div>
+                            <div class="homeWorkVisualCenter">
+                                <span class="homeWorkVisualMark" aria-hidden="true">CDS</span>
+                                <p>Engineering data, project workflows, and technical deliverables.</p>
+                            </div>
+                            <div class="homeWorkVisualFooter">
+                                <span>EPC Calculation Tools</span>
+                                <span>Project Management Tools</span>
+                                <span>Robust Reporting System</span>
+                            </div>
+                            <p class="homeWorkVisualNote">Proprietary software · Unable to provide screenshots demonstrating UI</p>
+                        </div>
+                    </article>
+                    <!-- Distribution Contract Design -->
+                    <article class="homeWorkPanel" id="homeWorkPanelDcd" role="tabpanel" aria-labelledby="homeWorkTabDcd" tabindex="0">
+                        <div class="homeWorkContent">
+                            <span class="homeWorkType">Enterprise Client Platform · Proprietary</span>
+                            <h3>Distribution Contract Design</h3>
+                            <p class="homeWorkDescription">
+                                A custom procurement and project management platform developed for San Diego Gas &amp; Electric (SDG&amp;E).
+                                I built TypeScript and React applications within SharePoint, supported by automated business workflows developed
+                                in Power Automate (about 25+ custom flows).
+                            </p>
+                            <div class="homeWorkDetails">
+                                <div>
+                                    <span>My Role</span>
+                                    <strong>Application Architecture &amp; Development</strong>
+                                </div>
+                                <div>
+                                    <span>Technologies</span>
+                                    <p>TypeScript · React · SPFx · SCSS · Power Automate</p>
+                                </div>
+                            </div>
+                            <a class="homeWorkLink" href="/portfolio#dcd">
+                                Explore Distribution Contract Design <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="homeWorkVisual homeWorkVisual--dcd">
+                            <div class="homeWorkVisualHeader">
+                                <span>Enterprise client delivery</span>
+                                <i class="bi bi-kanban" aria-hidden="true"></i>
+                            </div>
+                            <div class="homeWorkVisualCenter">
+                                <span class="homeWorkVisualMark" aria-hidden="true">DCD</span>
+                                <p>Custom applications built around complex project and procurement workflows.</p>
+                            </div>
+                            <div class="homeWorkVisualFooter">
+                                <span>Design Requests &rarr; Project Bids</span>
+                                <span>Review workflows</span>
+                                <span>Comminication Automations</span>
+                            </div>
+                            <p class="homeWorkVisualNote">Proprietary software · Unable to provide screenshots demonstrating UI</p>
+                        </div>
+                    </article>
+                    <!-- Rotted Cellar -->
+                    <article class="homeWorkPanel" id="homeWorkPanelRotted" role="tabpanel" aria-labelledby="homeWorkTabRotted" tabindex="0">
+                        <div class="homeWorkContent">
+                            <span class="homeWorkType">Independent Media Platform · In Development</span>
+                            <h3>Rotted Cellar</h3>
+                            <p class="homeWorkDescription">
+                                An independent horror media platform where authors can publish and display content (reviews, news articles, editoirals), 
+                                users can engage in comment sections where employees moderate and maintain orderly discussions,
+                                community participation events (contests), custom administrative tools, and a fully functioning E-Commerce store with Stripe&copy; payment
+                                encryption and processing.
+                            </p>
+                            <div class="homeWorkDetails">
+                                <div>
+                                    <span>My Role</span>
+                                    <strong>Independent Full-Stack Developer</strong>
+                                </div>
+                                <div>
+                                    <span>Technologies</span>
+                                    <p>JavaScript · Node.js · Express.js · MongoDB · EJS</p>
+                                </div>
+                            </div>
+                            <a class="homeWorkLink" href="/portfolio#rotted-cellar">
+                                Explore Rotted Cellar <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="homeWorkVisual homeWorkVisual--rotted">
+                            <div class="homeWorkVisualHeader">
+                                <span>Horror media &amp; community</span>
+                                <i class="bi bi-window" aria-hidden="true"></i>
+                            </div>
+                            <div class="homeWorkScreenshot">
+                                <img src="static/images/Rotted Cellar Home.png" alt="Preview of the Rotted Cellar homepage and its horror media content" loading="lazy" decoding="async">
+                            </div>
+                            <div class="homeWorkVisualFooter">
+                                <span>Content Publishing</span>
+                                <span>Community Engagement</span>
+                                <span>E-Commerce</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Technical Toolkit -->
+        <section class="homeToolkitSection" aria-labelledby="homeToolkitTitle">
+            <div class="homeToolkitInner">
+                <div class="homeToolkitHeading">
+                    <p class="eyebrowText">Technical Toolkit</p>
+                    <h2 id="homeToolkitTitle">The technologies I work with.</h2>
+                </div>
+                <div class="homeToolkitWorkspace" id="homeToolkitWorkspace">
+                    <div class="homeToolkitToolbar">
+                        <div class="homeToolkitToolbarIdentity">
+                            <span class="homeToolkitToolbarIcon"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></span>
+                            <div>
+                                <strong>Engineering toolkit</strong>
+                                <span>Languages, frameworks, platforms &amp; practices</span>
+                            </div>
+                        </div>
+                        <div class="homeToolkitSearch" role="search" hidden>
+                            <label class="homeToolkitSearchLabel" for="homeToolkitSearchInput">Find a technology or skill</label>
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                            <input id="homeToolkitSearchInput" type="search" placeholder="Search technologies..." autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+                    <div class="homeToolkitGroups">
+                        <!-- Languages & Styling -->
+                        <section class="homeToolkitGroup" aria-labelledby="homeToolkitLanguages">
+                            <div class="homeToolkitGroupHeading">
+                                <span class="homeToolkitGroupIcon"><i class="bi bi-braces" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="homeToolkitLanguages">Languages &amp; Styling</h3>
+                                    <p>Web technologies and general-purpose programming languages.</p>
+                                </div>
+                            </div>
+                            <ul class="homeToolkitTools">
+                                <li class="homeToolkitTool"><i class="devicon-javascript-plain colored" aria-hidden="true"></i><span>JavaScript</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-typescript-plain colored" aria-hidden="true"></i><span>TypeScript</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML5</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS3</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-sass-original colored" aria-hidden="true"></i><span>SCSS</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-csharp-plain colored" aria-hidden="true"></i><span>C#</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-cplusplus-plain colored" aria-hidden="true"></i><span>C++</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-python-plain colored" aria-hidden="true"></i><span>Python</span></li>
+                            </ul>
+                        </section>
+                        <!-- Front-End Development -->
+                        <section class="homeToolkitGroup" aria-labelledby="homeToolkitFrontend">
+                            <div class="homeToolkitGroupHeading">
+                                <span class="homeToolkitGroupIcon"><i class="bi bi-window-stack" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="homeToolkitFrontend">Front-End Development</h3>
+                                    <p>Interfaces, browser functionality, and presentation.</p>
+                                </div>
+                            </div>
+                            <ul class="homeToolkitTools">
+                                <li class="homeToolkitTool"><i class="devicon-react-original colored" aria-hidden="true"></i><span>React.js</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-file-earmark-code" aria-hidden="true"></i><span>EJS</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-jquery-plain colored" aria-hidden="true"></i><span>jQuery</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-code-slash" aria-hidden="true"></i><span>Browser APIs</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-phone" aria-hidden="true"></i><span>Responsive Design</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-layers" aria-hidden="true"></i><span>Custom UI Components</span></li>
+                            </ul>
+                        </section>
+                        <!-- Back-End Development -->
+                        <section class="homeToolkitGroup" aria-labelledby="homeToolkitBackend">
+                            <div class="homeToolkitGroupHeading">
+                                <span class="homeToolkitGroupIcon"><i class="bi bi-hdd-network" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="homeToolkitBackend">Back-End &amp; APIs</h3>
+                                    <p>Application logic, integrations, and access control.</p>
+                                </div>
+                            </div>
+                            <ul class="homeToolkitTools">
+                                <li class="homeToolkitTool"><i class="devicon-nodejs-plain colored" aria-hidden="true"></i><span>Node.js</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-express-original" aria-hidden="true"></i><span>Express.js</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-arrow-left-right" aria-hidden="true"></i><span>REST APIs</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-person-check" aria-hidden="true"></i><span>Authentication</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-shield-lock" aria-hidden="true"></i><span>Authorization &amp; RBAC</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-key" aria-hidden="true"></i><span>Session Security</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-check2-circle" aria-hidden="true"></i><span>Input Validation</span></li>
+                            </ul>
+                        </section>
+                        <!-- Data & Cloud -->
+                        <section class="homeToolkitGroup" aria-labelledby="homeToolkitData">
+                            <div class="homeToolkitGroupHeading">
+                                <span class="homeToolkitGroupIcon"><i class="bi bi-database" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="homeToolkitData">Data &amp; Cloud Storage</h3>
+                                    <p>Database design, querying, and application storage.</p>
+                                </div>
+                            </div>
+                            <ul class="homeToolkitTools">
+                                <li class="homeToolkitTool"><i class="devicon-mongodb-plain colored" aria-hidden="true"></i><span>MongoDB</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-diagram-3" aria-hidden="true"></i><span>Mongoose</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-database-fill" aria-hidden="true"></i><span>SQL</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-cloud" aria-hidden="true"></i><span>Google Cloud Storage</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-diagram-2" aria-hidden="true"></i><span>Data Modeling</span></li>
+                            </ul>
+                        </section>
+                        <!-- Enterprise & Automation -->
+                        <section class="homeToolkitGroup" aria-labelledby="homeToolkitEnterprise">
+                            <div class="homeToolkitGroupHeading">
+                                <span class="homeToolkitGroupIcon"><i class="bi bi-building-gear" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="homeToolkitEnterprise">Enterprise &amp; Automation</h3>
+                                    <p>Business applications and coordinated workflows.</p>
+                                </div>
+                            </div>
+                            <ul class="homeToolkitTools">
+                                <li class="homeToolkitTool"><i class="bi bi-microsoft" aria-hidden="true"></i><span>SharePoint</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-code-square" aria-hidden="true"></i><span>SharePoint Framework (SPFx)</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-microsoft" aria-hidden="true"></i><span>Microsoft 365</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-arrow-repeat" aria-hidden="true"></i><span>Power Automate</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-diagram-3" aria-hidden="true"></i><span>Workflow Automation</span></li>
+                            </ul>
+                        </section>
+                        <!-- Tooling & Delivery -->
+                        <section class="homeToolkitGroup" aria-labelledby="homeToolkitDelivery">
+                            <div class="homeToolkitGroupHeading">
+                                <span class="homeToolkitGroupIcon"><i class="bi bi-tools" aria-hidden="true"></i></span>
+                                <div>
+                                    <h3 id="homeToolkitDelivery">Tooling &amp; Delivery</h3>
+                                    <p>Source control, testing, deployment, and production support.</p>
+                                </div>
+                            </div>
+                            <ul class="homeToolkitTools">
+                                <li class="homeToolkitTool"><i class="devicon-git-plain colored" aria-hidden="true"></i><span>Git</span></li>
+                                <li class="homeToolkitTool"><i class="devicon-github-original" aria-hidden="true"></i><span>GitHub</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-arrow-repeat" aria-hidden="true"></i><span>CI/CD</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-gear" aria-hidden="true"></i><span>DevOps</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-check2-square" aria-hidden="true"></i><span>Testing &amp; QA</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-activity" aria-hidden="true"></i><span>Logging &amp; Troubleshooting</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-server" aria-hidden="true"></i><span>Production Support</span></li>
+                                <li class="homeToolkitTool"><i class="bi bi-journal-text" aria-hidden="true"></i><span>Technical Documentation</span></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <p class="homeToolkitEmpty" id="homeToolkitEmpty" hidden>No matching technologies or skills.</p>
+                    <div class="homeToolkitFooter">
+                        <span id="homeToolkitStatus" aria-live="polite">A selection of technologies and practices from my work.</span>
+                        <span class="homeToolkitFooterMark">RD / ENGINEERING</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Call to Action -->
+        <section class="homeClosingSection" aria-labelledby="homeClosingTitle">
+            <div class="homeClosingInner">
+                <div class="homeClosingContent">
+                    <h2 id="homeClosingTitle">
+                        Looking for an engineer who can take your project
+                        <span>from concept to production?</span>
+                    </h2>
+                    <p>
+                        I bring hands-on experience across system architecture, full-stack development,
+                        and production support. I learn new technologies quickly, adapt to different
+                        environments, and take pride in delivering software that people can depend on.
+                        If you're hiring for a senior software engineering role, I'd welcome a conversation.
+                    </p>
+                    <a class="homeClosingAction" href="/contact">
+                        <span>Get in touch</span>
+                        <span class="homeClosingActionIcon">
+                            <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="siteFooter">
         <div class="footerGrid">
             <div class="footerBrandBlock">
-                <h2>Rausch Development</h2>
-                <p>
-                    Secure, scalable, business-focused software built with clean architecture, practical design, and long-term ownership in mind.
-                </p>
+                <a href="/" class="footerBrandLink" aria-label="Rausch Development home">
+                    <span class="footerBrandMark">RD</span>
+                    <span>Rausch Development</span>
+                </a>
+                <p>Full-stack software engineering, enterprise platforms, and independently developed applications.</p>
+                <a href="/contact" class="footerAvailability">
+                    <span class="availabilityDot" aria-hidden="true"></span>
+                    <span>Open to senior software engineering opportunities</span>
+                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
             </div>
-            <div class="footerLinkBlock">
-                <h3>Quick Links</h3>
-                <a href="about">About</a>
-                <a href="portfolio">Portfolio</a>
-                <a href="contact">Contact</a>
-            </div>
-            <div class="footerLinkBlock">
-                <h3>Connect</h3>
-                <a href="mailto:rauschdevelopment.io@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/drausch84" target="_blank" rel="noopener">GitHub</a>
+            <div class="footerLinkGroup">
+                <nav class="footerLinkBlock" aria-label="Footer navigation">
+                    <h3>Explore</h3>
+                    <div class="footerLinkList">
+                        <a href="/">Home</a>
+                        <a href="/about">About</a>
+                        <a href="/portfolio">Portfolio</a>
+                        <a href="/resume">Résumé</a>
+                        <a href="/contact">Contact</a>
+                    </div>
+                </nav>
+                <div class="footerLinkBlock">
+                    <h3>Connect</h3>
+                    <div class="footerLinkList">
+                        <a href="mailto:rauschdevelopment.io@gmail.com">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/drausch84" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footerBottom">
-            <p>&copy; 2026 Rausch Development. All rights reserved.</p>
+            <p>&copy; 2026 Rausch Development. Designed and developed by David Rausch.</p>    
+            <a href="#portfolioTop">
+                Back to top
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
         </div>
     </footer>
-    <button class="topScrollButton" type="button" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
-    <script src="static/js/portfolio.js"></script>
+    <button aria-label="Scroll to top" class="topScrollButton" type="button"><i class="bi bi-arrow-up"></i></button>
 </body>
 </html>

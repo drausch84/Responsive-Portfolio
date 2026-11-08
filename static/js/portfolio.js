@@ -1,94 +1,26 @@
-document.addEventListener('DOMContentLoaded', initializePortfolioPage);
-window.addEventListener('pageshow', handlePageShow);
-
-function initializePortfolioPage() {
-    initializePageTransitions();
+document.addEventListener('DOMContentLoaded', () => {
     initializeMobileNavigation();
     initializeTopScrollButton();
+    initializeResumeRequestPrefill();
+});
+
+/* Helper: Update Mobile Navigation */
+function updateMobileNavigation(isOpen) {
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const siteNav = document.getElementById('siteNav');
+
+    if (!mobileNavToggle || !siteNav) {
+        return;
+    }
+
+    siteNav.classList.toggle('navOpen', isOpen);
+    mobileNavToggle.classList.toggle('navToggleOpen', isOpen);
+    mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileNavToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 }
+/* END Helper: Update Mobile Navigation */
 
-function initializePageTransitions() {
-    requestAnimationFrame(function addPageLoadedClass() {
-        document.body.classList.add('pageLoaded');
-    });
-
-    document.querySelectorAll('a[href]').forEach(function bindPageTransitionLink(linkElement) {
-        linkElement.addEventListener('click', function handlePageTransitionClick(event) {
-            const shouldSkipTransition = shouldSkipPageTransition(linkElement, event);
-
-            if (shouldSkipTransition) {
-                return;
-            }
-
-            event.preventDefault();
-
-            const destinationUrl = linkElement.href;
-
-            document.body.classList.remove('pageLoaded');
-            document.body.classList.add('pageLeaving');
-
-            window.setTimeout(function navigateAfterTransition() {
-                window.location.href = destinationUrl;
-            }, 220);
-        });
-    });
-}
-
-function shouldSkipPageTransition(linkElement, event) {
-    const hrefValue = linkElement.getAttribute('href');
-
-    if (!hrefValue) {
-        return true;
-    }
-
-    if (
-        event.ctrlKey ||
-        event.metaKey ||
-        event.shiftKey ||
-        event.altKey ||
-        event.button !== 0
-    ) {
-        return true;
-    }
-
-    if (linkElement.target === '_blank') {
-        return true;
-    }
-
-    if (linkElement.hasAttribute('download')) {
-        return true;
-    }
-
-    if (
-        hrefValue.startsWith('#') ||
-        hrefValue.startsWith('mailto:') ||
-        hrefValue.startsWith('tel:')
-    ) {
-        return true;
-    }
-
-    const linkUrl = new URL(linkElement.href, window.location.href);
-    const currentUrl = new URL(window.location.href);
-
-    if (linkUrl.origin !== currentUrl.origin) {
-        return true;
-    }
-
-    if (
-        linkUrl.pathname === currentUrl.pathname &&
-        linkUrl.hash
-    ) {
-        return true;
-    }
-
-    return false;
-}
-
-function handlePageShow() {
-    document.body.classList.remove('pageLeaving');
-    document.body.classList.add('pageLoaded');
-}
-
+/* Helper: Initialize Mobile Navigation */
 function initializeMobileNavigation() {
     const mobileNavToggle = document.getElementById('mobileNavToggle');
     const siteNav = document.getElementById('siteNav');
@@ -97,38 +29,36 @@ function initializeMobileNavigation() {
         return;
     }
 
-    mobileNavToggle.addEventListener('click', function handleMobileNavToggleClick() {
-        const isOpening = !siteNav.classList.contains('navOpen');
-
-        siteNav.classList.toggle('navOpen', isOpening);
-        mobileNavToggle.classList.toggle('navToggleOpen', isOpening);
-        mobileNavToggle.setAttribute('aria-expanded', String(isOpening));
-        mobileNavToggle.setAttribute('aria-label', isOpening ? 'Close navigation' : 'Open navigation');
+    mobileNavToggle.addEventListener('click', () => {
+        updateMobileNavigation(!siteNav.classList.contains('navOpen'));
     });
 
-    siteNav.querySelectorAll('.siteNavLink').forEach(function bindMobileNavLinkClick(siteNavLink) {
-        siteNavLink.addEventListener('click', function handleMobileNavLinkClick() {
-            siteNav.classList.remove('navOpen');
-            mobileNavToggle.classList.remove('navToggleOpen');
-            mobileNavToggle.setAttribute('aria-expanded', 'false');
-            mobileNavToggle.setAttribute('aria-label', 'Open navigation');
-        });
+    siteNav.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener('click', () => updateMobileNavigation(false));
     });
 
-    document.addEventListener('click', function handleOutsideNavClick(event) {
-        const clickedInsideHeader = event.target.closest('.siteHeader');
-
-        if (clickedInsideHeader) {
-            return;
+    document.addEventListener('click', (event) => {
+        if (siteNav.classList.contains('navOpen') && !event.target.closest('.siteHeader')) {
+            updateMobileNavigation(false);
         }
+    });
 
-        siteNav.classList.remove('navOpen');
-        mobileNavToggle.classList.remove('navToggleOpen');
-        mobileNavToggle.setAttribute('aria-expanded', 'false');
-        mobileNavToggle.setAttribute('aria-label', 'Open navigation');
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && siteNav.classList.contains('navOpen')) {
+            updateMobileNavigation(false);
+            mobileNavToggle.focus();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && siteNav.classList.contains('navOpen')) {
+            updateMobileNavigation(false);
+        }
     });
 }
+/* END Helper: Initialize Mobile Navigation */
 
+/* Helper: Initialize Scroll-to-Top Button */
 function initializeTopScrollButton() {
     const topScrollButton = document.querySelector('.topScrollButton');
 
@@ -136,18 +66,52 @@ function initializeTopScrollButton() {
         return;
     }
 
-    function updateTopScrollButtonVisibility() {
-        const shouldShowButton = window.scrollY > 500;
-        topScrollButton.classList.toggle('isVisible', shouldShowButton);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let ticking = false;
+
+    function updateButtonVisibility() {
+        topScrollButton.classList.toggle('isVisible', window.scrollY > 500);
+        ticking = false;
     }
 
-    topScrollButton.addEventListener('click', function handleTopScrollButtonClick() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    window.addEventListener('scroll', () => {
+        if (ticking) {
+            return;
+        }
+
+        ticking = true;
+        window.requestAnimationFrame(updateButtonVisibility);
+    }, { passive: true });
+
+    topScrollButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
     });
 
-    window.addEventListener('scroll', updateTopScrollButtonVisibility);
-    updateTopScrollButtonVisibility();
+    updateButtonVisibility();
 }
+/* END Helper: Initialize Scroll-to-Top Button */
+
+/* Helper: Prefill Resume Requests Without Automatically Submitting */
+function initializeResumeRequestPrefill() {
+    const contactSubject = document.getElementById('contactSubject');
+    const contactMessage = document.getElementById('contactMessage');
+
+    if (!contactSubject || !contactMessage) {
+        return;
+    }
+
+    const query = new URLSearchParams(window.location.search);
+
+    if (query.get('topic') !== 'resume') {
+        return;
+    }
+
+    if (!contactSubject.value) {
+        contactSubject.value = 'Request for current résumé';
+    }
+
+    if (!contactMessage.value) {
+        contactMessage.value = 'Hello, I would like to request a copy of your current résumé for a software engineering opportunity.\n\n';
+    }
+}
+/* END Helper: Prefill Resume Requests Without Automatically Submitting */

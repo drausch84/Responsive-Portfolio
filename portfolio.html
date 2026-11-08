@@ -1,27 +1,30 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Portfolio of David Rausch, featuring enterprise platform work, full-stack applications, and selected software engineering projects.">
-    <meta name="author" content="David Rausch">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="David Rausch">
+    <meta name="description" content="Explore software engineering projects by David Rausch, including enterprise platforms, workflow automation, and full-stack applications.">
     <meta property="og:title" content="Portfolio | David Rausch">
-    <meta property="og:description" content="Selected software engineering projects and professional platform work by David Rausch.">
+    <meta property="og:description" content="Enterprise platforms, modern full-stack applications, and software engineering work by David Rausch.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/svg+xml" href="static/images/rausch-development-favicon.svg">
     <link rel="canonical" href="https://rauschdevelopment.com/portfolio">
     <meta name="robots" content="index,follow">
     <script type="application/ld+json">
         {
-            "@context":"https://schema.org",
-            "@type":"CollectionPage",
-            "name":"Software Engineering Portfolio",
-            "url":"https://rauschdevelopment.com/portfolio"
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Software Engineering Portfolio",
+            "url": "https://rauschdevelopment.com/portfolio"
         }
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link href="static/css/default.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/default.css">
     <title>Software Engineering Portfolio | David Rausch | Rausch Development</title>
 </head>
 <body class="portfolioPageBody">
@@ -30,156 +33,484 @@
             <span class="siteLogoMark">RD</span>
             <span class="siteLogoText">Rausch Development</span>
         </a>
-        <button class="mobileNavToggle" id="mobileNavToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav">
+        <button
+            class="mobileNavToggle"
+            id="mobileNavToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="siteNav"
+        >
             <span class="mobileNavLine"></span>
             <span class="mobileNavLine"></span>
             <span class="mobileNavLine"></span>
         </button>
-        <nav class="siteNav" id="siteNav">
+        <nav class="siteNav" id="siteNav" aria-label="Primary navigation">
             <a href="/" class="siteNavLink">Home</a>
-            <a href="about" class="siteNavLink">About</a>
-            <a href="portfolio" class="siteNavLink activeNavLink">Portfolio</a>
-            <a href="/resume" class="siteNavLink">Resume</a>
-            <a href="contact" class="siteNavLink">Contact</a>
+            <a href="/about" class="siteNavLink">About</a>
+            <a href="/portfolio" class="siteNavLink activeNavLink" aria-current="page">Portfolio</a>
+            <a href="/resume" class="siteNavLink">Résumé</a>
+            <a href="/contact" class="siteNavLink">Contact</a>
         </nav>
     </header>
     <main>
-        <section class="portfolioHeroSection">
-            <div class="portfolioHeroContent">
+        <!-- Portfolio Banner -->
+        <section class="portfolioHeroSection" aria-labelledby="portfolioTitle">
+            <div class="portfolioHeroInner">
                 <p class="eyebrowText">Portfolio</p>
-                <h1 class="portfolioHeroTitle">Selected systems, products, and engineering work.</h1>
+
+                <h1 class="portfolioHeroTitle" id="portfolioTitle">
+                    Software engineering, from concept to production.
+                </h1>
                 <p class="portfolioHeroText">
-                    My strongest work includes private enterprise platforms, public-facing products, and production systems where architecture, security, data, usability, and long-term ownership all matter.
+                    A selection of enterprise platforms and independent software I've
+                    architected, built, and supported. Each project reflects a different
+                    challenge, but the same focus on useful, maintainable systems.
                 </p>
             </div>
-            <aside class="portfolioHeroPanel">
-                <p class="portfolioPanelEyebrow">Primary Focus</p>
-                <div class="portfolioPanelList">
-                    <div class="portfolioPanelItem">
-                        <i class="bi bi-building-gear"></i>
-                        <span>Enterprise platforms</span>
+        </section>
+        <!-- Animated Engineer Profile -->
+        <section class="portfolioEditorSection" aria-labelledby="engineerIntroTitle">
+            <div class="portfolioEditorIntro">
+                <p class="eyebrowText">Behind the Builds</p>
+                <h2 class="sectionTitle" id="engineerIntroTitle">
+                    A Little About Me
+                </h2>
+            </div>
+            <div
+                class="engineerEditor"
+                id="engineerProfileEditor"
+                aria-label="Animated TypeScript engineer profile"
+            >
+                <div class="engineerEditorChrome">
+                    <div class="engineerWindowDots" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <div class="portfolioPanelItem">
-                        <i class="bi bi-kanban"></i>
-                        <span>Workflow automation</span>
+                    <div class="engineerEditorTab">
+                        <i class="bi bi-filetype-ts" aria-hidden="true"></i>
+                        <span>engineer-profile.ts</span>
                     </div>
-                    <div class="portfolioPanelItem">
-                        <i class="bi bi-shield-lock"></i>
-                        <span>Secure full-stack systems</span>
-                    </div>
-                    <div class="portfolioPanelItem">
-                        <i class="bi bi-database-check"></i>
-                        <span>Data-driven applications</span>
+                    <span class="engineerEditorMode">READ ONLY</span>
+                </div>
+                <div
+                    class="engineerEditorViewport"
+                    tabindex="0"
+                    aria-label="Animated TypeScript profile. Use the editor controls to pause, replay, or show the completed code."
+                >
+                    <div class="engineerCodeLines" id="engineerCodeLines" aria-hidden="true">
+                        <div class="engineerCodeLine">
+                            <span class="engineerCodeNumber">01</span>
+                            <span class="engineerCodeContent">// Engineer profile loading...</span>
+                        </div>
                     </div>
                 </div>
-            </aside>
-        </section>
-        <section class="featuredCaseStudySection">
-            <div class="sectionHeader">
-                <p class="eyebrowText">Featured Work</p>
-                <h2 class="sectionTitle">Professional systems and product-scale builds.</h2>
+                <div class="engineerEditorFooter">
+                    <span
+                        class="engineerEditorStatus"
+                        id="engineerEditorStatus"
+                        role="status"
+                    >
+                        Ready when you're here
+                    </span>
+                    <div class="engineerEditorActions">
+                        <button type="button" id="engineerPauseButton" disabled>
+                            Pause
+                        </button>
+                        <button type="button" id="engineerReplayButton">
+                            Replay
+                        </button>
+                        <button type="button" id="engineerSkipButton">
+                            Show all
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="caseStudyGrid">
-                <article class="caseStudyCard caseStudyCardLarge">
-                    <div class="caseStudyHeader">
-                        <span class="projectTag">Private Enterprise Platform</span>
-                        <span class="projectStatusBadge">Proprietary</span>
+            <pre class="screenReaderOnly" aria-label="Complete TypeScript engineer profile source"><code id="engineerTranscriptCode"></code></pre>
+            <noscript>
+                <p class="sectionText">
+                    JavaScript is disabled, so the typing demonstration is unavailable.
+                    All portfolio projects below remain fully accessible.
+                </p>
+            </noscript>
+        </section>
+        <!-- Featured Work -->
+        <section class="portfolioWorkSection" id="featuredProjects" aria-labelledby="featuredWorkTitle">
+            <header class="portfolioWorkHeader">
+                <div>
+                    <p class="eyebrowText">Selected Work</p>
+                    <h2 id="featuredWorkTitle">A closer look at what I've built.</h2>
+                </div>
+
+                <nav class="portfolioWorkNav" aria-label="Jump to featured projects">
+                    <a href="#cds">Campos Deliverable Suite</a>
+                    <a href="#dcd">Distribution Contract Design</a>
+                    <a href="#rotted-cellar">Rotted Cellar</a>
+                </nav>
+            </header>
+            <!-- Campos Deliverable Suite -->
+            <article class="projectFeature projectFeature--cds" id="cds" aria-labelledby="cdsTitle">
+                <header class="projectFeatureHeader">
+                    <div>
+                        <p class="projectFeatureCategory">Enterprise engineering platform</p>
+
+                        <h3 id="cdsTitle">
+                            Campos Deliverable Suite <span>CDS</span>
+                        </h3>
+
+                        <p class="projectFeatureSummary">
+                            An engineering operations platform that brings project information,
+                            technical calculations, drawings, and coordination into one system.
+                        </p>
                     </div>
-                    <div class="caseStudyTitle">
-                        <h3>Campos Deliverable Suite (CDS)</h3>
-                    </div>
-                    <p class="caseStudyLead">
-                        A private internal software platform for Campos EPC that centralizes engineering workflows, project data, assignment/deliverable tracking, reporting, EIC calculations, audit history, and operational visibility.
-                    </p>
-                    <div class="caseStudyFeatureArea">
-                        <div class="caseStudyContentGrid">
+
+                    <span class="projectFeatureStatus">
+                        <i class="bi bi-lock-fill" aria-hidden="true"></i>
+                        Proprietary software
+                    </span>
+                </header>
+                <div class="projectFeatureBody">
+                    <div class="projectFeatureDetails">
+                        <div class="projectFeatureRole">
+                            <span>My Responsibility</span>
+                            <strong>
+                                System architecture, full-stack development,
+                                and ongoing platform ownership
+                            </strong>
+                        </div>
+                        <h4>Engineering Highlights</h4>
+                        <div class="projectFeatureContributions">
                             <div>
-                                <h4>My Role</h4>
+                                <strong>Engineering tools</strong>
                                 <p>
-                                    Sole architect and developer responsible for system design, full-stack development, security, DevOps, technical documentation, stakeholder support, and long-term platform ownership.
+                                    Load analysis, conduit fill, voltage drop,
+                                    and interactive loop drawings.
                                 </p>
                             </div>
                             <div>
-                                <h4>Engineering Scope</h4>
+                                <strong>Operational workflows</strong>
                                 <p>
-                                    Authentication, authorization, role-based access, data modeling, workflow automation, report generation, import/export pipelines, dashboards, revision systems, and production deployment.
+                                    Tasks, project tracking, notifications,
+                                    and role-based access.
+                                </p>
+                            </div>
+                            <div>
+                                <strong>Data and delivery</strong>
+                                <p>
+                                    Structured MongoDB data, report generation,
+                                    revision history, and production support.
                                 </p>
                             </div>
                         </div>
+                        <div class="projectFeatureStack" aria-label="CDS technologies">
+                            <span>Node.js</span>
+                            <span>Express.js</span>
+                            <span>MongoDB</span>
+                            <span>JavaScript</span>
+                            <span>EJS</span>
+                            <span>Google Cloud Storage</span>
+                        </div>
+                        <p class="projectFeaturePrivacy">
+                            <i class="bi bi-lock" aria-hidden="true"></i>
+                            Conceptual feature overview only. No source code, client
+                            information, or production screens are shown.
+                        </p>
                     </div>
-                    <div class="caseStudyPillGrid">
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>MongoDB</span>
-                        <span>EJS</span>
-                        <span>JavaScript</span>
-                        <span>DevOps</span>
-                        <span>CSS</span>
-                        <span>Google Cloud Storage</span>
-                    </div>
-                    <p class="projectPrivacyNote">
-                        Private repository and proprietary internal platform for Campos EPC. Public demo and screenshots unavailable.
-                    </p>
-                </article>
-                <article class="caseStudyCard caseStudyCardLarge">
-                    <div class="caseStudyHeader">
-                        <span class="projectTag">Public Media Platform</span>
-                        <span class="projectStatusBadge">In Development</span>
-                    </div>
-                    <div class="caseStudyTitle">
-                        <h3>Rotted Cellar</h3>
-                    </div>
-                    <p class="caseStudyLead">
-                        A full-stack horror media platform built for original content, community discussion, secure user accounts, creator submissions, contests, and e-commerce.
-                    </p>
-                    <div class="caseStudyFeatureArea">
-                        <div class="projectMockupCarousel" data-carousel="rotted-cellar">
-                            <div class="projectMockupTrack">
-                                <div class="projectMockupSlide">
-                                    <img src="static/images/Rotted Cellar Home.png" alt="Rotted Cellar homepage preview">
-                                </div>
-                                <div class="projectMockupSlide">
-                                    <img src="static/images/Rotted Cellar Comments.png" alt="Rotted Cellar comments preview">
-                                </div>
-                                <div class="projectMockupSlide">
-                                    <img src="static/images/Rotted Cellar Store.png" alt="Rotted Cellar store preview">
+                    <div class="projectFeatureVisual cdsVisual" aria-label="Conceptual overview of CDS capabilities">
+                        <div class="visualTopline">
+                            <span class="visualToplineDot"></span>
+                            <span>CDS / Capability overview</span>
+                            <i class="bi bi-grid-1x2" aria-hidden="true"></i>
+                        </div>
+                        <div class="cdsVisualBody">
+                            <div class="cdsVisualIdentity">
+                                <div class="cdsVisualMark">CDS</div>
+                                <div>
+                                    <strong>Engineering workspace</strong>
+                                    <span>One platform, connected capabilities</span>
                                 </div>
                             </div>
-                            <div class="projectMockupDots" aria-label="Rotted Cellar preview slides">
-                                <button class="projectMockupDot active" type="button" aria-label="Show slide 1"></button>
-                                <button class="projectMockupDot" type="button" aria-label="Show slide 2"></button>
-                                <button class="projectMockupDot" type="button" aria-label="Show slide 3"></button>
+                            <div class="cdsVisualModules">
+                                <div>
+                                    <i class="bi bi-calculator" aria-hidden="true"></i>
+                                    <span>Technical calculations</span>
+                                </div>
+                                <div>
+                                    <i class="bi bi-diagram-3" aria-hidden="true"></i>
+                                    <span>Loop drawing tools</span>
+                                </div>
+                                <div>
+                                    <i class="bi bi-kanban" aria-hidden="true"></i>
+                                    <span>Project workflows</span>
+                                </div>
+                                <div>
+                                    <i class="bi bi-file-earmark-bar-graph" aria-hidden="true"></i>
+                                    <span>Reports &amp; records</span>
+                                </div>
+                            </div>
+                            <div class="cdsVisualBottom">
+                                <span>Engineering</span>
+                                <span>Coordination</span>
+                                <span>Delivery</span>
                             </div>
                         </div>
+                        <p class="visualDisclaimer">
+                            Illustrative capability map · Not a screenshot of CDS
+                        </p>
                     </div>
-                    <div class="caseStudyPillGrid">
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>MongoDB</span>
-                        <span>EJS</span>
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                        <span>Custom Middleware</span>
-                        <span>REST APIs</span>
-                        <span>Google Cloud Storage</span>
+                </div>
+            </article>
+            <!-- Distribution Contract Design -->
+            <article class="projectFeature projectFeature--dcd" id="dcd" aria-labelledby="dcdTitle">
+                <header class="projectFeatureHeader">
+                    <div>
+                        <p class="projectFeatureCategory">Enterprise client application</p>
+
+                        <h3 id="dcdTitle">
+                            Distribution Contract Design <span>DCD</span>
+                        </h3>
+
+                        <p class="projectFeatureSummary">
+                            A custom project management and procurement application for San Diego Gas and Electric (SDG&amp;E), developed within SharePoint 
+                            using a purpose-built frontend and workflow automation/notification system.
+                        </p>
                     </div>
-                    <p class="projectPrivacyNote">
-                        Private repository while in development. Preview images are limited to selected public-facing screens as the platform moves closer to launch.
-                    </p>
-                </article>
-            </div>
+                    <span class="projectFeatureStatus">
+                        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                        Deployed
+                    </span>
+                </header>
+                <div class="projectFeatureBody">
+                    <div class="projectFeatureDetails">
+                        <div class="projectFeatureRole">
+                            <span>My Responsibility</span>
+                            <strong>
+                                Application architecture, workflow design, custom SPFx development, delivery, and refinement
+                            </strong>
+                        </div>
+                        <h4>Engineering Highlights</h4>
+                        <div class="projectFeatureContributions">
+                            <div>
+                                <strong>Custom application experience</strong>
+                                <p>TypeScript and React components with SCSS, rather than default SharePoint interfaces.</p>
+                            </div>
+                            <div>
+                                <strong>Business process management</strong>
+                                <p>
+                                    Utilizing a custom form/register system with built in stage-gating, procurement from design requests all the way
+                                    to external contractor submittals processing and review is handled with secure role-based proccessing. Enhanced
+                                    dashboards built out for robust analytics for distribution team leads.
+                                </p>
+                            </div>
+                            <div>
+                                <strong>Automation at scale</strong>
+                                <p>More than 25 Power Automate flows supporting routing and stakeholder notifications.</p>
+                            </div>
+                        </div>
+                        <div class="projectFeatureStack" aria-label="DCD technologies">
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>SPFx</span>
+                            <span>SCSS</span>
+                            <span>SharePoint</span>
+                            <span>Power Automate</span>
+                        </div>
+
+                        <p class="projectFeaturePrivacy">
+                            <i class="bi bi-lock" aria-hidden="true"></i>
+                            Client-owned software. This summary shows broad technology roles, not internal implementation details.
+                        </p>
+                    </div>
+                    <div class="projectFeatureVisual dcdVisual" aria-label="Conceptual overview of DCD application components">
+                        <div class="visualTopline visualTopline--light">
+                            <span class="visualToplineDot"></span>
+                            <span>Distribution Contract Design Platform composition</span>
+                            <i class="bi bi-layers" aria-hidden="true"></i>
+                        </div>
+                        <div class="dcdVisualBody">
+                            <div class="dcdLayer">
+                                <i class="bi bi-window-stack" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Custom application interface</strong>
+                                    <span>TypeScript · React · SPFx · SCSS</span>
+                                </div>
+                                <i class="bi bi-code-slash dcdLayerEnd" aria-hidden="true"></i>
+                            </div>
+                            <div class="dcdLayer">
+                                <i class="bi bi-shield-lock" aria-hidden="true"></i>
+                                <div>
+                                    <strong>SharePoint &amp; Microsoft 365</strong>
+                                    <span>Enterprise data and permissions</span>
+                                </div>
+                                <i class="bi bi-database dcdLayerEnd" aria-hidden="true"></i>
+                            </div>
+                            <div class="dcdLayer">
+                                <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Workflow automation</strong>
+                                    <span>Routing and stakeholder notifications</span>
+                                </div>
+
+                                <i class="bi bi-bell dcdLayerEnd" aria-hidden="true"></i>
+                            </div>
+                            <div class="dcdVisualMetric">
+                                <strong>25<span>+</span></strong>
+                                <p>Power Automate flows supporting operational workflows</p>
+                            </div>
+                        </div>
+                        <p class="visualDisclaimer">
+                            Conceptual component overview · Not a production architecture diagram
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!-- Rotted Cellar -->
+            <article class="projectFeature projectFeature--rotted" id="rotted-cellar" aria-labelledby="rottedTitle">
+                <header class="projectFeatureHeader">
+                    <div>
+                        <p class="projectFeatureCategory">Independent product</p>
+                        <h3 id="rottedTitle">Rotted Cellar</h3>
+
+                        <p class="projectFeatureSummary">
+                            An original horror media and community platform spanning
+                            content publishing, user accounts, discussion, and administration.
+                        </p>
+                    </div>
+
+                    <span class="projectFeatureStatus">In development</span>
+                </header>
+
+                <div class="projectFeatureBody">
+                    <div class="projectFeatureDetails">
+                        <div class="projectFeatureRole">
+                            <span>My Responsibility</span>
+                            <strong>
+                                Independent product design, full-stack development,
+                                and administration tools
+                            </strong>
+                        </div>
+
+                        <h4>Product and Engineering Highlights</h4>
+
+                        <div class="projectFeatureContributions">
+                            <div>
+                                <strong>Editorial publishing</strong>
+                                <p>Reviews, editorials, news, author tools, and creator submissions.</p>
+                            </div>
+                            <div>
+                                <strong>Community features</strong>
+                                <p>User profiles, discussions, reactions, and moderation tools.</p>
+                            </div>
+                            <div>
+                                <strong>Fully Built E-commerce</strong>
+                                <p>Store built out with everything expected of an online store including Stripe&copy; payment encyption and processing</p>
+                            </div>
+                            <div>
+                                <strong>Application infrastructure</strong>
+                                <p>Secure accounts, structured content data, APIs, and commerce functionality.</p>
+                            </div>
+                        </div>
+                        <div class="projectFeatureStack" aria-label="Rotted Cellar technologies">
+                            <span>Node.js</span>
+                            <span>Express.js</span>
+                            <span>MongoDB</span>
+                            <span>EJS</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                        </div>
+
+                        <p class="projectFeaturePrivacy">
+                            Selected interface previews are shown.
+                            The source repository remains private during development.
+                        </p>
+                    </div>
+
+                    <div class="projectFeatureVisual rottedVisual" aria-label="Rotted Cellar screenshots">
+                        <div class="visualTopline">
+                            <span class="visualToplineDot"></span>
+                            <span>Rotted Cellar / Interface previews</span>
+                            <i class="bi bi-images" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="projectMockupCarousel" data-carousel="rotted-cellar" aria-label="Rotted Cellar interface previews">
+                            <div class="projectMockupTrack" tabindex="0" aria-label="Swipe or use arrow keys to explore screens">
+                                <div class="projectMockupSlide">
+                                    <img
+                                        src="static/images/Rotted Cellar Home.png"
+                                        alt="Rotted Cellar homepage"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </div>
+
+                                <div class="projectMockupSlide">
+                                    <img
+                                        src="static/images/Rotted Cellar Comments.png"
+                                        alt="Rotted Cellar comments interface"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </div>
+
+                                <div class="projectMockupSlide">
+                                    <img
+                                        src="static/images/Rotted Cellar Store.png"
+                                        alt="Rotted Cellar storefront"
+                                        loading="lazy"
+                                        decoding="async"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="projectMockupDots" role="group" aria-label="Choose preview image">
+                                <button
+                                    class="projectMockupDot active"
+                                    type="button"
+                                    aria-current="true"
+                                    aria-label="Show preview 1 of 3"
+                                ></button>
+
+                                <button
+                                    class="projectMockupDot"
+                                    type="button"
+                                    aria-label="Show preview 2 of 3"
+                                ></button>
+
+                                <button
+                                    class="projectMockupDot"
+                                    type="button"
+                                    aria-label="Show preview 3 of 3"
+                                ></button>
+                            </div>
+                        </div>
+
+                        <p class="visualDisclaimer">
+                            Actual development interface previews · Swipe or select a slide
+                        </p>
+                    </div>
+                </div>
+            </article>
         </section>
+        <!-- Professional Experience -->
         <section class="professionalSystemsSection">
             <div class="sectionHeader">
                 <p class="eyebrowText">Professional Experience</p>
-                <h2 class="sectionTitle">Additional production systems experience.</h2>
+                <h2 class="sectionTitle">
+                    Experience supporting large legacy systems.
+                </h2>
             </div>
             <article class="professionalSystemCard">
                 <div>
                     <span class="projectTag">Enterprise Government Software</span>
+
                     <h3>GenTax Platform Support — FAST Enterprises</h3>
+
                     <p>
-                        Supported production software for a large-scale government tax platform used by the Georgia Department of Revenue. Work included production support, SQL-driven reporting, fraud detection workflows, and technical communication in a regulated environment.
+                        Supported production software for a large-scale government tax platform
+                        used by the Georgia Department of Revenue. Work included production support,
+                        SQL-driven reporting, fraud detection workflows, and technical communication
+                        in a regulated environment.
                     </p>
                 </div>
                 <div class="professionalSystemMeta">
@@ -191,43 +522,85 @@
                 </div>
             </article>
         </section>
+        <!-- Earlier Work -->
         <section class="earlierWorkSection">
             <div class="sectionHeader">
                 <p class="eyebrowText">Earlier Work</p>
-                <h2 class="sectionTitle">Selected academic and side projects.</h2>
+                <h2 class="sectionTitle">Foundations worth keeping.</h2>
                 <p class="sectionText">
-                    These projects are older, but they show earlier exposure to different languages, frameworks, data structures, and programming concepts.
+                    These projects are older, but they show earlier exposure to different languages,
+                    frameworks, data structures, and programming concepts.
                 </p>
             </div>
             <div class="earlierWorkGrid">
                 <article class="earlierWorkCard">
-                    <h3>Writer’s Conference Website</h3>
-                    <p>Conference website built with Python, Flask, Jinja2, and SQLite for a web/database applications course.</p>
+                    <h3>Writer's Conference Website</h3>
+                    <p>
+                        Conference website built with Python, Flask, Jinja2, and SQLite
+                        for a web/database applications course.
+                    </p>
+
                     <div class="caseStudyPillGrid">
                         <span>Python</span>
                         <span>Flask</span>
                         <span>SQLite</span>
                         <span>Jinja2</span>
                     </div>
-                    <a href="https://github.com/drausch84/PythonConferenceWebsite" target="_blank" rel="noopener" class="textLink">View code <i class="bi bi-arrow-right"></i></a>
+
+                    <a
+                        href="https://github.com/drausch84/PythonConferenceWebsite"
+                        class="textLink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View code
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </article>
                 <article class="earlierWorkCard">
                     <h3>Java Image Manipulation</h3>
-                    <p>Data structures project using Java and stack-based logic to apply image transformation filters.</p>
+                    <p>
+                        Data structures project using Java and stack-based logic
+                        to apply image transformation filters.
+                    </p>
+
                     <div class="caseStudyPillGrid">
                         <span>Java</span>
                         <span>Data Structures</span>
                     </div>
-                    <a href="https://github.com/drausch84/JavaImageManipulation" target="_blank" rel="noopener" class="textLink">View code <i class="bi bi-arrow-right"></i></a>
+                    <a
+                        href="https://github.com/drausch84/JavaImageManipulation"
+                        class="textLink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View code
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </article>
+
                 <article class="earlierWorkCard">
                     <h3>Turing Machine Simulator</h3>
-                    <p>Java-based computation theory project that simulates a Turing machine using text-based input.</p>
+
+                    <p>
+                        Java-based computation theory project that simulates a
+                        Turing machine using text-based input.
+                    </p>
+
                     <div class="caseStudyPillGrid">
                         <span>Java</span>
                         <span>Computation Theory</span>
                     </div>
-                    <a href="https://github.com/drausch84/TuringMachineSim" target="_blank" rel="noopener" class="textLink">View code <i class="bi bi-arrow-right"></i></a>
+
+                    <a
+                        href="https://github.com/drausch84/TuringMachineSim"
+                        class="textLink"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View code
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </article>
             </div>
         </section>
@@ -235,30 +608,60 @@
     <footer class="siteFooter">
         <div class="footerGrid">
             <div class="footerBrandBlock">
-                <h2>Rausch Development</h2>
-                <p>
-                    Secure, scalable, business-focused software built with clean architecture, practical design, and long-term ownership in mind.
-                </p>
+                <a href="/" class="footerBrandLink" aria-label="Rausch Development home">
+                    <span class="footerBrandMark">RD</span>
+                    <span>Rausch Development</span>
+                </a>
+                <p>Full-stack software engineering, enterprise platforms, and independently developed applications.</p>
+                <a href="/contact" class="footerAvailability">
+                    <span class="availabilityDot" aria-hidden="true"></span>
+                    <span>Open to senior software engineering opportunities</span>
+                    <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
             </div>
-            <div class="footerLinkBlock">
-                <h3>Quick Links</h3>
-                <a href="about">About</a>
-                <a href="portfolio">Portfolio</a>
-                <a href="contact">Contact</a>
-            </div>
-            <div class="footerLinkBlock">
-                <h3>Connect</h3>
-                <a href="mailto:rauschdevelopment.io@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/drausch84" target="_blank" rel="noopener">GitHub</a>
+            <div class="footerLinkGroup">
+                <nav class="footerLinkBlock" aria-label="Footer navigation">
+                    <h3>Explore</h3>
+                    <div class="footerLinkList">
+                        <a href="/">Home</a>
+                        <a href="/about">About</a>
+                        <a href="/portfolio">Portfolio</a>
+                        <a href="/resume">Résumé</a>
+                        <a href="/contact">Contact</a>
+                    </div>
+                </nav>
+                <div class="footerLinkBlock">
+                    <h3>Connect</h3>
+                    <div class="footerLinkList">
+                        <a href="mailto:rauschdevelopment.io@gmail.com">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/david-rausch-52444878/" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/drausch84" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footerBottom">
-            <p>&copy; 2026 Rausch Development. All rights reserved.</p>
+            <p>&copy; 2026 Rausch Development. Designed and developed by David Rausch.</p>    
+            <a href="#portfolioTop">
+                Back to top
+                <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
         </div>
     </footer>
-    <button class="topScrollButton" type="button" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
-    <script src="static/js/portfolio.js"></script>
-    <script src="static/js/portfolioPage.js"></script>
+    <button class="topScrollButton" type="button" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <script src="static/js/portfolio.js" defer></script>
+    <script src="static/js/portfolioPage.js" defer></script>
+    <script src="static/js/engineerProfile.js" defer></script>
 </body>
 </html>
