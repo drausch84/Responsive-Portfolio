@@ -5,7 +5,7 @@ const binaryTransitionConfig = {
     exitHoldDuration: 300,
     enterHoldDuration: 250,
     enterDuration: 1300,
-    frameInterval: 1000 / 45,
+    frameInterval: 1000 / 60,
     storageLifetime: 12000,
     background: '#101d2d'
 };
@@ -200,7 +200,7 @@ function createBinaryGlyphField(width, height, seed) {
 /* END Helper: Create Binary Glyph Field */
 
 /* Helper: Calculate Binary Sweep Edge */
-function getBinarySweepEdge(width, progress, y, elapsed) {
+function getBinarySweepEdge(width, progress, y, elapsed, phase) {
     if (progress <= 0) {
         return 0;
     }
@@ -209,7 +209,10 @@ function getBinarySweepEdge(width, progress, y, elapsed) {
         return width;
     }
 
-    const eased = progress * progress * (3 - 2 * progress);
+    const eased = phase === 'enter'
+        ? progress
+        : progress * progress * (3 - 2 * progress);
+
     const edgeWave = Math.sin(y * 0.019 + elapsed * 0.005) * 17;
     const edgeDetail = Math.sin(y * 0.058 - elapsed * 0.008) * 8;
     const waveStrength = Math.sin(progress * Math.PI);
@@ -228,7 +231,7 @@ function renderBinaryTransitionFrame(state, phase, progress, elapsed) {
 
     /* Draw Horizontal Binary Sweep */
     for (let y = 0; y < height; y += bandHeight) {
-        const edge = getBinarySweepEdge(width, progress, y, elapsed);
+        const edge = getBinarySweepEdge(width, progress, y, elapsed, phase);
 
         context.fillStyle = Math.floor(y / bandHeight) % 4 === 0
             ? '#12232e'
@@ -258,20 +261,19 @@ function renderBinaryTransitionFrame(state, phase, progress, elapsed) {
         const drift = Math.sin(elapsed * 0.002 * glyph.speed + glyph.phase) * 11;
         const x = glyph.x;
         const y = glyph.y + drift;
-        const edge = getBinarySweepEdge(width, progress, y, elapsed);
+        const edge = getBinarySweepEdge(width, progress, y, elapsed, phase);
 
         const inCoveredArea = isExit ? x <= edge - 3 : x >= edge + 3;
-        const atBoundary = Math.abs(x - edge) < 32;
 
-        if (!inCoveredArea && !(atBoundary && glyph.spark > 0.91)) {
+        if (!inCoveredArea) {
             return;
         }
 
         const nearBoundary = Math.abs(x - edge) < 110;
 
-        context.globalAlpha = inCoveredArea
-            ? (nearBoundary ? 0.48 + glyph.intensity * 0.43 : 0.15 + glyph.intensity * 0.35)
-            : 0.30;
+        context.globalAlpha = nearBoundary
+            ? 0.48 + glyph.intensity * 0.43
+            : 0.15 + glyph.intensity * 0.35;
 
         context.fillStyle = nearBoundary && glyph.spark > 0.75
             ? '#d0ffe0'
