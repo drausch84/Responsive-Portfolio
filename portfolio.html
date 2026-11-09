@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,15 +138,21 @@
         <!-- Featured Work -->
         <section class="portfolioWorkSection" id="featuredProjects" aria-labelledby="featuredWorkTitle">
             <header class="portfolioWorkHeader">
-                <div>
+                <div class="portfolioWorkIntro">
                     <p class="eyebrowText">Selected Work</p>
-                    <h2 id="featuredWorkTitle">A closer look at what I've built.</h2>
+                    <h2 id="featuredWorkTitle">Featured projects</h2>
                 </div>
-
                 <nav class="portfolioWorkNav" aria-label="Jump to featured projects">
-                    <a href="#cds">Campos Deliverable Suite</a>
-                    <a href="#dcd">Distribution Contract Design</a>
-                    <a href="#rotted-cellar">Rotted Cellar</a>
+                    <span class="portfolioWorkNavLabel">Jump to project</span>
+                    <a href="#cds" aria-label="Jump to Campos Deliverable Suite">
+                        CDS <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#dcd" aria-label="Jump to Distribution Contract Design">
+                        DCD <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="#rotted-cellar">
+                        Rotted Cellar <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+                    </a>
                 </nav>
             </header>
             <!-- Campos Deliverable Suite -->
@@ -161,8 +166,8 @@
                         </h3>
 
                         <p class="projectFeatureSummary">
-                            An engineering operations platform that brings project information,
-                            technical calculations, drawings, and coordination into one system.
+                            An engineering operations platform that brings organized project data,
+                            technical EPC calculations, engineering deliverables and drawings, and PM coordination into one system.
                         </p>
                     </div>
 
@@ -192,14 +197,14 @@
                             <div>
                                 <strong>Operational workflows</strong>
                                 <p>
-                                    Tasks, project tracking, notifications,
-                                    and role-based access.
+                                    Task management, project tracking, project update notifications,
+                                    and role-based access to sensitive information (NDA gating).
                                 </p>
                             </div>
                             <div>
                                 <strong>Data and delivery</strong>
                                 <p>
-                                    Structured MongoDB data, report generation,
+                                    Structured MongoDB data, report generation (including weekly outcomes),
                                     revision history, and production support.
                                 </p>
                             </div>
@@ -221,7 +226,7 @@
                     <div class="projectFeatureVisual cdsVisual" aria-label="Conceptual overview of CDS capabilities">
                         <div class="visualTopline">
                             <span class="visualToplineDot"></span>
-                            <span>CDS / Capability overview</span>
+                            <span>CDS Capability overview</span>
                             <i class="bi bi-grid-1x2" aria-hidden="true"></i>
                         </div>
                         <div class="cdsVisualBody">
@@ -229,25 +234,25 @@
                                 <div class="cdsVisualMark">CDS</div>
                                 <div>
                                     <strong>Engineering workspace</strong>
-                                    <span>One platform, connected capabilities</span>
+                                    <span>One platform, connected company portfolio capabilities</span>
                                 </div>
                             </div>
                             <div class="cdsVisualModules">
                                 <div>
                                     <i class="bi bi-calculator" aria-hidden="true"></i>
-                                    <span>Technical calculations</span>
+                                    <span>EPC calculations (NEC Certified)</span>
                                 </div>
                                 <div>
                                     <i class="bi bi-diagram-3" aria-hidden="true"></i>
-                                    <span>Loop drawing tools</span>
+                                    <span>Drawing modules (ISA, Loop Drawing)</span>
                                 </div>
                                 <div>
                                     <i class="bi bi-kanban" aria-hidden="true"></i>
-                                    <span>Project workflows</span>
+                                    <span>Project Management</span>
                                 </div>
                                 <div>
                                     <i class="bi bi-file-earmark-bar-graph" aria-hidden="true"></i>
-                                    <span>Reports &amp; records</span>
+                                    <span>Report &amp; record generation</span>
                                 </div>
                             </div>
                             <div class="cdsVisualBottom">
@@ -349,7 +354,7 @@
                             <div class="dcdLayer">
                                 <i class="bi bi-arrow-repeat" aria-hidden="true"></i>
                                 <div>
-                                    <strong>Workflow automation</strong>
+                                    <strong>Workflow automations</strong>
                                     <span>Routing and stakeholder notifications</span>
                                 </div>
 
@@ -375,7 +380,7 @@
 
                         <p class="projectFeatureSummary">
                             An original horror media and community platform spanning
-                            content publishing, user accounts, discussion, and administration.
+                            content publishing, community engagement, and E-commerce.
                         </p>
                     </div>
 

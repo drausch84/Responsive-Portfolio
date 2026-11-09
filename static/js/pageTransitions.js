@@ -1,11 +1,8 @@
 /* Binary Page Transition Configuration */
 const binaryTransitionConfig = {
     storageKey: 'rauschBinaryTransition',
-    exitDuration: 1050,
-    exitHoldDuration: 180,
-    enterHoldDuration: 150,
-    enterDuration: 1150,
-    frameInterval: 1000 / 60,
+    exitDuration: 1175,
+    enterDuration: 1225,
     storageLifetime: 12000,
     background: '#101d2d'
 };
@@ -64,7 +61,7 @@ function initializeBinaryPageTransitions() {
 
     const started = startBinaryTransition('enter', binaryIncomingTransition.seed, () => {
         document.documentElement.classList.remove('binaryTransitionIncoming');
-    });
+    }, binaryIncomingTransition.createdAt);
 
     if (!started) {
         document.documentElement.classList.remove('binaryTransitionIncoming');
@@ -128,11 +125,12 @@ function handleBinaryNavigationClick(event) {
     }
 
     const seed = Math.floor(Math.random() * 0xffffffff);
+    const transitionStartedAt = Date.now();
 
     try {
         window.sessionStorage.setItem(binaryTransitionConfig.storageKey, JSON.stringify({
             destination: destinationRoute,
-            createdAt: Date.now(),
+            createdAt: transitionStartedAt,
             seed
         }));
     } catch (error) {
@@ -144,7 +142,7 @@ function handleBinaryNavigationClick(event) {
 
     const started = startBinaryTransition('exit', seed, () => {
         window.location.assign(destination.href);
-    });
+    }, transitionStartedAt);
 
     if (!started) {
         binaryNavigationInProgress = false;
@@ -300,7 +298,7 @@ function renderBinaryTransitionFrame(state, phase, progress, elapsed) {
 /* END Helper: Render Binary Transition Frame */
 
 /* Helper: Start Binary Transition */
-function startBinaryTransition(phase, seed, onComplete) {
+function startBinaryTransition(phase, seed, onComplete, transitionStartedAt = Date.now()) {
     const canvas = document.createElement('canvas');
     canvas.className = 'binaryTransitionCanvas';
     canvas.setAttribute('aria-hidden', 'true');
@@ -318,7 +316,6 @@ function startBinaryTransition(phase, seed, onComplete) {
         height: 0,
         field: null,
         animationFrame: null,
-        lastFrameTime: 0,
         cancelled: false
     };
 
@@ -351,40 +348,19 @@ function startBinaryTransition(phase, seed, onComplete) {
     }
 
     const isExit = phase === 'exit';
-    const sweepDuration = isExit ? binaryTransitionConfig.exitDuration : binaryTransitionConfig.enterDuration;
-    const holdDuration = isExit ? binaryTransitionConfig.exitHoldDuration : binaryTransitionConfig.enterHoldDuration;
-    const totalDuration = sweepDuration + holdDuration;
-    const startTime = performance.now();
+    const duration = isExit
+        ? binaryTransitionConfig.exitDuration
+        : binaryTransitionConfig.enterDuration;
 
+    const startTime = performance.now();
     let completed = false;
     let fallbackTimer = null;
 
-    /* Helper: Calculate Transition Progress */
-    function calculateTransitionProgress(elapsed) {
-        if (isExit) {
-            return Math.min(1, elapsed / sweepDuration);
-        }
-
-        const revealElapsed = Math.max(0, elapsed - holdDuration);
-
-        return Math.min(1, revealElapsed / sweepDuration);
+    /* Helper: Get Continuous Binary Motion Time */
+    function getContinuousBinaryMotionTime() {
+        return Math.max(0, Date.now() - transitionStartedAt);
     }
-    /* END Helper: Calculate Transition Progress */
-
-    /* Helper: Calculate Binary Motion Time */
-    function calculateBinaryMotionTime(elapsed) {
-        if (isExit) {
-            // Freeze glyph movement when the outgoing sweep finishes.
-            return Math.min(elapsed, binaryTransitionConfig.exitDuration);
-        }
-
-        // Begin at the exact glyph frame used by the outgoing page.
-        // Keep that frame stationary during the incoming hold.
-        const revealElapsed = Math.max(0, elapsed - holdDuration);
-
-        return binaryTransitionConfig.exitDuration + revealElapsed;
-    }
-    /* END Helper: Calculate Binary Motion Time */
+    /* END Helper: Get Continuous Binary Motion Time */
 
     /* Helper: Cancel Active Binary Transition */
     function cancelTransition() {
@@ -412,11 +388,14 @@ function startBinaryTransition(phase, seed, onComplete) {
         completed = true;
         window.clearTimeout(fallbackTimer);
 
+        if (state.animationFrame !== null) {
+            window.cancelAnimationFrame(state.animationFrame);
+            state.animationFrame = null;
+        }
+
         if (isExit) {
             resizeCanvas();
-
-            // Preserve the handoff frame without advancing the glyph clock.
-            renderBinaryTransitionFrame(state, phase, 1, binaryTransitionConfig.exitDuration);
+            renderBinaryTransitionFrame(state, phase, 1, getContinuousBinaryMotionTime());
         } else {
             cancelTransition();
         }
@@ -431,19 +410,17 @@ function startBinaryTransition(phase, seed, onComplete) {
             return;
         }
 
-        const elapsed = Math.max(0, Math.min(timestamp - startTime, totalDuration));
-        const progress = calculateTransitionProgress(elapsed);
-        const motionElapsed = calculateBinaryMotionTime(elapsed);
+        const elapsed = Math.max(0, Math.min(timestamp - startTime, duration));
+        const progress = Math.min(1, elapsed / duration);
+        const motionElapsed = getContinuousBinaryMotionTime();
 
-        if (timestamp - state.lastFrameTime >= binaryTransitionConfig.frameInterval || elapsed >= totalDuration) {
-            resizeCanvas();
-            renderBinaryTransitionFrame(state, phase, progress, motionElapsed);
-            state.lastFrameTime = timestamp;
-        }
+        resizeCanvas();
+        renderBinaryTransitionFrame(state, phase, progress, motionElapsed);
 
-        if (elapsed < totalDuration) {
+        if (progress < 1) {
             state.animationFrame = window.requestAnimationFrame(animate);
         } else {
+            state.animationFrame = null;
             completeTransition();
         }
     }
@@ -451,13 +428,11 @@ function startBinaryTransition(phase, seed, onComplete) {
 
     binaryCancelActiveTransition = cancelTransition;
 
-    // Ensure navigation can finish if animation frames become throttled.
-    fallbackTimer = window.setTimeout(completeTransition, totalDuration + 1000);
+    // Ensure navigation completes if the browser throttles animation frames.
+    fallbackTimer = window.setTimeout(completeTransition, duration + 1000);
 
-    // Match the incoming glyph positions to the outgoing handoff frame.
-    const initialMotionTime = isExit ? 0 : binaryTransitionConfig.exitDuration;
-
-    renderBinaryTransitionFrame(state, phase, 0, initialMotionTime);
+    // Both documents use the same seed and continuous animation clock.
+    renderBinaryTransitionFrame(state, phase, 0, getContinuousBinaryMotionTime());
     document.documentElement.classList.remove('binaryTransitionIncoming');
 
     state.animationFrame = window.requestAnimationFrame(animate);

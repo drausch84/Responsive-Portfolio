@@ -3324,59 +3324,100 @@ html.binaryTransitionIncoming::after {
 }
 .portfolioPageBody .portfolioWorkSection {
     width: min(1440px, calc(100% - 64px));
-    margin: 84px auto 0;
+    margin: 68px auto 0;
     scroll-margin-top: 110px;
 }
 .portfolioWorkHeader {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
-    gap: 32px;
-    padding-bottom: 30px;
+    gap: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dce7e4;
+}
+.portfolioWorkIntro {
+    flex: 0 1 auto;
+    min-width: 0;
+}
+.portfolioWorkIntro .eyebrowText {
+    margin: 0 0 7px;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
 }
 .portfolioWorkHeader h2 {
-    max-width: 830px;
+    max-width: none;
     margin: 0;
     font-family: var(--font-display);
-    font-size: clamp(2rem, 3.25vw, 3rem);
-    font-weight: 800;
-    line-height: 1.18;
-    letter-spacing: -0.05em;
+    font-size: clamp(1.5rem, 2.1vw, 1.95rem);
+    font-weight: 750;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
     color: #111c2b;
 }
 .portfolioWorkNav {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    padding-bottom: 2px;
+}
+.portfolioWorkNavLabel {
+    color: #788b94;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 .portfolioWorkNav a {
     display: inline-flex;
     align-items: center;
-    min-height: 37px;
-    padding: 8px 12px;
-    border: 1px solid #dfe8e6;
-    border-radius: 9px;
-    background: #ffffff;
+    gap: 7px;
+    min-height: 35px;
+    padding: 5px 0;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
     color: #425969;
-    font-size: 0.78rem;
+    font-family: var(--font-body);
+    font-size: 0.84rem;
     font-weight: 600;
-    transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    white-space: nowrap;
+    transition: color 180ms ease, border-color 180ms ease;
 }
-.portfolioWorkNav a:hover {
-    background: #edf7f1;
-    border-color: #93c6a7;
-    color: #0c6d3d;
+.portfolioWorkNav a i {
+    color: #7c9b8e;
+    font-size: 0.76rem;
+    transition: color 180ms ease, transform 180ms ease;
 }
+.portfolioWorkNav a:hover,
 .portfolioWorkNav a:focus-visible {
-    background: #edf7f1;
-    border-color: #93c6a7;
-    color: #0c6d3d;
+    background: transparent;
+    border-bottom-color: #117a4c;
+    color: #08784b;
+}
+.portfolioWorkNav a:hover i,
+.portfolioWorkNav a:focus-visible i {
+    color: #08784b;
+    transform: translate(2px, 2px);
+}
+.portfolioWorkSection:has(#cds:target) .portfolioWorkNav a[href="#cds"],
+.portfolioWorkSection:has(#dcd:target) .portfolioWorkNav a[href="#dcd"],
+.portfolioWorkSection:has(#rotted-cellar:target) .portfolioWorkNav a[href="#rotted-cellar"] {
+    border-bottom-color: #117a4c;
+    color: #08784b;
 }
 .projectFeature {
     padding: clamp(40px, 4.5vw, 68px) 0;
     border-top: 1px solid #dce7e4;
     scroll-margin-top: 115px;
+}
+.portfolioWorkSection > .projectFeature:first-of-type {
+    padding-top: 30px;
+    border-top: 0;
 }
 .projectFeatureHeader {
     display: flex;
@@ -3944,11 +3985,15 @@ html.binaryTransitionIncoming::after {
 }
 @media (max-width: 1050px) {
     .portfolioWorkHeader {
-        display: block;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
     }
     .portfolioWorkNav {
         justify-content: flex-start;
-        margin-top: 20px;
+        margin-top: 0;
+        gap: 10px 20px;
     }
     .projectFeatureBody {
         grid-template-columns: minmax(0, 1fr) minmax(0, 0.94fr);
@@ -4002,17 +4047,27 @@ html.binaryTransitionIncoming::after {
         margin-top: 65px;
     }
     .portfolioWorkHeader {
-        padding-bottom: 24px;
+        padding-bottom: 18px;
+        gap: 13px;
     }
     .portfolioWorkHeader h2 {
-        font-size: 2.05rem;
+        font-size: 1.6rem;
     }
     .portfolioWorkNav {
-        gap: 6px;
+        gap: 4px 16px;
+    }
+    .portfolioWorkNavLabel {
+        flex-basis: 100%;
+        margin-bottom: 2px;
+        font-size: 0.62rem;
     }
     .portfolioWorkNav a {
-        padding: 7px 9px;
-        font-size: 0.72rem;
+        min-height: 34px;
+        padding: 5px 0;
+        font-size: 0.81rem;
+    }
+    .portfolioWorkSection > .projectFeature:first-of-type {
+        padding-top: 25px;
     }
     .projectFeature {
         padding: 37px 0 43px;
