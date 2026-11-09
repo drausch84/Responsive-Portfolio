@@ -1,9 +1,11 @@
 /* Binary Page Transition Configuration */
 const binaryTransitionConfig = {
     storageKey: 'rauschBinaryTransition',
-    exitDuration: 420,
-    enterDuration: 540,
-    frameInterval: 1000 / 30,
+    exitDuration: 1200,
+    exitHoldDuration: 300,
+    enterHoldDuration: 250,
+    enterDuration: 1300,
+    frameInterval: 1000 / 45,
     storageLifetime: 12000,
     background: '#101d2d'
 };
@@ -277,7 +279,16 @@ function renderBinaryTransitionFrame(state, phase, progress, elapsed) {
                 ? '#8cdea9'
                 : '#459578';
 
-        context.fillText(glyph.digit, x, y);
+        
+        const mutationInterval = 220 + glyph.speed * 105;
+        const mutationTick = Math.floor((elapsed + glyph.phase * 95) / mutationInterval);
+        const shouldMutate = glyph.spark > 0.80 && mutationTick % 2 === 1;
+        const displayDigit = shouldMutate
+            ? (glyph.digit === '0' ? '1' : '0')
+            : glyph.digit;
+
+        context.fillText(displayDigit, x, y);
+
     });
 
     context.globalAlpha = 1;
@@ -336,13 +347,35 @@ function startBinaryTransition(phase, seed, onComplete) {
         return false;
     }
 
-    const duration = phase === 'exit'
+    const isExit = phase === 'exit';
+
+    const sweepDuration = isExit
         ? binaryTransitionConfig.exitDuration
         : binaryTransitionConfig.enterDuration;
 
+    const holdDuration = isExit
+        ? binaryTransitionConfig.exitHoldDuration
+        : binaryTransitionConfig.enterHoldDuration;
+
+    const totalDuration = sweepDuration + holdDuration;
     const startTime = performance.now();
+
     let completed = false;
     let fallbackTimer = null;
+
+    /* Helper: Calculate Transition Progress */
+    function calculateTransitionProgress(elapsed) {
+        if (isExit) {
+            // First sweep across the screen, then remain fully covered.
+            return Math.min(1, elapsed / sweepDuration);
+        }
+
+        // Keep the destination covered briefly before revealing it.
+        const revealElapsed = Math.max(0, elapsed - holdDuration);
+
+        return Math.min(1, revealElapsed / sweepDuration);
+    }
+    /* END Helper: Calculate Transition Progress */
 
     /* Helper: Cancel Active Binary Transition */
     function cancelTransition() {
@@ -370,9 +403,9 @@ function startBinaryTransition(phase, seed, onComplete) {
         completed = true;
         window.clearTimeout(fallbackTimer);
 
-        if (phase === 'exit') {
+        if (isExit) {
             resizeCanvas();
-            renderBinaryTransitionFrame(state, phase, 1, duration);
+            renderBinaryTransitionFrame(state, phase, 1, totalDuration);
         } else {
             cancelTransition();
         }
@@ -387,16 +420,16 @@ function startBinaryTransition(phase, seed, onComplete) {
             return;
         }
 
-        const elapsed = Math.min(timestamp - startTime, duration);
-        const progress = Math.min(1, elapsed / duration);
+        const elapsed = Math.max(0, Math.min(timestamp - startTime, totalDuration));
+        const progress = calculateTransitionProgress(elapsed);
 
-        if (timestamp - state.lastFrameTime >= binaryTransitionConfig.frameInterval || progress === 1) {
+        if (timestamp - state.lastFrameTime >= binaryTransitionConfig.frameInterval || elapsed >= totalDuration) {
             resizeCanvas();
             renderBinaryTransitionFrame(state, phase, progress, elapsed);
             state.lastFrameTime = timestamp;
         }
 
-        if (progress < 1) {
+        if (elapsed < totalDuration) {
             state.animationFrame = window.requestAnimationFrame(animate);
         } else {
             completeTransition();
@@ -406,10 +439,10 @@ function startBinaryTransition(phase, seed, onComplete) {
 
     binaryCancelActiveTransition = cancelTransition;
 
-    // Ensure the transition completes if animation frames become throttled.
-    fallbackTimer = window.setTimeout(completeTransition, duration + 1000);
+    // Complete the transition if browser throttling prevents animation frames.
+    fallbackTimer = window.setTimeout(completeTransition, totalDuration + 1000);
 
-    // Render before removing the temporary incoming-page coverage.
+    // Render the initial frame before removing incoming-page coverage.
     renderBinaryTransitionFrame(state, phase, 0, 0);
     document.documentElement.classList.remove('binaryTransitionIncoming');
 
